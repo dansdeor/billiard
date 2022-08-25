@@ -1,21 +1,19 @@
 module hole (
-					input logic clk,
-					//input logic resetN,
-					input logic signed [10:0] pixelX,
-					input logic signed [10:0] pixelY,
+	input logic clk,
+	input logic signed [10:0] pixelX,
+	input logic signed [10:0] pixelY,
 
-					output logic drawingRequestHole,
-					output logic [7:0] RGBoutHole
+	output logic drawingRequestHole,
+	output logic [7:0] RGBoutHole
 );
 
 // generating the bitmap of a single hole 
-localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF ; // RGB value in the bitmap representing a transparent pixel 
-parameter logic [10:0] hole_top_left_posX = 11'd10;   //inside paramater for deciding the RGBoutHole value
-parameter logic [10:0] hole_top_left_posY = 11'd30; 
-const int OBJECT_cOLORS_X= 11'd32; 				   //const value for deciding the RGBoutHole value
-const int OBJECT_cOLORS_Y= 11'd32;
+localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF;
+parameter logic [10:0] TOP_LEFT_POS_X = 11'b0, TOP_LEFT_POS_Y = 11'b0;
+const int BITMAP_WIDTH = 32;
+const int BITMAP_HEIGHT = 32;
 
-logic[0:31][0:31][7:0] object_colors = {
+logic [0:32][0:32][7:0] object_colors = {
 	{8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF},
 	{8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF},
 	{8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF},
@@ -49,14 +47,12 @@ logic[0:31][0:31][7:0] object_colors = {
 	{8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF},
 	{8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF}};
 
-	
-//RGBoutHole defenition	
-always_ff@(posedge clk)// or negedge resetN) 
+
+always_ff @(posedge clk)
 begin 
-	RGBoutHole <= TRANSPARENT_ENCODING ; // default  
-	if ((hole_top_left_posX <= pixelX) && (hole_top_left_posX + OBJECT_cOLORS_X > pixelX) && (hole_top_left_posY + OBJECT_cOLORS_Y > pixelY) && (hole_top_left_posY <= pixelY) ) 
-	begin // inside an external bracket  
-		RGBoutHole <= object_colors[pixelY - hole_top_left_posY][pixelX - hole_top_left_posX]; // gets the color from the bitmap
+	RGBoutHole <= TRANSPARENT_ENCODING;
+	if ((TOP_LEFT_POS_X <= pixelX) && (TOP_LEFT_POS_X + BITMAP_WIDTH > pixelX) && (TOP_LEFT_POS_Y + BITMAP_HEIGHT > pixelY) && (TOP_LEFT_POS_Y <= pixelY) ) begin 
+		RGBoutHole <= object_colors[pixelY - TOP_LEFT_POS_Y][pixelX - TOP_LEFT_POS_X]; // gets the color from the bitmap
 	end
 end 
 // decide if to draw the pixel or not 

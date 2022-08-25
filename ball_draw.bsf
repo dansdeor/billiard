@@ -21,7 +21,7 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 288 160)
+	(rect 16 16 280 160)
 	(text "ball_draw" (rect 5 0 41 12)(font "Arial" ))
 	(text "inst" (rect 8 128 20 140)(font "Arial" ))
 	(port
@@ -48,32 +48,32 @@ agreement for further details.
 	(port
 		(pt 0 80)
 		(input)
-		(text "ball_top_left_posX[10..0]" (rect 0 0 96 12)(font "Arial" ))
-		(text "ball_top_left_posX[10..0]" (rect 21 75 117 87)(font "Arial" ))
+		(text "ballTopLeftPosX[10..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "ballTopLeftPosX[10..0]" (rect 21 75 109 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 3))
 	)
 	(port
 		(pt 0 96)
 		(input)
-		(text "ball_top_left_posY[10..0]" (rect 0 0 97 12)(font "Arial" ))
-		(text "ball_top_left_posY[10..0]" (rect 21 91 118 103)(font "Arial" ))
+		(text "ballTopLeftPosY[10..0]" (rect 0 0 89 12)(font "Arial" ))
+		(text "ballTopLeftPosY[10..0]" (rect 21 91 110 103)(font "Arial" ))
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
-		(pt 272 32)
+		(pt 264 32)
 		(output)
 		(text "drawingRequestBall" (rect 0 0 76 12)(font "Arial" ))
-		(text "drawingRequestBall" (rect 175 27 251 39)(font "Arial" ))
-		(line (pt 272 32)(pt 256 32)(line_width 1))
+		(text "drawingRequestBall" (rect 167 27 243 39)(font "Arial" ))
+		(line (pt 264 32)(pt 248 32)(line_width 1))
 	)
 	(port
-		(pt 272 48)
+		(pt 264 48)
 		(output)
 		(text "RGBoutBall[7..0]" (rect 0 0 66 12)(font "Arial" ))
-		(text "RGBoutBall[7..0]" (rect 185 43 251 55)(font "Arial" ))
-		(line (pt 272 48)(pt 256 48)(line_width 3))
+		(text "RGBoutBall[7..0]" (rect 177 43 243 55)(font "Arial" ))
+		(line (pt 264 48)(pt 248 48)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 256 128)(line_width 1))
+		(rectangle (rect 16 16 248 128)(line_width 1))
 	)
 )

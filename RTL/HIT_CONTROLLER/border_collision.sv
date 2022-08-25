@@ -1,4 +1,4 @@
-module border_collision #(parameter TOP_OFFSET = 40, DOWN_OFFSET = 440, RIGHT_OFFSET = 600, LEFT_OFFSET = 30)
+module border_collision #(parameter TOP_OFFSET, DOWN_OFFSET, RIGHT_OFFSET, LEFT_OFFSET)
 (
 					input logic clk,
 					input logic resetN,

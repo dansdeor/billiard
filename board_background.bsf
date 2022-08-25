@@ -59,7 +59,28 @@ agreement for further details.
 		(text "RGBoutBoard[7..0]" (rect 143 43 219 55)(font "Arial" ))
 		(line (pt 240 48)(pt 224 48)(line_width 3))
 	)
+	(parameter
+		"TOP_OFFSET"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"DOWN_OFFSET"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LEFT_OFFSET"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RIGHT_OFFSET"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 224 96)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 256 -64 356 16))
 )

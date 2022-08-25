@@ -33,6 +33,8 @@ module hit_controller (
 					output logic redBallCollisionOccurred
 );
 
+parameter int TOP_OFFSET = 0, DOWN_OFFSET = 0, LEFT_OFFSET = 0, RIGHT_OFFSET = 0;
+
 logic borderWhiteBallCol;
 logic signed [10:0] borderWhiteBallVelX;
 logic signed [10:0] borderWhiteBallVelY;
@@ -41,7 +43,7 @@ logic borderRedBallCol;
 logic signed [10:0] borderRedBallVelX;
 logic signed [10:0] borderRedBallVelY;
 
-border_collision white_ball_border_col(
+border_collision #(TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_OFFSET) white_ball_border_col(
 	.clk(clk),
 	.resetN(resetN),
 	.ballDR(whiteBallDR),

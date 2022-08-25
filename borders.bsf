@@ -59,7 +59,28 @@ agreement for further details.
 		(text "RGBoutBorders[7..0]" (rect 143 43 227 55)(font "Arial" ))
 		(line (pt 248 48)(pt 232 48)(line_width 3))
 	)
+	(parameter
+		"TOP_OFFSET"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"DOWN_OFFSET"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"LEFT_OFFSET"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"RIGHT_OFFSET"
+		"0"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 232 96)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 264 -64 364 16))
 )
