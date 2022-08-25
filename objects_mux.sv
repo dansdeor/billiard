@@ -16,6 +16,12 @@ module objects_mux (
 						input logic drawingRequestHole_6,
 						input logic	[7:0] RGBHole_6, 
 						
+						//balls layout
+						input logic drawingRequestWBall,
+						input logic	[7:0] RGBWBall,
+						input logic drawingRequestRBall,
+						input logic	[7:0] RGBRBall,
+						
 						// borders layout
 						input logic drawingRequestBorders,
 						input logic	[7:0] RGBBorders,
@@ -34,6 +40,7 @@ begin
 	end
 	
 	else begin
+
 		if (drawingRequestHole_1 == 1'b1) begin
 			RGBOut <= RGBHole_1;
 		end
@@ -51,6 +58,12 @@ begin
 		end
 		else if (drawingRequestHole_6 == 1'b1) begin
 			RGBOut <= RGBHole_6;
+		end
+		else if (drawingRequestWBall == 1'b1) begin
+			RGBOut <= RGBWBall;
+		end
+		else if (drawingRequestRBall == 1'b1) begin
+			RGBOut <= RGBRBall;
 		end
 		else if (drawingRequestBorders == 1'b1) begin
 			RGBOut <= RGBBorders;
