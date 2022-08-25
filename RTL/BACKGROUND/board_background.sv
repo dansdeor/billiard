@@ -9,7 +9,7 @@ module board_background (
 
 // Screen resolution -> 640 cols 480 rows
 
-parameter int TOP_OFFSET = 0, DOWN_OFFSET = 0, LEFT_OFFSET = 0, RIGHT_OFFSET = 0;
+parameter int TOP_OFFSET = 0, DOWN_OFFSET = 479, LEFT_OFFSET = 0, RIGHT_OFFSET = 639;
 localparam logic [7:0] boardColor = 8'b00010100;
 
 assign RGBoutBoard = boardColor;

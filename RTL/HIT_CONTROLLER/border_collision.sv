@@ -11,9 +11,9 @@ module border_collision #(parameter TOP_OFFSET, DOWN_OFFSET, RIGHT_OFFSET, LEFT_
 					input logic signed [10:0] ballVelX,
 					input logic signed [10:0] ballVelY,
 					
-					output logic collisionOccurred,
 					output logic signed [10:0] ballVelXOut,
-					output logic signed [10:0] ballVelYOut
+					output logic signed [10:0] ballVelYOut,
+					output logic collisionOccurred
 );
 
 always_ff @(posedge clk or negedge resetN)

@@ -13,7 +13,7 @@ parameter logic [10:0] TOP_LEFT_POS_X = 11'b0, TOP_LEFT_POS_Y = 11'b0;
 const int BITMAP_WIDTH = 32;
 const int BITMAP_HEIGHT = 32;
 
-logic [0:32][0:32][7:0] object_colors = {
+logic [0:31][0:31][7:0] object_colors = {
 	{8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF},
 	{8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF},
 	{8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF,8'hFF},
@@ -51,11 +51,10 @@ logic [0:32][0:32][7:0] object_colors = {
 always_ff @(posedge clk)
 begin 
 	RGBoutHole <= TRANSPARENT_ENCODING;
-	if ((TOP_LEFT_POS_X <= pixelX) && (TOP_LEFT_POS_X + BITMAP_WIDTH > pixelX) && (TOP_LEFT_POS_Y + BITMAP_HEIGHT > pixelY) && (TOP_LEFT_POS_Y <= pixelY) ) begin 
+	if ((TOP_LEFT_POS_X <= pixelX) && (TOP_LEFT_POS_X + BITMAP_WIDTH > pixelX) && (TOP_LEFT_POS_Y + BITMAP_HEIGHT > pixelY) && (TOP_LEFT_POS_Y <= pixelY)) begin 
 		RGBoutHole <= object_colors[pixelY - TOP_LEFT_POS_Y][pixelX - TOP_LEFT_POS_X]; // gets the color from the bitmap
 	end
 end 
-// decide if to draw the pixel or not 
 	
 assign drawingRequestHole = (RGBoutHole != TRANSPARENT_ENCODING ) ? 1'b1 : 1'b0 ; // get optional transparent command from the bitmpap   
 endmodule

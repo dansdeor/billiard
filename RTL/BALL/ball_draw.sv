@@ -51,12 +51,10 @@ logic[0:31][0:31][7:0] object_colors = {
 always_ff@(posedge clk) 
 begin 
 	RGBoutBall <= TRANSPARENT_ENCODING; 
-	if ((ballTopLeftPosX <= pixelX) && (ballTopLeftPosX + BITMAP_WIDTH > pixelX) && (ballTopLeftPosY + BITMAP_HEIGHT > pixelY) && (ballTopLeftPosY <= pixelY) ) 
-		begin 
+	if ((ballTopLeftPosX <= pixelX) && (ballTopLeftPosX + BITMAP_WIDTH > pixelX) && (ballTopLeftPosY + BITMAP_HEIGHT > pixelY) && (ballTopLeftPosY <= pixelY)) begin 
 		RGBoutBall <= object_colors[pixelY - ballTopLeftPosY][pixelX - ballTopLeftPosX];
-		end
+	end
 end 
 
 assign drawingRequestBall = (RGBoutBall != TRANSPARENT_ENCODING ) ? 1'b1 : 1'b0;
- 
 endmodule

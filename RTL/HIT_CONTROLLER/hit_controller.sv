@@ -52,9 +52,9 @@ border_collision #(TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_OFFSET) white_bal
 	.ballTopLeftPosy(ballTopLeftPosy),
 	.ballVelX(whiteBallVelX),
 	.ballVelY(whiteBallVelY),
-	.collisionOccurred(borderWhiteBallCol),
 	.ballVelXOut(borderWhiteBallVelX),
-	.ballVelYOut(borderWhiteBallVelY)
+	.ballVelYOut(borderWhiteBallVelY),
+	.collisionOccurred(borderWhiteBallCol)
 );
 
 //TODO: add mux between cols

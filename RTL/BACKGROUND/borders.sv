@@ -7,7 +7,7 @@ module borders (
 					output logic [7:0] RGBoutBorders
 );
 
-parameter int TOP_OFFSET = 0, DOWN_OFFSET = 0, LEFT_OFFSET = 0, RIGHT_OFFSET = 0;
+parameter int TOP_OFFSET = 0, DOWN_OFFSET = 479, LEFT_OFFSET = 0, RIGHT_OFFSET = 639;
 localparam logic [7:0] borderColor = 8'b10101100;
 
 assign RGBoutBorders = borderColor;
