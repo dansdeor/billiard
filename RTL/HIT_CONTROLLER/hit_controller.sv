@@ -44,12 +44,12 @@ logic signed [10:0] borderRedBallVelY;
 border_collision white_ball_border_col(
 	.clk(clk),
 	.resetN(resetN),
-	.ballDR(ballDR),
+	.ballDR(whiteBallDR),
 	.borderDR(borderDR),
 	.ballTopLeftPosX(ballTopLeftPosX),
 	.ballTopLeftPosy(ballTopLeftPosy),
-	.ballVelX(ballVelX),
-	.ballVelY(ballVelY),
+	.ballVelX(whiteBallVelX),
+	.ballVelY(whiteBallVelY),
 	.collisionOccurred(borderWhiteBallCol),
 	.ballVelXOut(borderWhiteBallVelX),
 	.ballVelYOut(borderWhiteBallVelY)

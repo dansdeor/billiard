@@ -16,7 +16,7 @@ module border_collision #(parameter TOP_OFFSET = 40, DOWN_OFFSET = 440, RIGHT_OF
 					output logic signed [10:0] ballVelYOut
 );
 
-always_ff@(posedge clk or negedge resetN)
+always_ff @(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin
 		ballVelXOut <= 11'b0;
