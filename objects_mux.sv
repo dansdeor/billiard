@@ -3,31 +3,31 @@ module objects_mux (
 						input logic	resetN,
 					
 						//holes layout
-						input logic drawingRequestHole_1,
-						input logic	[7:0] RGBHole_1, 	
-						input logic drawingRequestHole_2,
-						input logic	[7:0] RGBHole_2,
-						input logic drawingRequestHole_3,
-						input logic	[7:0] RGBHole_3,
-						input logic drawingRequestHole_4,
-						input logic	[7:0] RGBHole_4,
-						input logic drawingRequestHole_5,
-						input logic	[7:0] RGBHole_5,
-						input logic drawingRequestHole_6,
-						input logic	[7:0] RGBHole_6, 
+						input logic holeDR1,
+						input logic	[7:0] RGBHole1, 	
+						input logic holeDR2,
+						input logic	[7:0] RGBHole2,
+						input logic holeDR3,
+						input logic	[7:0] RGBHole3,
+						input logic holeDR4,
+						input logic	[7:0] RGBHole4,
+						input logic holeDR5,
+						input logic	[7:0] RGBHole5,
+						input logic holeDR6,
+						input logic	[7:0] RGBHole6, 
 						
 						//balls layout
-						input logic drawingRequestWBall,
-						input logic	[7:0] RGBWBall,
-						input logic drawingRequestRBall,
-						input logic	[7:0] RGBRBall,
+						input logic whiteBallDR,
+						input logic	[7:0] RGBWhiteBall,
+						input logic redBallDR,
+						input logic	[7:0] RGBRedBall,
 						
 						// borders layout
-						input logic drawingRequestBorders,
+						input logic bordersDR,
 						input logic	[7:0] RGBBorders,
 						
 						// board layout
-						input logic drawingRequestBoard,
+						input logic boardDR,
 						input logic	[7:0] RGBBoard, 
 
 						output logic [7:0] RGBOut
@@ -41,34 +41,34 @@ begin
 	
 	else begin
 
-		if (drawingRequestHole_1 == 1'b1) begin
-			RGBOut <= RGBHole_1;
+		if (holeDR1 == 1'b1) begin
+			RGBOut <= RGBHole1;
 		end
-		else if (drawingRequestHole_2 == 1'b1) begin
-			RGBOut <= RGBHole_2;
+		else if (holeDR2 == 1'b1) begin
+			RGBOut <= RGBHole2;
 		end
-		else if (drawingRequestHole_3 == 1'b1) begin
-			RGBOut <= RGBHole_3;
+		else if (holeDR3 == 1'b1) begin
+			RGBOut <= RGBHole3;
 		end
-		else if (drawingRequestHole_4 == 1'b1) begin
-			RGBOut <= RGBHole_4;
+		else if (holeDR4 == 1'b1) begin
+			RGBOut <= RGBHole4;
 		end
-		else if (drawingRequestHole_5 == 1'b1) begin
-			RGBOut <= RGBHole_5;
+		else if (holeDR5 == 1'b1) begin
+			RGBOut <= RGBHole5;
 		end
-		else if (drawingRequestHole_6 == 1'b1) begin
-			RGBOut <= RGBHole_6;
+		else if (holeDR6 == 1'b1) begin
+			RGBOut <= RGBHole6;
 		end
-		else if (drawingRequestWBall == 1'b1) begin
-			RGBOut <= RGBWBall;
+		else if (whiteBallDR == 1'b1) begin
+			RGBOut <= RGBWhiteBall;
 		end
-		else if (drawingRequestRBall == 1'b1) begin
-			RGBOut <= RGBRBall;
+		else if (redBallDR == 1'b1) begin
+			RGBOut <= RGBRedBall;
 		end
-		else if (drawingRequestBorders == 1'b1) begin
+		else if (bordersDR == 1'b1) begin
 			RGBOut <= RGBBorders;
 		end
-		else if (drawingRequestBoard == 1'b1) begin
+		else if (boardDR == 1'b1) begin
 			RGBOut <= RGBBoard;
 		end
 		else begin

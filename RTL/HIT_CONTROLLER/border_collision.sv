@@ -4,7 +4,7 @@ module border_collision #(parameter TOP_OFFSET, DOWN_OFFSET, RIGHT_OFFSET, LEFT_
 					input logic resetN,
 					
 					input logic ballDR,
-					input logic borderDR,
+					input logic bordersDR,
 					
 					input logic signed [10:0] ballTopLeftPosX,
 					input logic signed [10:0] ballTopLeftPosy,
@@ -29,7 +29,7 @@ begin
 		ballVelYOut <= ballVelY;
 		
 		// Collision occurred only when the DR of both objects is 1
-		if(ballDR && borderDR) begin
+		if(ballDR && bordersDR) begin
 			collisionOccurred <= 1'b1;
 			
 			// Now we need to check the type of the collision
