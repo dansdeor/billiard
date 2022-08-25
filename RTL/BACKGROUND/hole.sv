@@ -59,7 +59,7 @@ begin
 		RGBoutHole <= object_colors[pixelY - hole_top_left_posY][pixelX - hole_top_left_posX]; // gets the color from the bitmap
 	end
 end 
-	
 // decide if to draw the pixel or not 
+	
 assign drawingRequestHole = (RGBoutHole != TRANSPARENT_ENCODING ) ? 1'b1 : 1'b0 ; // get optional transparent command from the bitmpap   
 endmodule
