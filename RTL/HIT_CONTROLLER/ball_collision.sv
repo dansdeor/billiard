@@ -24,14 +24,19 @@ module ball_collision (
 					output logic collisionOccurred
 );
 
+
+logic flag = 1'b1;
+
 int unitVectorNormSquared;
 int unitVectorX, unitVectorY;
 int tangentVectorX, tangentVectorY;
 int tangentX1, tangentX2, tangentY1, tangentY2;
 int unitX1, unitX2, unitY1, unitY2;
+
 always_ff @(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin
+		flag <= 1'b1;
 		collisionOccurred <= 1'b0;
 		ballVelXOut1 <= 11'b0;
 		ballVelYOut1 <= 11'b0;
@@ -46,11 +51,12 @@ begin
 		ballVelXOut2 <= ballVelX2;
 		ballVelYOut2 <= ballVelY2;
 		
-		if(ballDR1 && ballDR2) begin
+		if(ballDR1 && ballDR2 && flag) begin
+			flag <= 1'b0;
 			// For the collision algorithm we first nedd to set initial relative position vectors
 			unitVectorX = ballTopLeftPosX2 - ballTopLeftPosX1;
 			unitVectorY = ballTopLeftPosY2 - ballTopLeftPosY1;
-			unitVectorNormSquared = unitVectorX ^ 2 + unitVectorY ^ 2;
+			unitVectorNormSquared = unitVectorX ** 2 + unitVectorY ** 2;
 			if(unitVectorNormSquared) begin
 				tangentVectorX = -unitVectorY;
 				tangentVectorY = unitVectorX;
@@ -70,6 +76,10 @@ begin
 				ballVelXOut2 <= (unitX2 + tangentX2) / unitVectorNormSquared;
 				ballVelYOut2 <= (unitY2 + tangentY2) / unitVectorNormSquared;
 			end
+		end
+		
+		else if (!(ballDR1 && ballDR2)) begin
+			flag <= 1'b1;
 		end
 		
 	end

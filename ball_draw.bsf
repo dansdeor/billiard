@@ -73,7 +73,13 @@ agreement for further details.
 		(text "RGBoutBall[7..0]" (rect 177 43 243 55)(font "Arial" ))
 		(line (pt 264 48)(pt 248 48)(line_width 3))
 	)
+	(parameter
+		"BALL_COLOR"
+		"0"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
 	(drawing
 		(rectangle (rect 16 16 248 128)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 280 -64 380 16))
 )

@@ -47,6 +47,7 @@
 *.rpt
 *.smsg
 *.sof
+*.qsf
 *.sopc_builder
 *.summary
 *.txt # Explicitly add any text files used
