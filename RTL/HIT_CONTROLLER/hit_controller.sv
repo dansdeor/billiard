@@ -89,7 +89,7 @@ always_comb begin
 end
 
 always_comb begin
-	if(borderWhiteBallCol) begin
+	if(borderRedBallCol) begin
 		redBallVelXOut = borderRedBallVelX;
 		redBallVelYOut = borderRedBallVelY;
 	end
