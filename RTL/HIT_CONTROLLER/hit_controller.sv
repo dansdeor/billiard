@@ -15,12 +15,12 @@ module hit_controller (
 
 					//ball position and velocity (velocities are most important for ball and border collision detection)
 					input logic signed [10:0] whiteBallTopLeftPosX,
-					input logic signed [10:0] whiteBallTopLeftPosy,
+					input logic signed [10:0] whiteballTopLeftPosY,
 					input logic signed [10:0] whiteBallVelX,
 					input logic signed [10:0] whiteBallVelY,
 					
 					input logic signed [10:0] redBallTopLeftPosX,
-					input logic signed [10:0] redBallTopLeftPosy,
+					input logic signed [10:0] redballTopLeftPosY,
 					input logic signed [10:0] redBallVelX,
 					input logic signed [10:0] redBallVelY,
 					
@@ -52,8 +52,8 @@ border_collision #(TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_OFFSET) white_bal
 	.resetN(resetN),
 	.ballDR(whiteBallDR),
 	.bordersDR(bordersDR),
-	.ballTopLeftPosX(ballTopLeftPosX),
-	.ballTopLeftPosy(ballTopLeftPosy),
+	.ballTopLeftPosX(whiteBallTopLeftPosX),
+	.ballTopLeftPosY(whiteballTopLeftPosY),
 	.ballVelX(whiteBallVelX),
 	.ballVelY(whiteBallVelY),
 	.ballVelXOut(borderWhiteBallVelX),
@@ -66,11 +66,11 @@ border_collision #(TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_OFFSET) white_bal
 always_comb begin
 	if(borderWhiteBallCol) begin
 		whiteBallVelXOut = borderWhiteBallVelX;
-		whiteBallVelXOut = borderWhiteBallVelY;
+		whiteBallVelYOut = borderWhiteBallVelY;
 	end
 	else begin
 		whiteBallVelXOut = 11'b0;
-		whiteBallVelXOut = 11'b0;
+		whiteBallVelYOut = 11'b0;
 	end
 end
 

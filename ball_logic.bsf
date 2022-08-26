@@ -21,7 +21,7 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 288 160)
+	(rect 16 16 272 160)
 	(text "ball_logic" (rect 5 0 39 12)(font "Arial" ))
 	(text "inst" (rect 8 128 20 140)(font "Arial" ))
 	(port
@@ -55,77 +55,74 @@ agreement for further details.
 	(port
 		(pt 0 96)
 		(input)
-		(text "invelocityX[10..0]" (rect 0 0 66 12)(font "Arial" ))
-		(text "invelocityX[10..0]" (rect 21 91 87 103)(font "Arial" ))
+		(text "inVelocityX[10..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "inVelocityX[10..0]" (rect 21 91 89 103)(font "Arial" ))
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
 		(pt 0 112)
 		(input)
-		(text "invelocityY[10..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "invelocityY[10..0]" (rect 21 107 88 119)(font "Arial" ))
+		(text "inVelocityY[10..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "inVelocityY[10..0]" (rect 21 107 90 119)(font "Arial" ))
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
-		(pt 272 32)
+		(pt 256 32)
 		(output)
-		(text "topLeftX_position[10..0]" (rect 0 0 92 12)(font "Arial" ))
-		(text "topLeftX_position[10..0]" (rect 159 27 251 39)(font "Arial" ))
-		(line (pt 272 32)(pt 256 32)(line_width 3))
+		(text "topLeftPosX[10..0]" (rect 0 0 73 12)(font "Arial" ))
+		(text "topLeftPosX[10..0]" (rect 162 27 235 39)(font "Arial" ))
+		(line (pt 256 32)(pt 240 32)(line_width 3))
 	)
 	(port
-		(pt 272 48)
+		(pt 256 48)
 		(output)
-		(text "topLeftY_position[10..0]" (rect 0 0 93 12)(font "Arial" ))
-		(text "topLeftY_position[10..0]" (rect 158 43 251 55)(font "Arial" ))
-		(line (pt 272 48)(pt 256 48)(line_width 3))
+		(text "topLeftPosY[10..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "topLeftPosY[10..0]" (rect 161 43 235 55)(font "Arial" ))
+		(line (pt 256 48)(pt 240 48)(line_width 3))
 	)
 	(port
-		(pt 272 64)
+		(pt 256 64)
 		(output)
-		(text "outvelocityX[10..0]" (rect 0 0 71 12)(font "Arial" ))
-		(text "outvelocityX[10..0]" (rect 180 59 251 71)(font "Arial" ))
-		(line (pt 272 64)(pt 256 64)(line_width 3))
+		(text "outVelocityX[10..0]" (rect 0 0 74 12)(font "Arial" ))
+		(text "outVelocityX[10..0]" (rect 161 59 235 71)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64)(line_width 3))
 	)
 	(port
-		(pt 272 80)
+		(pt 256 80)
 		(output)
-		(text "outvelocityY[10..0]" (rect 0 0 73 12)(font "Arial" ))
-		(text "outvelocityY[10..0]" (rect 178 75 251 87)(font "Arial" ))
-		(line (pt 272 80)(pt 256 80)(line_width 3))
+		(text "outVelocityY[10..0]" (rect 0 0 75 12)(font "Arial" ))
+		(text "outVelocityY[10..0]" (rect 160 75 235 87)(font "Arial" ))
+		(line (pt 256 80)(pt 240 80)(line_width 3))
+	)
+	(port
+		(pt 256 96)
+		(output)
+		(text "ballStopped" (rect 0 0 43 12)(font "Arial" ))
+		(text "ballStopped" (rect 192 91 235 103)(font "Arial" ))
+		(line (pt 256 96)(pt 240 96)(line_width 1))
 	)
 	(parameter
-		"INITIAL_Y_velocity"
+		"INITIAL_Y_VELOCITY"
 		"0"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"INITIAL_X_velocity"
+		"INITIAL_X_VELOCITY"
 		"0"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"INITIAL_Y_position"
+		"INITIAL_Y_POSITION"
 		"0"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
-		"INITIAL_X_position"
+		"INITIAL_X_POSITION"
 		"0"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"velocityY_ACCEL"
-		"1"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"velocityX_ACCEL"
-		"1"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 256 128)(line_width 1))
+		(rectangle (rect 16 16 240 128)(line_width 1))
 	)
-	(annotation_block (parameter)(rect 288 -64 388 16))
+	(annotation_block (parameter)(rect 272 -64 372 16))
 )

@@ -2,8 +2,8 @@ module ball_collision (
 					input logic clk,
 					input logic resetN,
 					
-					input logic ballDR_1,
-					input logic ballDR_2,
+					input logic ballDR1,
+					input logic ballDR2,
 					
 					input logic signed [10:0] ballTopLeftPosX1,
 					input logic signed [10:0] ballTopLeftPosY1,
@@ -46,7 +46,7 @@ begin
 		ballVelXOut2 <= ballVelX2;
 		ballVelYOut2 <= ballVelY2;
 		
-		if(ballDR_1 && ballDR_2) begin
+		if(ballDR1 && ballDR2) begin
 			// For the collision algorithm we first nedd to set initial relative position vectors
 			unitVectorX = ballTopLeftPosX2 - ballTopLeftPosX1;
 			unitVectorY = ballTopLeftPosY2 - ballTopLeftPosY1;

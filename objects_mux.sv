@@ -1,36 +1,36 @@
 module objects_mux (
-						input logic	clk,
-						input logic	resetN,
-					
-						//holes layout
-						input logic holeDR1,
-						input logic	[7:0] RGBHole1, 	
-						input logic holeDR2,
-						input logic	[7:0] RGBHole2,
-						input logic holeDR3,
-						input logic	[7:0] RGBHole3,
-						input logic holeDR4,
-						input logic	[7:0] RGBHole4,
-						input logic holeDR5,
-						input logic	[7:0] RGBHole5,
-						input logic holeDR6,
-						input logic	[7:0] RGBHole6, 
-						
-						//balls layout
-						input logic whiteBallDR,
-						input logic	[7:0] RGBWhiteBall,
-						input logic redBallDR,
-						input logic	[7:0] RGBRedBall,
-						
-						// borders layout
-						input logic bordersDR,
-						input logic	[7:0] RGBBorders,
-						
-						// board layout
-						input logic boardDR,
-						input logic	[7:0] RGBBoard, 
+	input logic	clk,
+	input logic	resetN,
 
-						output logic [7:0] RGBOut
+	//balls layout
+	input logic whiteBallDR,
+	input logic	[7:0] RGBWhiteBall,
+	input logic redBallDR,
+	input logic	[7:0] RGBRedBall,
+
+	//holes layout
+	input logic holeDR1,
+	input logic	[7:0] RGBHole1, 	
+	input logic holeDR2,
+	input logic	[7:0] RGBHole2,
+	input logic holeDR3,
+	input logic	[7:0] RGBHole3,
+	input logic holeDR4,
+	input logic	[7:0] RGBHole4,
+	input logic holeDR5,
+	input logic	[7:0] RGBHole5,
+	input logic holeDR6,
+	input logic	[7:0] RGBHole6, 
+
+	// borders layout
+	input logic bordersDR,
+	input logic	[7:0] RGBBorders,
+
+	// board layout
+	input logic boardDR,
+	input logic	[7:0] RGBBoard, 
+
+	output logic [7:0] RGBOut
 );
 
 always_ff@(posedge clk or negedge resetN)
@@ -40,8 +40,13 @@ begin
 	end
 	
 	else begin
-
-		if (holeDR1 == 1'b1) begin
+		if (whiteBallDR == 1'b1) begin
+			RGBOut <= RGBWhiteBall;
+		end
+		else if (redBallDR == 1'b1) begin
+			RGBOut <= RGBRedBall;
+		end
+		else if (holeDR1 == 1'b1) begin
 			RGBOut <= RGBHole1;
 		end
 		else if (holeDR2 == 1'b1) begin
@@ -58,12 +63,6 @@ begin
 		end
 		else if (holeDR6 == 1'b1) begin
 			RGBOut <= RGBHole6;
-		end
-		else if (whiteBallDR == 1'b1) begin
-			RGBOut <= RGBWhiteBall;
-		end
-		else if (redBallDR == 1'b1) begin
-			RGBOut <= RGBRedBall;
 		end
 		else if (bordersDR == 1'b1) begin
 			RGBOut <= RGBBorders;

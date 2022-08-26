@@ -111,8 +111,8 @@ agreement for further details.
 	(port
 		(pt 0 224)
 		(input)
-		(text "whiteBallTopLeftPosy[10..0]" (rect 0 0 108 12)(font "Arial" ))
-		(text "whiteBallTopLeftPosy[10..0]" (rect 21 219 129 231)(font "Arial" ))
+		(text "whiteballTopLeftPosY[10..0]" (rect 0 0 108 12)(font "Arial" ))
+		(text "whiteballTopLeftPosY[10..0]" (rect 21 219 129 231)(font "Arial" ))
 		(line (pt 0 224)(pt 16 224)(line_width 3))
 	)
 	(port
@@ -139,8 +139,8 @@ agreement for further details.
 	(port
 		(pt 0 288)
 		(input)
-		(text "redBallTopLeftPosy[10..0]" (rect 0 0 102 12)(font "Arial" ))
-		(text "redBallTopLeftPosy[10..0]" (rect 21 283 123 295)(font "Arial" ))
+		(text "redballTopLeftPosY[10..0]" (rect 0 0 102 12)(font "Arial" ))
+		(text "redballTopLeftPosY[10..0]" (rect 21 283 123 295)(font "Arial" ))
 		(line (pt 0 288)(pt 16 288)(line_width 3))
 	)
 	(port
@@ -229,22 +229,22 @@ agreement for further details.
 	)
 	(parameter
 		"TOP_OFFSET"
-		"0"
+		"40"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"DOWN_OFFSET"
-		"479"
+		"440"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"LEFT_OFFSET"
-		"0"
+		"30"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"RIGHT_OFFSET"
-		"639"
+		"600"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
