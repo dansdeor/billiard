@@ -1,14 +1,15 @@
 module objects_mux (
 	input logic	clk,
 	input logic	resetN,
-
-	//balls layout
+	// balls layout
 	input logic whiteBallDR,
 	input logic	[7:0] RGBWhiteBall,
 	input logic redBallDR,
 	input logic	[7:0] RGBRedBall,
-
-	//holes layout
+	// hole number to hit
+	input logic holeNumberDR,
+	input logic	[7:0] RGBHoleNumber,
+	// holes layout
 	input logic holeDR1,
 	input logic	[7:0] RGBHole1, 	
 	input logic holeDR2,
@@ -36,7 +37,7 @@ module objects_mux (
 always_ff@(posedge clk or negedge resetN)
 begin
 	if(!resetN) begin
-			RGBOut <= 8'b0;
+		RGBOut <= 8'b0;
 	end
 	
 	else begin
@@ -45,6 +46,9 @@ begin
 		end
 		else if (redBallDR == 1'b1) begin
 			RGBOut <= RGBRedBall;
+		end
+		else if (holeNumberDR == 1'b1) begin
+			RGBOut <= RGBHoleNumber;
 		end
 		else if (holeDR1 == 1'b1) begin
 			RGBOut <= RGBHole1;

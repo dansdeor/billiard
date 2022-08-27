@@ -154,26 +154,6 @@ set_location_assignment PIN_V23 -to ADC_DOUT
 set_location_assignment PIN_W24 -to ADC_SCLK
 set_location_assignment PIN_Y24 -to AUDOUT[6]
 set_location_assignment PIN_Y23 -to AUDOUT[7]
-set_global_assignment -name BDF_FILE RTL/BILLIARD_GAME_ORIT.bdf
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/border_collision.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/hole_collision.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/hit_controller.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/ball_collision.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/hole.sv
-set_global_assignment -name VERILOG_FILE clock_divider/clock_divider_0002.v -library clock_divider
-set_global_assignment -name QIP_FILE clock_divider/clock_divider_0002.qip -library clock_divider
-set_global_assignment -name SIP_FILE clock_divider.sip
-set_global_assignment -name SOURCE_FILE clock_divider.cmp
-set_global_assignment -name QIP_FILE clock_divider.qip
-set_global_assignment -name VERILOG_FILE clock_divider.v -library clock_divider
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/VGA_Controller.sv
-set_global_assignment -name BDF_FILE RTL/BILLIARD_GAME.bdf
-set_global_assignment -name TCL_SCRIPT_FILE pin_layout.tcl
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/board_background.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/borders.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/BALL/ball_logic.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/BALL/ball_draw.sv
-set_global_assignment -name SYSTEMVERILOG_FILE objects_mux.sv
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to resetN
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[0]
@@ -205,7 +185,33 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[25]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[26]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[27]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OVGA[28]
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/hole_number.sv
+set_global_assignment -name BDF_FILE RTL/BILLIARD_GAME_ORIT.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/border_collision.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/hole_collision.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/hit_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/ball_collision.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/hole.sv
+set_global_assignment -name VERILOG_FILE clock_divider/clock_divider_0002.v -library clock_divider
+set_global_assignment -name QIP_FILE clock_divider/clock_divider_0002.qip -library clock_divider
+set_global_assignment -name SIP_FILE clock_divider.sip
+set_global_assignment -name SOURCE_FILE clock_divider.cmp
+set_global_assignment -name QIP_FILE clock_divider.qip
+set_global_assignment -name VERILOG_FILE clock_divider.v -library clock_divider
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/VGA_Controller.sv
+set_global_assignment -name BDF_FILE RTL/BILLIARD_GAME.bdf
+set_global_assignment -name TCL_SCRIPT_FILE pin_layout.tcl
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/board_background.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/borders.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BALL/ball_logic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BALL/ball_draw.sv
+set_global_assignment -name SYSTEMVERILOG_FILE objects_mux.sv
+set_global_assignment -name QIP_FILE holeNumConstant.qip
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tck
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tdi
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tdo
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tms
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -26,7 +26,6 @@ const int VELOCITY_X_FRICTION = 1;
 int frictionCounterY = 0;
 int frictionCounterX = 0;
 
-
 int velocityX, topLeftXInt;
 int velocityY, topLeftYInt;
 
@@ -39,16 +38,14 @@ begin
 		velocityY <= INITIAL_Y_VELOCITY;
 		topLeftYInt	<= INITIAL_Y_POSITION * FIXED_POINT_MULTIPLIER;
 	end
-	
 	//for collision, the collision velocity we get from our cotroller
 	else if(velocityWriteEnable) begin
-			velocityY <= inVelocityY;
+		velocityY <= inVelocityY;
 	end
-	
 	// perform  POSITION and velocity integral only when a new frame starts
 	else if (startOfFrame) begin
 		frictionCounterY = frictionCounterY + 1;
-		topLeftYInt  <= topLeftYInt + velocityY;// POSITION interpolation 
+		topLeftYInt <= topLeftYInt + velocityY;// POSITION interpolation 
 		//TODO : MAKE SURE THAT THE BALL ISN'T ON THE EDGES AFTER THE CHANGE!!!
 		if ( frictionCounterY % FRICTION_FRAME_COUNT == 0) begin
 			if (velocityY > 0) begin
@@ -61,8 +58,8 @@ begin
 				if(velocityY > 0)
 					velocityY <= 0;
 			end
-		end	
-	end 
+		end
+	end
 end
 
 // X_direction_moves
@@ -72,16 +69,14 @@ begin
 		velocityX	<= INITIAL_X_VELOCITY;
 		topLeftXInt	<= INITIAL_X_POSITION * FIXED_POINT_MULTIPLIER;
 	end
-	
 	//for collision, the collision velocity we get from our cotroller
 	else if(velocityWriteEnable) begin
-			velocityX <= inVelocityX;
+		velocityX <= inVelocityX;
 	end
-	
 	// perform  POSITION and velocity integral only when a new frame starts
 	else if (startOfFrame) begin
 		frictionCounterX <= frictionCounterX + 1;
-		topLeftXInt  <= topLeftXInt + velocityX;	// POSITION interpolation 
+		topLeftXInt <= topLeftXInt + velocityX;	// POSITION interpolation 
 		//TODO : MAKE SURE THAT THE BALL ISN'T ON THE EDGES AFTER THE CHANGE!!!
 		if ( frictionCounterX % FRICTION_FRAME_COUNT == 0) begin
 			if (velocityX > 0) begin
@@ -89,14 +84,13 @@ begin
 				if(velocityX < 0)
 					velocityX <= 0;
 			end
-			
 			else if (velocityX < 0) begin
 				velocityX <= velocityX + VELOCITY_X_FRICTION;
 				if(velocityX > 0)
 					velocityX <= 0;
 			end
 		end
-	end	
+	end
 end 
 
 //outputs

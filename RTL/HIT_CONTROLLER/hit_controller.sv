@@ -80,7 +80,7 @@ border_collision #(TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_OFFSET) red_ball_
 	.ballVelYOut(borderRedBallVelY),
 	.collisionOccurred(borderRedBallCol)
 );
-
+/*
 ball_collision (
 	.clk(clk),
 	.resetN(resetN),
@@ -100,7 +100,7 @@ ball_collision (
 	.ballVelYOut2(ballColRedBallVelY),
 	.collisionOccurred(ballToBallCol)
 );
-
+*/
 
 //TODO: add mux between cols of border and ball
 //for now
@@ -109,10 +109,12 @@ always_comb begin
 		whiteBallVelXOut = borderWhiteBallVelX;
 		whiteBallVelYOut = borderWhiteBallVelY;
 	end
+	/*
 	else if(ballToBallCol) begin
 		whiteBallVelXOut = ballColWhiteBallVelX;
 		whiteBallVelYOut = ballColWhiteBallVelY;
 	end
+	*/
 	else begin
 		whiteBallVelXOut = 11'b0;
 		whiteBallVelYOut = 11'b0;
@@ -124,10 +126,12 @@ always_comb begin
 		redBallVelXOut = borderRedBallVelX;
 		redBallVelYOut = borderRedBallVelY;
 	end
+	/*
 	else if(ballToBallCol) begin
 		redBallVelXOut = ballColRedBallVelX;
 		redBallVelYOut = ballColRedBallVelY;
 	end
+	*/
 	else begin
 		redBallVelXOut = 11'b0;
 		redBallVelYOut = 11'b0;

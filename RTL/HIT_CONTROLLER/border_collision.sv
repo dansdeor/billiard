@@ -29,8 +29,8 @@ begin
 	else begin
 		// Default value
 		collisionOccurred <= 1'b0;
-		ballVelXOut <= ballVelX;
-		ballVelYOut <= ballVelY;
+		//ballVelXOut <= ballVelX;
+		//ballVelYOut <= ballVelY;
 
 		// Collision occurres only when the DR of both objects is 1
 		// We dont want to change the velocities all the time when the drawing requests are on
@@ -48,10 +48,8 @@ begin
 				ballVelYOut <= -ballVelY;
 			end	
 		end
-		if(ballTopLeftPosX > LEFT_OFFSET || ballTopLeftPosX + BALL_RADIUS < RIGHT_OFFSET) begin
-			if(ballTopLeftPosY > TOP_OFFSET || ballTopLeftPosY + BALL_RADIUS < DOWN_OFFSET) begin
-				flag <= 1'b1;
-			end
+		if(!(ballDR && bordersDR)) begin //((ballTopLeftPosX > LEFT_OFFSET || ballTopLeftPosX + BALL_RADIUS < RIGHT_OFFSET) && (ballTopLeftPosY > TOP_OFFSET || ballTopLeftPosY + BALL_RADIUS < DOWN_OFFSET))) begin
+			flag <= 1'b1;
 		end
 	end
 end
