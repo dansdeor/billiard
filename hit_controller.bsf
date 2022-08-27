@@ -139,8 +139,8 @@ agreement for further details.
 	(port
 		(pt 0 288)
 		(input)
-		(text "redballTopLeftPosY[10..0]" (rect 0 0 102 12)(font "Arial" ))
-		(text "redballTopLeftPosY[10..0]" (rect 21 283 123 295)(font "Arial" ))
+		(text "redBallTopLeftPosY[10..0]" (rect 0 0 103 12)(font "Arial" ))
+		(text "redBallTopLeftPosY[10..0]" (rect 21 283 124 295)(font "Arial" ))
 		(line (pt 0 288)(pt 16 288)(line_width 3))
 	)
 	(port
@@ -229,22 +229,22 @@ agreement for further details.
 	)
 	(parameter
 		"TOP_OFFSET"
-		"40"
+		"0"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"DOWN_OFFSET"
-		"440"
+		"479"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"LEFT_OFFSET"
-		"30"
+		"0"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"RIGHT_OFFSET"
-		"600"
+		"639"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing

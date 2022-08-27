@@ -48,8 +48,10 @@ begin
 				ballVelYOut <= -ballVelY;
 			end	
 		end
-		else if (!(ballDR && bordersDR)) begin
-			flag <= 1'b1;
+		if(ballTopLeftPosX > LEFT_OFFSET || ballTopLeftPosX + BALL_RADIUS < RIGHT_OFFSET) begin
+			if(ballTopLeftPosY > TOP_OFFSET || ballTopLeftPosY + BALL_RADIUS < DOWN_OFFSET) begin
+				flag <= 1'b1;
+			end
 		end
 	end
 end

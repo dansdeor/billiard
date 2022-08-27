@@ -20,7 +20,7 @@ parameter int INITIAL_X_VELOCITY = 0;
 parameter int INITIAL_Y_POSITION = 0;
 parameter int INITIAL_X_POSITION = 0;
 
-const int FRICTION_FRAME_COUNT = 40;
+const int FRICTION_FRAME_COUNT = 10;
 const int VELOCITY_Y_FRICTION = 1;
 const int VELOCITY_X_FRICTION = 1;
 int frictionCounterY = 0;
@@ -47,21 +47,21 @@ begin
 	
 	// perform  POSITION and velocity integral only when a new frame starts
 	else if (startOfFrame) begin
-		//frictionCounterY = frictionCounterY + 1;
+		frictionCounterY = frictionCounterY + 1;
 		topLeftYInt  <= topLeftYInt + velocityY;// POSITION interpolation 
 		//TODO : MAKE SURE THAT THE BALL ISN'T ON THE EDGES AFTER THE CHANGE!!!
-		//if ( frictionCounterY % FRICTION_FRAME_COUNT == 0) begin
-		//	if (velocityY > 0) begin
-		//		velocityY <= velocityY - VELOCITY_Y_FRICTION;
-		//		if(velocityY < 0)
-		//			velocityY <= 0;
-		//	end		
-		//	else if (velocityY < 0) begin
-		//		velocityY <= velocityY + VELOCITY_Y_FRICTION;
-		//		if(velocityY > 0)
-		//			velocityY <= 0;
-		//	end
-		//end	
+		if ( frictionCounterY % FRICTION_FRAME_COUNT == 0) begin
+			if (velocityY > 0) begin
+				velocityY <= velocityY - VELOCITY_Y_FRICTION;
+				if(velocityY < 0)
+					velocityY <= 0;
+			end		
+			else if (velocityY < 0) begin
+				velocityY <= velocityY + VELOCITY_Y_FRICTION;
+				if(velocityY > 0)
+					velocityY <= 0;
+			end
+		end	
 	end 
 end
 
@@ -80,24 +80,22 @@ begin
 	
 	// perform  POSITION and velocity integral only when a new frame starts
 	else if (startOfFrame) begin
-		//frictionCounterX <= frictionCounterX + 1;
+		frictionCounterX <= frictionCounterX + 1;
 		topLeftXInt  <= topLeftXInt + velocityX;	// POSITION interpolation 
 		//TODO : MAKE SURE THAT THE BALL ISN'T ON THE EDGES AFTER THE CHANGE!!!
-		
-		
-		//if ( frictionCounterX % FRICTION_FRAME_COUNT == 0) begin
-		//	if (velocityX > 0) begin
-		//		velocityX <= velocityX - VELOCITY_X_FRICTION;
-		//		if(velocityX < 0)
-		//			velocityX <= 0;
-		//	end
+		if ( frictionCounterX % FRICTION_FRAME_COUNT == 0) begin
+			if (velocityX > 0) begin
+				velocityX <= velocityX - VELOCITY_X_FRICTION;
+				if(velocityX < 0)
+					velocityX <= 0;
+			end
 			
-		//	else if (velocityX < 0) begin
-		//		velocityX <= velocityX + VELOCITY_X_FRICTION;
-		//		if(velocityX > 0)
-		//			velocityX <= 0;
-		//	end
-		//end
+			else if (velocityX < 0) begin
+				velocityX <= velocityX + VELOCITY_X_FRICTION;
+				if(velocityX > 0)
+					velocityX <= 0;
+			end
+		end
 	end	
 end 
 
@@ -106,6 +104,6 @@ assign outVelocityX = velocityX;
 assign outVelocityY = velocityY;
 assign topLeftPosX = topLeftXInt / FIXED_POINT_MULTIPLIER;
 assign topLeftPosY = topLeftYInt / FIXED_POINT_MULTIPLIER;
-//assign ballStopped = ~(outVelocityX & outVelocityY);
+assign ballStopped = ~(outVelocityX & outVelocityY);
 
 endmodule
