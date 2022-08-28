@@ -20,8 +20,6 @@ const logic [10:0] RIGHT_PLACE = RIGHT_OFFSET - BITMAP_WIDTH / 2;
 const logic [10:0] TOP_PLACE = TOP_OFFSET - BITMAP_HEIGHT / 2;
 const logic [10:0] DOWN_PLACE = DOWN_OFFSET - BITMAP_HEIGHT / 2;
 
-logic [10:0] topLeftPosX, topLeftPosY;
-
 logic [0:31][0:31] HOLE_BITMAP = {
 	{32'b00000000000011111111000000000000},
 	{32'b00000000011111111111111000000000},
@@ -59,42 +57,38 @@ logic [0:31][0:31] HOLE_BITMAP = {
 always_ff @(posedge clk)
 begin 
 	holeNumber <= 3'b0;
-	topLeftPosX <= 11'b0;
-	topLeftPosY <= 11'b0;
-
+	RGBoutHoles <= TRANSPARENT_ENCODING;
+	
 	if((TOP_PLACE + BITMAP_HEIGHT > pixelY) && (TOP_PLACE <= pixelY)) begin
 		if((LEFT_PLACE <= pixelX) && (LEFT_PLACE + BITMAP_WIDTH > pixelX)) begin
-			topLeftPosX <= LEFT_PLACE;
+			RGBoutHoles <= (HOLE_BITMAP[pixelY - TOP_PLACE][pixelX - LEFT_PLACE]) ? 8'b0 : TRANSPARENT_ENCODING;
 			holeNumber <= 3'd1;
 		end
 		else if((MIDDLE_PLACE <= pixelX) && (MIDDLE_PLACE + BITMAP_WIDTH > pixelX)) begin 
-			topLeftPosX <= MIDDLE_PLACE;
+			RGBoutHoles <= (HOLE_BITMAP[pixelY - TOP_PLACE][pixelX - MIDDLE_PLACE]) ? 8'b0 : TRANSPARENT_ENCODING;
 			holeNumber <= 3'd2;
 		end
 		else if((RIGHT_PLACE <= pixelX) && (RIGHT_PLACE + BITMAP_WIDTH > pixelX)) begin 
-			topLeftPosX <= RIGHT_PLACE;
+			RGBoutHoles <= (HOLE_BITMAP[pixelY - TOP_PLACE][pixelX - RIGHT_PLACE]) ? 8'b0 : TRANSPARENT_ENCODING;
 			holeNumber <= 3'd3;
 		end
-		topLeftPosY <= TOP_PLACE;
 	end
 	
 	else if((DOWN_PLACE + BITMAP_HEIGHT > pixelY) && (DOWN_PLACE <= pixelY)) begin
 		if((RIGHT_PLACE <= pixelX) && (RIGHT_PLACE + BITMAP_WIDTH > pixelX)) begin 
-			topLeftPosX <= RIGHT_PLACE;
+			RGBoutHoles <= (HOLE_BITMAP[pixelY - DOWN_PLACE][pixelX - RIGHT_PLACE]) ? 8'b0 : TRANSPARENT_ENCODING;
 			holeNumber <= 3'd4;
 		end
 		else if((MIDDLE_PLACE <= pixelX) && (MIDDLE_PLACE + BITMAP_WIDTH > pixelX)) begin 
-			topLeftPosX <= MIDDLE_PLACE;
+			RGBoutHoles <= (HOLE_BITMAP[pixelY - DOWN_PLACE][pixelX - MIDDLE_PLACE]) ? 8'b0 : TRANSPARENT_ENCODING;
 			holeNumber <= 3'd5;
 		end
 		else if((LEFT_PLACE <= pixelX) && (LEFT_PLACE + BITMAP_WIDTH > pixelX)) begin 
-			topLeftPosX <= LEFT_PLACE;
+			RGBoutHoles <= (HOLE_BITMAP[pixelY - DOWN_PLACE][pixelX - LEFT_PLACE]) ? 8'b0 : TRANSPARENT_ENCODING;
 			holeNumber <= 3'd6;
 		end
-		topLeftPosY <= DOWN_PLACE;
 	end
-	RGBoutHoles <= (HOLE_BITMAP[pixelY - topLeftPosX][pixelX - topLeftPosY]) ? 8'h00 : TRANSPARENT_ENCODING;
 end 
 	
-assign drawingRequestHole = (holeNumber) ? 1'b1 : 1'b0 ; // get optional transparent command from the bitmpap   
+assign drawingRequestHoles = (RGBoutHoles != TRANSPARENT_ENCODING) ? 1'b1 : 1'b0 ; // get optional transparent command from the bitmpap   
 endmodule
