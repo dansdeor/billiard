@@ -5,13 +5,8 @@ module hit_controller (
 	input logic whiteBallDR,
 	input logic redBallDR,
 	input logic bordersDR,
-
-	input logic holeDR1,
-	input logic holeDR2,
-	input logic holeDR3,
-	input logic holeDR4,
-	input logic holeDR5,
-	input logic holeDR6,
+	input logic holesDR,
+	input logic [2:0] holeNumber,
 
 	//ball position and velocity (velocities are most important for ball and border collision detection)
 	input logic [10:0] whiteBallTopLeftPosX,

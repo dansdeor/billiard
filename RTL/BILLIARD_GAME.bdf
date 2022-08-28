@@ -262,458 +262,6 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect -72 416 168 528)
-	(text "board_background" (rect 5 0 94 12)(font "Arial" ))
-	(text "board_background" (rect 8 96 96 113)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 240 32)
-		(output)
-		(text "drawingRequestBoard" (rect 0 0 106 12)(font "Arial" ))
-		(text "drawingRequestBoard" (rect 130 27 236 39)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32))
-	)
-	(port
-		(pt 240 48)
-		(output)
-		(text "RGBoutBoard[7..0]" (rect 0 0 93 12)(font "Arial" ))
-		(text "RGBoutBoard[7..0]" (rect 141 43 234 55)(font "Arial" ))
-		(line (pt 240 48)(pt 224 48)(line_width 3))
-	)
-	(parameter
-		"TOP_OFFSET"
-		"top_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"DOWN_OFFSET"
-		"down_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"LEFT_OFFSET"
-		"left_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RIGHT_OFFSET"
-		"right_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 224 96))
-	)
-	(annotation_block (parameter)(rect -72 312 163 407))
-)
-(symbol
-	(rect -72 640 176 752)
-	(text "borders" (rect 5 0 41 12)(font "Arial" ))
-	(text "borders" (rect 8 96 43 113)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 248 32)
-		(output)
-		(text "drawingRequestBorders" (rect 0 0 115 12)(font "Arial" ))
-		(text "drawingRequestBorders" (rect 130 27 245 39)(font "Arial" ))
-		(line (pt 248 32)(pt 232 32))
-	)
-	(port
-		(pt 248 48)
-		(output)
-		(text "RGBoutBorders[7..0]" (rect 0 0 102 12)(font "Arial" ))
-		(text "RGBoutBorders[7..0]" (rect 141 43 243 55)(font "Arial" ))
-		(line (pt 248 48)(pt 232 48)(line_width 3))
-	)
-	(parameter
-		"TOP_OFFSET"
-		"top_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"DOWN_OFFSET"
-		"down_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"LEFT_OFFSET"
-		"left_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RIGHT_OFFSET"
-		"right_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 232 96))
-	)
-	(annotation_block (parameter)(rect -72 536 163 631))
-)
-(symbol
-	(rect -64 832 168 944)
-	(text "hole" (rect 5 0 25 12)(font "Arial" ))
-	(text "hole_1" (rect 8 96 39 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 232 32)
-		(output)
-		(text "drawingRequestHole" (rect 0 0 100 12)(font "Arial" ))
-		(text "drawingRequestHole" (rect 127 27 227 39)(font "Arial" ))
-		(line (pt 232 32)(pt 216 32))
-	)
-	(port
-		(pt 232 48)
-		(output)
-		(text "RGBoutHole[7..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "RGBoutHole[7..0]" (rect 138 43 225 55)(font "Arial" ))
-		(line (pt 232 48)(pt 216 48)(line_width 3))
-	)
-	(parameter
-		"TOP_LEFT_POS_X"
-		"hole_left"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"TOP_LEFT_POS_Y"
-		"hole_top"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 216 96))
-	)
-	(annotation_block (parameter)(rect -64 768 178 825))
-)
-(symbol
-	(rect -64 1016 168 1128)
-	(text "hole" (rect 5 0 25 12)(font "Arial" ))
-	(text "hole_2" (rect 8 96 39 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 232 32)
-		(output)
-		(text "drawingRequestHole" (rect 0 0 100 12)(font "Arial" ))
-		(text "drawingRequestHole" (rect 127 27 227 39)(font "Arial" ))
-		(line (pt 232 32)(pt 216 32))
-	)
-	(port
-		(pt 232 48)
-		(output)
-		(text "RGBoutHole[7..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "RGBoutHole[7..0]" (rect 138 43 225 55)(font "Arial" ))
-		(line (pt 232 48)(pt 216 48)(line_width 3))
-	)
-	(parameter
-		"TOP_LEFT_POS_X"
-		"hole_middle"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"TOP_LEFT_POS_Y"
-		"hole_top"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 216 96))
-	)
-	(annotation_block (parameter)(rect -64 952 196 1009))
-)
-(symbol
-	(rect -64 1200 168 1312)
-	(text "hole" (rect 5 0 25 12)(font "Arial" ))
-	(text "hole_3" (rect 8 96 39 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 232 32)
-		(output)
-		(text "drawingRequestHole" (rect 0 0 100 12)(font "Arial" ))
-		(text "drawingRequestHole" (rect 127 27 227 39)(font "Arial" ))
-		(line (pt 232 32)(pt 216 32))
-	)
-	(port
-		(pt 232 48)
-		(output)
-		(text "RGBoutHole[7..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "RGBoutHole[7..0]" (rect 138 43 225 55)(font "Arial" ))
-		(line (pt 232 48)(pt 216 48)(line_width 3))
-	)
-	(parameter
-		"TOP_LEFT_POS_X"
-		"hole_right"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"TOP_LEFT_POS_Y"
-		"hole_top"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 216 96))
-	)
-	(annotation_block (parameter)(rect -64 1136 184 1193))
-)
-(symbol
-	(rect -64 1384 168 1496)
-	(text "hole" (rect 5 0 25 12)(font "Arial" ))
-	(text "hole_4" (rect 8 96 39 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 232 32)
-		(output)
-		(text "drawingRequestHole" (rect 0 0 100 12)(font "Arial" ))
-		(text "drawingRequestHole" (rect 127 27 227 39)(font "Arial" ))
-		(line (pt 232 32)(pt 216 32))
-	)
-	(port
-		(pt 232 48)
-		(output)
-		(text "RGBoutHole[7..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "RGBoutHole[7..0]" (rect 138 43 225 55)(font "Arial" ))
-		(line (pt 232 48)(pt 216 48)(line_width 3))
-	)
-	(parameter
-		"TOP_LEFT_POS_X"
-		"hole_right"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"TOP_LEFT_POS_Y"
-		"hole_down"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 216 96))
-	)
-	(annotation_block (parameter)(rect -64 1320 190 1377))
-)
-(symbol
-	(rect -64 1560 168 1672)
-	(text "hole" (rect 5 0 25 12)(font "Arial" ))
-	(text "hole_5" (rect 8 96 39 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 232 32)
-		(output)
-		(text "drawingRequestHole" (rect 0 0 100 12)(font "Arial" ))
-		(text "drawingRequestHole" (rect 127 27 227 39)(font "Arial" ))
-		(line (pt 232 32)(pt 216 32))
-	)
-	(port
-		(pt 232 48)
-		(output)
-		(text "RGBoutHole[7..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "RGBoutHole[7..0]" (rect 138 43 225 55)(font "Arial" ))
-		(line (pt 232 48)(pt 216 48)(line_width 3))
-	)
-	(parameter
-		"TOP_LEFT_POS_X"
-		"hole_middle"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"TOP_LEFT_POS_Y"
-		"hole_down"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 216 96))
-	)
-	(annotation_block (parameter)(rect -64 1496 196 1553))
-)
-(symbol
-	(rect -64 1752 168 1864)
-	(text "hole" (rect 5 0 25 12)(font "Arial" ))
-	(text "hole_6" (rect 8 96 39 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 232 32)
-		(output)
-		(text "drawingRequestHole" (rect 0 0 100 12)(font "Arial" ))
-		(text "drawingRequestHole" (rect 127 27 227 39)(font "Arial" ))
-		(line (pt 232 32)(pt 216 32))
-	)
-	(port
-		(pt 232 48)
-		(output)
-		(text "RGBoutHole[7..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "RGBoutHole[7..0]" (rect 138 43 225 55)(font "Arial" ))
-		(line (pt 232 48)(pt 216 48)(line_width 3))
-	)
-	(parameter
-		"TOP_LEFT_POS_X"
-		"hole_left"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"TOP_LEFT_POS_Y"
-		"hole_down"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 216 96))
-	)
-	(annotation_block (parameter)(rect -64 1688 190 1745))
-)
-(symbol
 	(rect 560 328 824 472)
 	(text "ball_draw" (rect 5 0 49 12)(font "Arial" ))
 	(text "white_ball_draw" (rect 8 128 88 145)(font "Intel Clear" ))
@@ -895,238 +443,6 @@ agreement for further details.
 		(rectangle (rect 16 16 248 128))
 	)
 	(annotation_block (parameter)(rect 832 768 1046 806))
-)
-(symbol
-	(rect 544 1504 856 1872)
-	(text "hit_controller" (rect 5 0 67 12)(font "Arial" ))
-	(text "hit_controller" (rect 8 352 70 364)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
-		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "whiteBallDR" (rect 0 0 59 12)(font "Arial" ))
-		(text "whiteBallDR" (rect 21 59 80 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "redBallDR" (rect 0 0 49 12)(font "Arial" ))
-		(text "redBallDR" (rect 21 75 70 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "bordersDR" (rect 0 0 53 12)(font "Arial" ))
-		(text "bordersDR" (rect 21 91 74 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "holeDR1" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR1" (rect 21 107 63 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "holeDR2" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR2" (rect 21 123 63 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128))
-	)
-	(port
-		(pt 0 144)
-		(input)
-		(text "holeDR3" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR3" (rect 21 139 63 151)(font "Arial" ))
-		(line (pt 0 144)(pt 16 144))
-	)
-	(port
-		(pt 0 160)
-		(input)
-		(text "holeDR4" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR4" (rect 21 155 63 167)(font "Arial" ))
-		(line (pt 0 160)(pt 16 160))
-	)
-	(port
-		(pt 0 176)
-		(input)
-		(text "holeDR5" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR5" (rect 21 171 63 183)(font "Arial" ))
-		(line (pt 0 176)(pt 16 176))
-	)
-	(port
-		(pt 0 192)
-		(input)
-		(text "holeDR6" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR6" (rect 21 187 63 199)(font "Arial" ))
-		(line (pt 0 192)(pt 16 192))
-	)
-	(port
-		(pt 0 208)
-		(input)
-		(text "whiteBallTopLeftPosX[10..0]" (rect 0 0 136 12)(font "Arial" ))
-		(text "whiteBallTopLeftPosX[10..0]" (rect 21 203 157 215)(font "Arial" ))
-		(line (pt 0 208)(pt 16 208)(line_width 3))
-	)
-	(port
-		(pt 0 224)
-		(input)
-		(text "whiteballTopLeftPosY[10..0]" (rect 0 0 138 12)(font "Arial" ))
-		(text "whiteballTopLeftPosY[10..0]" (rect 21 219 159 231)(font "Arial" ))
-		(line (pt 0 224)(pt 16 224)(line_width 3))
-	)
-	(port
-		(pt 0 240)
-		(input)
-		(text "whiteBallVelX[10..0]" (rect 0 0 95 12)(font "Arial" ))
-		(text "whiteBallVelX[10..0]" (rect 21 235 116 247)(font "Arial" ))
-		(line (pt 0 240)(pt 16 240)(line_width 3))
-	)
-	(port
-		(pt 0 256)
-		(input)
-		(text "whiteBallVelY[10..0]" (rect 0 0 97 12)(font "Arial" ))
-		(text "whiteBallVelY[10..0]" (rect 21 251 118 263)(font "Arial" ))
-		(line (pt 0 256)(pt 16 256)(line_width 3))
-	)
-	(port
-		(pt 0 272)
-		(input)
-		(text "redBallTopLeftPosX[10..0]" (rect 0 0 127 12)(font "Arial" ))
-		(text "redBallTopLeftPosX[10..0]" (rect 21 267 148 279)(font "Arial" ))
-		(line (pt 0 272)(pt 16 272)(line_width 3))
-	)
-	(port
-		(pt 0 288)
-		(input)
-		(text "redBallTopLeftPosY[10..0]" (rect 0 0 129 12)(font "Arial" ))
-		(text "redBallTopLeftPosY[10..0]" (rect 21 283 150 295)(font "Arial" ))
-		(line (pt 0 288)(pt 16 288)(line_width 3))
-	)
-	(port
-		(pt 0 304)
-		(input)
-		(text "redBallVelX[10..0]" (rect 0 0 86 12)(font "Arial" ))
-		(text "redBallVelX[10..0]" (rect 21 299 107 311)(font "Arial" ))
-		(line (pt 0 304)(pt 16 304)(line_width 3))
-	)
-	(port
-		(pt 0 320)
-		(input)
-		(text "redBallVelY[10..0]" (rect 0 0 88 12)(font "Arial" ))
-		(text "redBallVelY[10..0]" (rect 21 315 109 327)(font "Arial" ))
-		(line (pt 0 320)(pt 16 320)(line_width 3))
-	)
-	(port
-		(pt 312 32)
-		(output)
-		(text "whiteBallVelXOut[10..0]" (rect 0 0 113 12)(font "Arial" ))
-		(text "whiteBallVelXOut[10..0]" (rect 196 27 309 39)(font "Arial" ))
-		(line (pt 312 32)(pt 296 32)(line_width 3))
-	)
-	(port
-		(pt 312 48)
-		(output)
-		(text "whiteBallVelYOut[10..0]" (rect 0 0 115 12)(font "Arial" ))
-		(text "whiteBallVelYOut[10..0]" (rect 194 43 309 55)(font "Arial" ))
-		(line (pt 312 48)(pt 296 48)(line_width 3))
-	)
-	(port
-		(pt 312 64)
-		(output)
-		(text "whiteBallCollisionOccurred" (rect 0 0 128 12)(font "Arial" ))
-		(text "whiteBallCollisionOccurred" (rect 183 59 311 71)(font "Arial" ))
-		(line (pt 312 64)(pt 296 64))
-	)
-	(port
-		(pt 312 80)
-		(output)
-		(text "whiteBallHoleHit" (rect 0 0 79 12)(font "Arial" ))
-		(text "whiteBallHoleHit" (rect 225 75 304 87)(font "Arial" ))
-		(line (pt 312 80)(pt 296 80))
-	)
-	(port
-		(pt 312 96)
-		(output)
-		(text "whiteBallHoleNum[2..0]" (rect 0 0 114 12)(font "Arial" ))
-		(text "whiteBallHoleNum[2..0]" (rect 195 91 309 103)(font "Arial" ))
-		(line (pt 312 96)(pt 296 96)(line_width 3))
-	)
-	(port
-		(pt 312 112)
-		(output)
-		(text "redBallVelXOut[10..0]" (rect 0 0 103 12)(font "Arial" ))
-		(text "redBallVelXOut[10..0]" (rect 204 107 307 119)(font "Arial" ))
-		(line (pt 312 112)(pt 296 112)(line_width 3))
-	)
-	(port
-		(pt 312 128)
-		(output)
-		(text "redBallVelYOut[10..0]" (rect 0 0 106 12)(font "Arial" ))
-		(text "redBallVelYOut[10..0]" (rect 202 123 308 135)(font "Arial" ))
-		(line (pt 312 128)(pt 296 128)(line_width 3))
-	)
-	(port
-		(pt 312 144)
-		(output)
-		(text "redBallCollisionOccurred" (rect 0 0 119 12)(font "Arial" ))
-		(text "redBallCollisionOccurred" (rect 191 139 310 151)(font "Arial" ))
-		(line (pt 312 144)(pt 296 144))
-	)
-	(port
-		(pt 312 160)
-		(output)
-		(text "redBallHoleHit" (rect 0 0 69 12)(font "Arial" ))
-		(text "redBallHoleHit" (rect 233 155 302 167)(font "Arial" ))
-		(line (pt 312 160)(pt 296 160))
-	)
-	(port
-		(pt 312 176)
-		(output)
-		(text "redBallHoleNum[2..0]" (rect 0 0 105 12)(font "Arial" ))
-		(text "redBallHoleNum[2..0]" (rect 203 171 308 183)(font "Arial" ))
-		(line (pt 312 176)(pt 296 176)(line_width 3))
-	)
-	(parameter
-		"TOP_OFFSET"
-		"top_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"DOWN_OFFSET"
-		"down_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"LEFT_OFFSET"
-		"left_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(parameter
-		"RIGHT_OFFSET"
-		"right_offset"
-		""
-		(type "PARAMETER_SIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 296 352))
-	)
-	(annotation_block (parameter)(rect 864 1776 1099 1871))
 )
 (symbol
 	(rect 560 840 816 984)
@@ -1356,189 +672,6 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 1384 768 1632 1200)
-	(text "objects_mux" (rect 5 0 67 12)(font "Arial" ))
-	(text "objects_mux" (rect 8 416 67 433)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
-		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "whiteBallDR" (rect 0 0 59 12)(font "Arial" ))
-		(text "whiteBallDR" (rect 21 59 80 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "RGBWhiteBall[7..0]" (rect 0 0 95 12)(font "Arial" ))
-		(text "RGBWhiteBall[7..0]" (rect 21 75 116 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "redBallDR" (rect 0 0 49 12)(font "Arial" ))
-		(text "redBallDR" (rect 21 91 70 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "RGBRedBall[7..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "RGBRedBall[7..0]" (rect 21 107 108 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "holeNumberDR" (rect 0 0 75 12)(font "Arial" ))
-		(text "holeNumberDR" (rect 21 123 96 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128))
-	)
-	(port
-		(pt 0 144)
-		(input)
-		(text "RGBHoleNumber[7..0]" (rect 0 0 110 12)(font "Arial" ))
-		(text "RGBHoleNumber[7..0]" (rect 21 139 131 151)(font "Arial" ))
-		(line (pt 0 144)(pt 16 144)(line_width 3))
-	)
-	(port
-		(pt 0 160)
-		(input)
-		(text "holeDR1" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR1" (rect 21 155 63 167)(font "Arial" ))
-		(line (pt 0 160)(pt 16 160))
-	)
-	(port
-		(pt 0 176)
-		(input)
-		(text "RGBHole1[7..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "RGBHole1[7..0]" (rect 21 171 98 183)(font "Arial" ))
-		(line (pt 0 176)(pt 16 176)(line_width 3))
-	)
-	(port
-		(pt 0 192)
-		(input)
-		(text "holeDR2" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR2" (rect 21 187 63 199)(font "Arial" ))
-		(line (pt 0 192)(pt 16 192))
-	)
-	(port
-		(pt 0 208)
-		(input)
-		(text "RGBHole2[7..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "RGBHole2[7..0]" (rect 21 203 98 215)(font "Arial" ))
-		(line (pt 0 208)(pt 16 208)(line_width 3))
-	)
-	(port
-		(pt 0 224)
-		(input)
-		(text "holeDR3" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR3" (rect 21 219 63 231)(font "Arial" ))
-		(line (pt 0 224)(pt 16 224))
-	)
-	(port
-		(pt 0 240)
-		(input)
-		(text "RGBHole3[7..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "RGBHole3[7..0]" (rect 21 235 98 247)(font "Arial" ))
-		(line (pt 0 240)(pt 16 240)(line_width 3))
-	)
-	(port
-		(pt 0 256)
-		(input)
-		(text "holeDR4" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR4" (rect 21 251 63 263)(font "Arial" ))
-		(line (pt 0 256)(pt 16 256))
-	)
-	(port
-		(pt 0 272)
-		(input)
-		(text "RGBHole4[7..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "RGBHole4[7..0]" (rect 21 267 98 279)(font "Arial" ))
-		(line (pt 0 272)(pt 16 272)(line_width 3))
-	)
-	(port
-		(pt 0 288)
-		(input)
-		(text "holeDR5" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR5" (rect 21 283 63 295)(font "Arial" ))
-		(line (pt 0 288)(pt 16 288))
-	)
-	(port
-		(pt 0 304)
-		(input)
-		(text "RGBHole5[7..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "RGBHole5[7..0]" (rect 21 299 98 311)(font "Arial" ))
-		(line (pt 0 304)(pt 16 304)(line_width 3))
-	)
-	(port
-		(pt 0 320)
-		(input)
-		(text "holeDR6" (rect 0 0 42 12)(font "Arial" ))
-		(text "holeDR6" (rect 21 315 63 327)(font "Arial" ))
-		(line (pt 0 320)(pt 16 320))
-	)
-	(port
-		(pt 0 336)
-		(input)
-		(text "RGBHole6[7..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "RGBHole6[7..0]" (rect 21 331 98 343)(font "Arial" ))
-		(line (pt 0 336)(pt 16 336)(line_width 3))
-	)
-	(port
-		(pt 0 352)
-		(input)
-		(text "bordersDR" (rect 0 0 53 12)(font "Arial" ))
-		(text "bordersDR" (rect 21 347 74 359)(font "Arial" ))
-		(line (pt 0 352)(pt 16 352))
-	)
-	(port
-		(pt 0 368)
-		(input)
-		(text "RGBBorders[7..0]" (rect 0 0 87 12)(font "Arial" ))
-		(text "RGBBorders[7..0]" (rect 21 363 108 375)(font "Arial" ))
-		(line (pt 0 368)(pt 16 368)(line_width 3))
-	)
-	(port
-		(pt 0 384)
-		(input)
-		(text "boardDR" (rect 0 0 43 12)(font "Arial" ))
-		(text "boardDR" (rect 21 379 64 391)(font "Arial" ))
-		(line (pt 0 384)(pt 16 384))
-	)
-	(port
-		(pt 0 400)
-		(input)
-		(text "RGBBoard[7..0]" (rect 0 0 77 12)(font "Arial" ))
-		(text "RGBBoard[7..0]" (rect 21 395 98 407)(font "Arial" ))
-		(line (pt 0 400)(pt 16 400)(line_width 3))
-	)
-	(port
-		(pt 248 32)
-		(output)
-		(text "RGBOut[7..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "RGBOut[7..0]" (rect 171 27 238 39)(font "Arial" ))
-		(line (pt 248 32)(pt 232 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 232 416))
-	)
-)
-(symbol
 	(rect 1416 1440 1704 1552)
 	(text "hole_number" (rect 5 0 67 12)(font "Arial" ))
 	(text "inst14" (rect 8 96 36 113)(font "Intel Clear" ))
@@ -1609,6 +742,522 @@ agreement for further details.
 	)
 	(annotation_block (parameter)(rect 1704 1344 1952 1439))
 )
+(symbol
+	(rect -72 720 176 832)
+	(text "borders" (rect 5 0 41 12)(font "Arial" ))
+	(text "borders" (rect 8 96 43 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "drawingRequestBorders" (rect 0 0 115 12)(font "Arial" ))
+		(text "drawingRequestBorders" (rect 130 27 245 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32))
+	)
+	(port
+		(pt 248 48)
+		(output)
+		(text "RGBoutBorders[7..0]" (rect 0 0 102 12)(font "Arial" ))
+		(text "RGBoutBorders[7..0]" (rect 141 43 243 55)(font "Arial" ))
+		(line (pt 248 48)(pt 232 48)(line_width 3))
+	)
+	(parameter
+		"TOP_OFFSET"
+		"top_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"DOWN_OFFSET"
+		"down_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"LEFT_OFFSET"
+		"left_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"RIGHT_OFFSET"
+		"right_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 232 96))
+	)
+	(annotation_block (parameter)(rect -72 616 176 711))
+)
+(symbol
+	(rect -72 496 168 608)
+	(text "board_background" (rect 5 0 94 12)(font "Arial" ))
+	(text "board_background" (rect 8 96 96 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 240 32)
+		(output)
+		(text "drawingRequestBoard" (rect 0 0 106 12)(font "Arial" ))
+		(text "drawingRequestBoard" (rect 130 27 236 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32))
+	)
+	(port
+		(pt 240 48)
+		(output)
+		(text "RGBoutBoard[7..0]" (rect 0 0 93 12)(font "Arial" ))
+		(text "RGBoutBoard[7..0]" (rect 141 43 234 55)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48)(line_width 3))
+	)
+	(parameter
+		"TOP_OFFSET"
+		"top_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"DOWN_OFFSET"
+		"down_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"LEFT_OFFSET"
+		"left_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"RIGHT_OFFSET"
+		"right_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 224 96))
+	)
+	(annotation_block (parameter)(rect -72 392 176 487))
+)
+(symbol
+	(rect -72 944 160 1056)
+	(text "holes" (rect 5 0 30 12)(font "Arial" ))
+	(text "holes" (rect 8 96 33 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "holeNumber[2..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "holeNumber[2..0]" (rect 140 27 224 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32)(line_width 3))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "drawingRequestHoles" (rect 0 0 106 12)(font "Arial" ))
+		(text "drawingRequestHoles" (rect 122 43 228 55)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48))
+	)
+	(port
+		(pt 232 64)
+		(output)
+		(text "RGBoutHoles[7..0]" (rect 0 0 93 12)(font "Arial" ))
+		(text "RGBoutHoles[7..0]" (rect 133 59 226 71)(font "Arial" ))
+		(line (pt 232 64)(pt 216 64)(line_width 3))
+	)
+	(parameter
+		"TOP_OFFSET"
+		"top_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"DOWN_OFFSET"
+		"down_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"LEFT_OFFSET"
+		"left_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"RIGHT_OFFSET"
+		"right_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 216 96))
+	)
+	(annotation_block (parameter)(rect -72 840 176 935))
+)
+(symbol
+	(rect 1384 768 1632 1040)
+	(text "objects_mux" (rect 5 0 67 12)(font "Arial" ))
+	(text "objects_mux" (rect 8 256 67 273)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
+		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "whiteBallDR" (rect 0 0 59 12)(font "Arial" ))
+		(text "whiteBallDR" (rect 21 59 80 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "RGBWhiteBall[7..0]" (rect 0 0 95 12)(font "Arial" ))
+		(text "RGBWhiteBall[7..0]" (rect 21 75 116 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "redBallDR" (rect 0 0 49 12)(font "Arial" ))
+		(text "redBallDR" (rect 21 91 70 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "RGBRedBall[7..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "RGBRedBall[7..0]" (rect 21 107 108 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "holeNumberDR" (rect 0 0 75 12)(font "Arial" ))
+		(text "holeNumberDR" (rect 21 123 96 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "RGBHoleNumber[7..0]" (rect 0 0 110 12)(font "Arial" ))
+		(text "RGBHoleNumber[7..0]" (rect 21 139 131 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "holesDR" (rect 0 0 42 12)(font "Arial" ))
+		(text "holesDR" (rect 21 155 63 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "RGBHoles[7..0]" (rect 0 0 77 12)(font "Arial" ))
+		(text "RGBHoles[7..0]" (rect 21 171 98 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "bordersDR" (rect 0 0 53 12)(font "Arial" ))
+		(text "bordersDR" (rect 21 187 74 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "RGBBorders[7..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "RGBBorders[7..0]" (rect 21 203 108 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 3))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "boardDR" (rect 0 0 43 12)(font "Arial" ))
+		(text "boardDR" (rect 21 219 64 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "RGBBoard[7..0]" (rect 0 0 77 12)(font "Arial" ))
+		(text "RGBBoard[7..0]" (rect 21 235 98 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 3))
+	)
+	(port
+		(pt 248 32)
+		(output)
+		(text "RGBOut[7..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "RGBOut[7..0]" (rect 171 27 238 39)(font "Arial" ))
+		(line (pt 248 32)(pt 232 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 232 256))
+	)
+)
+(symbol
+	(rect 544 1504 856 1808)
+	(text "hit_controller" (rect 5 0 67 12)(font "Arial" ))
+	(text "inst4" (rect 8 288 30 305)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
+		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "whiteBallDR" (rect 0 0 59 12)(font "Arial" ))
+		(text "whiteBallDR" (rect 21 59 80 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "redBallDR" (rect 0 0 49 12)(font "Arial" ))
+		(text "redBallDR" (rect 21 75 70 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "bordersDR" (rect 0 0 53 12)(font "Arial" ))
+		(text "bordersDR" (rect 21 91 74 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "holesDR" (rect 0 0 42 12)(font "Arial" ))
+		(text "holesDR" (rect 21 107 63 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "holeNumber[2..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "holeNumber[2..0]" (rect 21 123 105 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "whiteBallTopLeftPosX[10..0]" (rect 0 0 136 12)(font "Arial" ))
+		(text "whiteBallTopLeftPosX[10..0]" (rect 21 139 157 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "whiteballTopLeftPosY[10..0]" (rect 0 0 138 12)(font "Arial" ))
+		(text "whiteballTopLeftPosY[10..0]" (rect 21 155 159 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "whiteBallVelX[10..0]" (rect 0 0 95 12)(font "Arial" ))
+		(text "whiteBallVelX[10..0]" (rect 21 171 116 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
+		(pt 0 192)
+		(input)
+		(text "whiteBallVelY[10..0]" (rect 0 0 97 12)(font "Arial" ))
+		(text "whiteBallVelY[10..0]" (rect 21 187 118 199)(font "Arial" ))
+		(line (pt 0 192)(pt 16 192)(line_width 3))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "redBallTopLeftPosX[10..0]" (rect 0 0 127 12)(font "Arial" ))
+		(text "redBallTopLeftPosX[10..0]" (rect 21 203 148 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 3))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "redBallTopLeftPosY[10..0]" (rect 0 0 129 12)(font "Arial" ))
+		(text "redBallTopLeftPosY[10..0]" (rect 21 219 150 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 3))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "redBallVelX[10..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "redBallVelX[10..0]" (rect 21 235 107 247)(font "Arial" ))
+		(line (pt 0 240)(pt 16 240)(line_width 3))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "redBallVelY[10..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "redBallVelY[10..0]" (rect 21 251 109 263)(font "Arial" ))
+		(line (pt 0 256)(pt 16 256)(line_width 3))
+	)
+	(port
+		(pt 312 32)
+		(output)
+		(text "whiteBallVelXOut[10..0]" (rect 0 0 113 12)(font "Arial" ))
+		(text "whiteBallVelXOut[10..0]" (rect 196 27 309 39)(font "Arial" ))
+		(line (pt 312 32)(pt 296 32)(line_width 3))
+	)
+	(port
+		(pt 312 48)
+		(output)
+		(text "whiteBallVelYOut[10..0]" (rect 0 0 115 12)(font "Arial" ))
+		(text "whiteBallVelYOut[10..0]" (rect 194 43 309 55)(font "Arial" ))
+		(line (pt 312 48)(pt 296 48)(line_width 3))
+	)
+	(port
+		(pt 312 64)
+		(output)
+		(text "whiteBallCollisionOccurred" (rect 0 0 128 12)(font "Arial" ))
+		(text "whiteBallCollisionOccurred" (rect 183 59 311 71)(font "Arial" ))
+		(line (pt 312 64)(pt 296 64))
+	)
+	(port
+		(pt 312 80)
+		(output)
+		(text "whiteBallHoleHit" (rect 0 0 79 12)(font "Arial" ))
+		(text "whiteBallHoleHit" (rect 225 75 304 87)(font "Arial" ))
+		(line (pt 312 80)(pt 296 80))
+	)
+	(port
+		(pt 312 96)
+		(output)
+		(text "whiteBallHoleNum[2..0]" (rect 0 0 114 12)(font "Arial" ))
+		(text "whiteBallHoleNum[2..0]" (rect 195 91 309 103)(font "Arial" ))
+		(line (pt 312 96)(pt 296 96)(line_width 3))
+	)
+	(port
+		(pt 312 112)
+		(output)
+		(text "redBallVelXOut[10..0]" (rect 0 0 103 12)(font "Arial" ))
+		(text "redBallVelXOut[10..0]" (rect 204 107 307 119)(font "Arial" ))
+		(line (pt 312 112)(pt 296 112)(line_width 3))
+	)
+	(port
+		(pt 312 128)
+		(output)
+		(text "redBallVelYOut[10..0]" (rect 0 0 106 12)(font "Arial" ))
+		(text "redBallVelYOut[10..0]" (rect 202 123 308 135)(font "Arial" ))
+		(line (pt 312 128)(pt 296 128)(line_width 3))
+	)
+	(port
+		(pt 312 144)
+		(output)
+		(text "redBallCollisionOccurred" (rect 0 0 119 12)(font "Arial" ))
+		(text "redBallCollisionOccurred" (rect 191 139 310 151)(font "Arial" ))
+		(line (pt 312 144)(pt 296 144))
+	)
+	(port
+		(pt 312 160)
+		(output)
+		(text "redBallHoleHit" (rect 0 0 69 12)(font "Arial" ))
+		(text "redBallHoleHit" (rect 233 155 302 167)(font "Arial" ))
+		(line (pt 312 160)(pt 296 160))
+	)
+	(port
+		(pt 312 176)
+		(output)
+		(text "redBallHoleNum[2..0]" (rect 0 0 105 12)(font "Arial" ))
+		(text "redBallHoleNum[2..0]" (rect 203 171 308 183)(font "Arial" ))
+		(line (pt 312 176)(pt 296 176)(line_width 3))
+	)
+	(parameter
+		"TOP_OFFSET"
+		"top_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"DOWN_OFFSET"
+		"down_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"LEFT_OFFSET"
+		"left_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"RIGHT_OFFSET"
+		"right_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 296 288))
+	)
+	(annotation_block (parameter)(rect 864 1712 1112 1807))
+)
 (connector
 	(text "resetN" (rect 498 512 528 529)(font "Intel Clear" ))
 	(pt 560 528)
@@ -1618,128 +1267,6 @@ agreement for further details.
 	(text "startOfFrame" (rect 498 528 561 545)(font "Intel Clear" ))
 	(pt 488 544)
 	(pt 560 544)
-)
-(connector
-	(text "clk" (rect -94 848 -80 865)(font "Intel Clear" ))
-	(pt -64 864)
-	(pt -96 864)
-)
-(connector
-	(text "holeDR1" (rect 178 848 219 865)(font "Intel Clear" ))
-	(pt 168 864)
-	(pt 296 864)
-)
-(connector
-	(text "clk" (rect -110 1032 -96 1049)(font "Intel Clear" ))
-	(pt -64 1048)
-	(pt -112 1048)
-)
-(connector
-	(text "PixelY[10..0]" (rect -126 1432 -66 1449)(font "Intel Clear" ))
-	(pt -64 1448)
-	(pt -136 1448)
-	(bus)
-)
-(connector
-	(text "clk" (rect -110 1216 -96 1233)(font "Intel Clear" ))
-	(pt -112 1232)
-	(pt -64 1232)
-)
-(connector
-	(text "PixelX[10..0]" (rect -126 1784 -66 1801)(font "Intel Clear" ))
-	(pt -64 1800)
-	(pt -136 1800)
-	(bus)
-)
-(connector
-	(text "holeDR2" (rect 178 1032 219 1049)(font "Intel Clear" ))
-	(pt 168 1048)
-	(pt 296 1048)
-)
-(connector
-	(text "holeDR3" (rect 178 1216 219 1233)(font "Intel Clear" ))
-	(pt 168 1232)
-	(pt 296 1232)
-)
-(connector
-	(text "RGBHole4[7..0]" (rect 178 1416 251 1433)(font "Intel Clear" ))
-	(pt 168 1432)
-	(pt 296 1432)
-	(bus)
-)
-(connector
-	(text "holeDR4" (rect 178 1400 219 1417)(font "Intel Clear" ))
-	(pt 296 1416)
-	(pt 168 1416)
-)
-(connector
-	(text "holeDR6" (rect 178 1768 219 1785)(font "Intel Clear" ))
-	(pt 296 1784)
-	(pt 168 1784)
-)
-(connector
-	(text "RGBHole6[7..0]" (rect 178 1784 251 1801)(font "Intel Clear" ))
-	(pt 296 1800)
-	(pt 168 1800)
-	(bus)
-)
-(connector
-	(text "PixelX[10..0]" (rect -126 864 -66 881)(font "Intel Clear" ))
-	(pt -136 880)
-	(pt -64 880)
-	(bus)
-)
-(connector
-	(text "PixelY[10..0]" (rect -126 880 -66 897)(font "Intel Clear" ))
-	(pt -136 896)
-	(pt -64 896)
-	(bus)
-)
-(connector
-	(text "PixelX[10..0]" (rect -126 1048 -66 1065)(font "Intel Clear" ))
-	(pt -136 1064)
-	(pt -64 1064)
-	(bus)
-)
-(connector
-	(text "PixelY[10..0]" (rect -126 1064 -66 1081)(font "Intel Clear" ))
-	(pt -64 1080)
-	(pt -136 1080)
-	(bus)
-)
-(connector
-	(text "PixelX[10..0]" (rect -126 1232 -66 1249)(font "Intel Clear" ))
-	(pt -136 1248)
-	(pt -64 1248)
-	(bus)
-)
-(connector
-	(text "PixelY[10..0]" (rect -126 1248 -66 1265)(font "Intel Clear" ))
-	(pt -136 1264)
-	(pt -64 1264)
-	(bus)
-)
-(connector
-	(text "clk" (rect -110 1400 -96 1417)(font "Intel Clear" ))
-	(pt -112 1416)
-	(pt -64 1416)
-)
-(connector
-	(text "PixelX[10..0]" (rect -126 1416 -66 1433)(font "Intel Clear" ))
-	(pt -136 1432)
-	(pt -64 1432)
-	(bus)
-)
-(connector
-	(text "clk" (rect -110 1768 -96 1785)(font "Intel Clear" ))
-	(pt -112 1784)
-	(pt -64 1784)
-)
-(connector
-	(text "PixelY[10..0]" (rect -126 1800 -66 1817)(font "Intel Clear" ))
-	(pt -136 1816)
-	(pt -64 1816)
-	(bus)
 )
 (connector
 	(pt 112 208)
@@ -1753,102 +1280,6 @@ agreement for further details.
 	(text "clk" (rect 282 192 296 209)(font "Intel Clear" ))
 	(pt 272 208)
 	(pt 304 208)
-)
-(connector
-	(text "PixelY[10..0]" (rect -126 1608 -66 1625)(font "Intel Clear" ))
-	(pt -64 1624)
-	(pt -136 1624)
-	(bus)
-)
-(connector
-	(text "RGBHole5[7..0]" (rect 178 1592 251 1609)(font "Intel Clear" ))
-	(pt 168 1608)
-	(pt 296 1608)
-	(bus)
-)
-(connector
-	(text "holeDR5" (rect 178 1576 219 1593)(font "Intel Clear" ))
-	(pt 296 1592)
-	(pt 168 1592)
-)
-(connector
-	(text "clk" (rect -110 1576 -96 1593)(font "Intel Clear" ))
-	(pt -112 1592)
-	(pt -64 1592)
-)
-(connector
-	(text "RGBHole1[7..0]" (rect 178 864 251 881)(font "Intel Clear" ))
-	(pt 168 880)
-	(pt 296 880)
-	(bus)
-)
-(connector
-	(text "RGBHole2[7..0]" (rect 178 1048 251 1065)(font "Intel Clear" ))
-	(pt 168 1064)
-	(pt 296 1064)
-	(bus)
-)
-(connector
-	(text "RGBHole3[7..0]" (rect 178 1232 251 1249)(font "Intel Clear" ))
-	(pt 168 1248)
-	(pt 296 1248)
-	(bus)
-)
-(connector
-	(text "PixelY[10..0]" (rect -142 464 -82 481)(font "Intel Clear" ))
-	(pt -144 480)
-	(pt -72 480)
-	(bus)
-)
-(connector
-	(text "PixelX[10..0]" (rect -142 448 -82 465)(font "Intel Clear" ))
-	(pt -144 464)
-	(pt -72 464)
-	(bus)
-)
-(connector
-	(text "clk" (rect -102 432 -88 449)(font "Intel Clear" ))
-	(pt -104 448)
-	(pt -72 448)
-)
-(connector
-	(text "boardDR" (rect 178 432 219 449)(font "Intel Clear" ))
-	(pt 168 448)
-	(pt 296 448)
-)
-(connector
-	(text "RGBboard[7..0]" (rect 178 448 249 465)(font "Intel Clear" ))
-	(pt 168 464)
-	(pt 296 464)
-	(bus)
-)
-(connector
-	(text "clk" (rect -94 656 -80 673)(font "Intel Clear" ))
-	(pt -72 672)
-	(pt -96 672)
-)
-(connector
-	(text "PixelY[10..0]" (rect -134 688 -74 705)(font "Intel Clear" ))
-	(pt -136 704)
-	(pt -72 704)
-	(bus)
-)
-(connector
-	(text "PixelX[10..0]" (rect -134 672 -74 689)(font "Intel Clear" ))
-	(pt -136 688)
-	(pt -72 688)
-	(bus)
-)
-(connector
-	(text "RGBBorders[7..0]" (rect 186 672 267 689)(font "Intel Clear" ))
-	(pt 176 688)
-	(pt 296 688)
-	(bus)
-)
-(connector
-	(text "bordersDR" (rect 186 656 235 673)(font "Intel Clear" ))
-	(pt 176 672)
-	(pt 296 672)
 )
 (connector
 	(text "whiteBallDR" (rect 840 344 900 361)(font "Intel Clear" ))
@@ -2102,84 +1533,6 @@ agreement for further details.
 	(pt 544 1600)
 )
 (connector
-	(text "holeDR1" (rect 490 1600 531 1617)(font "Intel Clear" ))
-	(pt 480 1616)
-	(pt 544 1616)
-)
-(connector
-	(text "holeDR2" (rect 490 1616 531 1633)(font "Intel Clear" ))
-	(pt 480 1632)
-	(pt 544 1632)
-)
-(connector
-	(text "holeDR3" (rect 490 1632 531 1649)(font "Intel Clear" ))
-	(pt 480 1648)
-	(pt 544 1648)
-)
-(connector
-	(text "holeDR4" (rect 490 1648 531 1665)(font "Intel Clear" ))
-	(pt 480 1664)
-	(pt 544 1664)
-)
-(connector
-	(text "holeDR5" (rect 490 1664 531 1681)(font "Intel Clear" ))
-	(pt 480 1680)
-	(pt 544 1680)
-)
-(connector
-	(text "holeDR6" (rect 490 1680 531 1697)(font "Intel Clear" ))
-	(pt 480 1696)
-	(pt 544 1696)
-)
-(connector
-	(text "whiteBallTopLeftX[10..0]" (rect 434 1696 553 1713)(font "Intel Clear" ))
-	(pt 424 1712)
-	(pt 544 1712)
-	(bus)
-)
-(connector
-	(text "whiteBallTopLeftY[10..0]" (rect 434 1712 553 1729)(font "Intel Clear" ))
-	(pt 424 1728)
-	(pt 544 1728)
-	(bus)
-)
-(connector
-	(text "whiteBallOutVelX[10..0]" (rect 434 1728 550 1745)(font "Intel Clear" ))
-	(pt 424 1744)
-	(pt 544 1744)
-	(bus)
-)
-(connector
-	(text "whiteBallOutVelY[10..0]" (rect 434 1744 550 1761)(font "Intel Clear" ))
-	(pt 424 1760)
-	(pt 544 1760)
-	(bus)
-)
-(connector
-	(text "redBallTopLeftX[10..0]" (rect 434 1760 542 1777)(font "Intel Clear" ))
-	(pt 424 1776)
-	(pt 544 1776)
-	(bus)
-)
-(connector
-	(text "redBallTopLeftY[10..0]" (rect 434 1776 542 1793)(font "Intel Clear" ))
-	(pt 424 1792)
-	(pt 544 1792)
-	(bus)
-)
-(connector
-	(text "redBallOutVelX[10..0]" (rect 434 1792 540 1809)(font "Intel Clear" ))
-	(pt 424 1808)
-	(pt 544 1808)
-	(bus)
-)
-(connector
-	(text "redBallOutVelY[10..0]" (rect 434 1808 540 1825)(font "Intel Clear" ))
-	(pt 424 1824)
-	(pt 544 1824)
-	(bus)
-)
-(connector
 	(text "whiteBallDR" (rect 1242 816 1302 833)(font "Intel Clear" ))
 	(pt 1240 832)
 	(pt 1384 832)
@@ -2210,100 +1563,6 @@ agreement for further details.
 	(text "redBallColOccurred" (rect 866 1632 960 1649)(font "Intel Clear" ))
 	(pt 856 1648)
 	(pt 984 1648)
-)
-(connector
-	(text "PixelX[10..0]" (rect -126 1592 -66 1609)(font "Intel Clear" ))
-	(pt -136 1608)
-	(pt -64 1608)
-	(bus)
-)
-(connector
-	(text "RGBBorders[7..0]" (rect 1242 1120 1323 1137)(font "Intel Clear" ))
-	(pt 1240 1136)
-	(pt 1384 1136)
-	(bus)
-)
-(connector
-	(text "boardDR" (rect 1242 1136 1283 1153)(font "Intel Clear" ))
-	(pt 1240 1152)
-	(pt 1384 1152)
-)
-(connector
-	(text "RGBboard[7..0]" (rect 1242 1152 1313 1169)(font "Intel Clear" ))
-	(pt 1240 1168)
-	(pt 1384 1168)
-	(bus)
-)
-(connector
-	(text "bordersDR" (rect 1242 1104 1291 1121)(font "Intel Clear" ))
-	(pt 1240 1120)
-	(pt 1384 1120)
-)
-(connector
-	(text "RGBHole1[7..0]" (rect 1242 928 1315 945)(font "Intel Clear" ))
-	(pt 1384 944)
-	(pt 1240 944)
-	(bus)
-)
-(connector
-	(text "holeDR2" (rect 1242 944 1283 961)(font "Intel Clear" ))
-	(pt 1240 960)
-	(pt 1384 960)
-)
-(connector
-	(text "RGBHole4[7..0]" (rect 1242 1024 1315 1041)(font "Intel Clear" ))
-	(pt 1240 1040)
-	(pt 1384 1040)
-	(bus)
-)
-(connector
-	(text "RGBHole3[7..0]" (rect 1242 992 1315 1009)(font "Intel Clear" ))
-	(pt 1240 1008)
-	(pt 1384 1008)
-	(bus)
-)
-(connector
-	(text "holeDR3" (rect 1242 976 1283 993)(font "Intel Clear" ))
-	(pt 1240 992)
-	(pt 1384 992)
-)
-(connector
-	(text "holeDR5" (rect 1242 1040 1283 1057)(font "Intel Clear" ))
-	(pt 1240 1056)
-	(pt 1384 1056)
-)
-(connector
-	(text "holeDR6" (rect 1242 1072 1283 1089)(font "Intel Clear" ))
-	(pt 1240 1088)
-	(pt 1384 1088)
-)
-(connector
-	(text "RGBHole5[7..0]" (rect 1242 1056 1315 1073)(font "Intel Clear" ))
-	(pt 1384 1072)
-	(pt 1240 1072)
-	(bus)
-)
-(connector
-	(text "RGBHole6[7..0]" (rect 1242 1088 1315 1105)(font "Intel Clear" ))
-	(pt 1384 1104)
-	(pt 1240 1104)
-	(bus)
-)
-(connector
-	(text "RGBHole2[7..0]" (rect 1242 960 1315 977)(font "Intel Clear" ))
-	(pt 1240 976)
-	(pt 1384 976)
-	(bus)
-)
-(connector
-	(text "holeDR4" (rect 1242 1008 1283 1025)(font "Intel Clear" ))
-	(pt 1240 1024)
-	(pt 1384 1024)
-)
-(connector
-	(text "holeDR1" (rect 1242 912 1283 929)(font "Intel Clear" ))
-	(pt 1240 928)
-	(pt 1384 928)
 )
 (connector
 	(text "holeNumberDR" (rect 1242 880 1315 897)(font "Intel Clear" ))
@@ -2391,12 +1650,194 @@ agreement for further details.
 	(pt 1824 1488)
 	(bus)
 )
-(text "Billiard Background" (rect 40 272 155 291)(font "Intel Clear" (font_size 8)))
+(connector
+	(text "PixelY[10..0]" (rect -142 544 -82 561)(font "Intel Clear" ))
+	(pt -144 560)
+	(pt -72 560)
+	(bus)
+)
+(connector
+	(text "PixelX[10..0]" (rect -142 528 -82 545)(font "Intel Clear" ))
+	(pt -144 544)
+	(pt -72 544)
+	(bus)
+)
+(connector
+	(text "clk" (rect -102 512 -88 529)(font "Intel Clear" ))
+	(pt -104 528)
+	(pt -72 528)
+)
+(connector
+	(text "boardDR" (rect 178 512 219 529)(font "Intel Clear" ))
+	(pt 168 528)
+	(pt 296 528)
+)
+(connector
+	(text "RGBboard[7..0]" (rect 178 528 249 545)(font "Intel Clear" ))
+	(pt 168 544)
+	(pt 296 544)
+	(bus)
+)
+(connector
+	(text "clk" (rect -94 736 -80 753)(font "Intel Clear" ))
+	(pt -72 752)
+	(pt -96 752)
+)
+(connector
+	(text "PixelY[10..0]" (rect -134 768 -74 785)(font "Intel Clear" ))
+	(pt -136 784)
+	(pt -72 784)
+	(bus)
+)
+(connector
+	(text "PixelX[10..0]" (rect -134 752 -74 769)(font "Intel Clear" ))
+	(pt -136 768)
+	(pt -72 768)
+	(bus)
+)
+(connector
+	(text "RGBBorders[7..0]" (rect 186 752 267 769)(font "Intel Clear" ))
+	(pt 176 768)
+	(pt 296 768)
+	(bus)
+)
+(connector
+	(text "bordersDR" (rect 186 736 235 753)(font "Intel Clear" ))
+	(pt 176 752)
+	(pt 296 752)
+)
+(connector
+	(text "clk" (rect -102 960 -88 977)(font "Intel Clear" ))
+	(pt -72 976)
+	(pt -104 976)
+)
+(connector
+	(text "PixelX[10..0]" (rect -134 976 -74 993)(font "Intel Clear" ))
+	(pt -144 992)
+	(pt -72 992)
+	(bus)
+)
+(connector
+	(text "PixelY[10..0]" (rect -134 992 -74 1009)(font "Intel Clear" ))
+	(pt -144 1008)
+	(pt -72 1008)
+	(bus)
+)
+(connector
+	(text "holesDR" (rect 170 976 210 993)(font "Intel Clear" ))
+	(pt 160 992)
+	(pt 288 992)
+)
+(connector
+	(text "RGBHoles[7..0]" (rect 170 992 241 1009)(font "Intel Clear" ))
+	(pt 160 1008)
+	(pt 288 1008)
+	(bus)
+)
+(connector
+	(text "holeNumber[2..0]" (rect 170 960 252 977)(font "Intel Clear" ))
+	(pt 160 976)
+	(pt 288 976)
+	(bus)
+)
+(connector
+	(text "holesDR" (rect 1242 912 1282 929)(font "Intel Clear" ))
+	(pt 1240 928)
+	(pt 1384 928)
+)
+(connector
+	(text "RGBHoles[7..0]" (rect 1242 928 1313 945)(font "Intel Clear" ))
+	(pt 1384 944)
+	(pt 1240 944)
+	(bus)
+)
+(connector
+	(text "RGBBorders[7..0]" (rect 1242 960 1323 977)(font "Intel Clear" ))
+	(pt 1240 976)
+	(pt 1384 976)
+	(bus)
+)
+(connector
+	(text "boardDR" (rect 1242 976 1283 993)(font "Intel Clear" ))
+	(pt 1240 992)
+	(pt 1384 992)
+)
+(connector
+	(text "RGBboard[7..0]" (rect 1242 992 1313 1009)(font "Intel Clear" ))
+	(pt 1240 1008)
+	(pt 1384 1008)
+	(bus)
+)
+(connector
+	(text "bordersDR" (rect 1242 944 1291 961)(font "Intel Clear" ))
+	(pt 1240 960)
+	(pt 1384 960)
+)
+(connector
+	(text "holesDR" (rect 490 1600 530 1617)(font "Intel Clear" ))
+	(pt 480 1616)
+	(pt 544 1616)
+)
+(connector
+	(text "whiteBallTopLeftX[10..0]" (rect 434 1632 553 1649)(font "Intel Clear" ))
+	(pt 424 1648)
+	(pt 544 1648)
+	(bus)
+)
+(connector
+	(text "whiteBallTopLeftY[10..0]" (rect 434 1648 553 1665)(font "Intel Clear" ))
+	(pt 424 1664)
+	(pt 544 1664)
+	(bus)
+)
+(connector
+	(text "whiteBallOutVelX[10..0]" (rect 434 1664 550 1681)(font "Intel Clear" ))
+	(pt 424 1680)
+	(pt 544 1680)
+	(bus)
+)
+(connector
+	(text "whiteBallOutVelY[10..0]" (rect 434 1680 550 1697)(font "Intel Clear" ))
+	(pt 424 1696)
+	(pt 544 1696)
+	(bus)
+)
+(connector
+	(text "redBallTopLeftX[10..0]" (rect 434 1696 542 1713)(font "Intel Clear" ))
+	(pt 424 1712)
+	(pt 544 1712)
+	(bus)
+)
+(connector
+	(text "redBallTopLeftY[10..0]" (rect 434 1712 542 1729)(font "Intel Clear" ))
+	(pt 424 1728)
+	(pt 544 1728)
+	(bus)
+)
+(connector
+	(text "redBallOutVelX[10..0]" (rect 434 1728 540 1745)(font "Intel Clear" ))
+	(pt 424 1744)
+	(pt 544 1744)
+	(bus)
+)
+(connector
+	(text "redBallOutVelY[10..0]" (rect 434 1744 540 1761)(font "Intel Clear" ))
+	(pt 424 1760)
+	(pt 544 1760)
+	(bus)
+)
+(connector
+	(text "holeNumber[2..0]" (rect 434 1616 516 1633)(font "Intel Clear" ))
+	(pt 424 1632)
+	(pt 544 1632)
+	(bus)
+)
+(text "Billiard Background" (rect 24 312 139 331)(font "Intel Clear" (font_size 8)))
 (text "White ball and Red ball" (rect 640 288 779 307)(font "Intel Clear" (font_size 8)))
 (text "CONSTANTS" (rect 1344 272 1421 291)(font "Intel Clear" (font_size 8)))
 (text "hit controller" (rect 680 1456 754 1475)(font "Intel Clear" (font_size 8)))
 (text "direction loader" (rect 704 1168 797 1187)(font "Intel Clear" (font_size 8)))
-(rectangle (rect -160 264 336 1888))
+(rectangle (rect -160 264 336 1136))
 (rectangle (rect 344 264 1160 1136))
 (rectangle (rect 1168 264 1616 744))
 (rectangle (rect 344 1448 1160 1888))
