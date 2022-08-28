@@ -7,23 +7,22 @@ module hole_number (
 	output logic [7:0] RGBHoleNumber
 );
 
-// generating the bitmap of a single hole 
-localparam logic [7:0] TRANSPARENT_ENCODING = 8'hFF;
+const logic [7:0] TRANSPARENT_ENCODING = 8'hFF;
 parameter int TOP_OFFSET = 0, DOWN_OFFSET = 479, LEFT_OFFSET = 0, RIGHT_OFFSET = 639;
 
 // Because we use here a 32x16 bitmap and not 32x32 bitmap, we need to add an offset in order to center the number inside the hole
 const int BITMAP_HEIGHT = 32;
 const int BITMAP_WIDTH = 16;
 
-const int LEFT_PLACE = LEFT_OFFSET - BITMAP_WIDTH / 2;
-const int MIDDLE_PLACE = (LEFT_OFFSET + RIGHT_OFFSET) / 2 - BITMAP_WIDTH / 2;
-const int RIGHT_PLACE = RIGHT_OFFSET - BITMAP_WIDTH / 2;
-const int TOP_PLACE = TOP_OFFSET - BITMAP_HEIGHT / 2;
-const int DOWN_PLACE = DOWN_OFFSET - BITMAP_HEIGHT / 2;
+const logic [10:0] LEFT_PLACE = LEFT_OFFSET - BITMAP_WIDTH / 2;
+const logic [10:0] MIDDLE_PLACE = (LEFT_OFFSET + RIGHT_OFFSET) / 2 - BITMAP_WIDTH / 2;
+const logic [10:0] RIGHT_PLACE = RIGHT_OFFSET - BITMAP_WIDTH / 2;
+const logic [10:0] TOP_PLACE = TOP_OFFSET - BITMAP_HEIGHT / 2;
+const logic [10:0] DOWN_PLACE = DOWN_OFFSET - BITMAP_HEIGHT / 2;
 
 logic [10:0] holeTopLeftX, holeTopLeftY;
 
-bit [0:5] [0:31] [0:15] number_bitmap = {																	
+bit [0:5] [0:31] [0:15] NUMBER_BITMAP = {																	
 {16'b	0000000011100000,
 16'b	0000000111100000,
 16'b	0000011111100000,
@@ -255,7 +254,7 @@ begin
 	endcase
 
 	if ((holeTopLeftX <= pixelX) && (holeTopLeftX + BITMAP_WIDTH > pixelX) && (holeTopLeftY + BITMAP_HEIGHT > pixelY) && (holeTopLeftY <= pixelY)) begin 
-		drawingRequestHoleNumber <= number_bitmap[holeNumber - 1][pixelY - holeTopLeftY][pixelX - holeTopLeftX];
+		drawingRequestHoleNumber <= NUMBER_BITMAP[holeNumber - 1][pixelY - holeTopLeftY][pixelX - holeTopLeftX];
 	end
 end  
 
