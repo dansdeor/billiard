@@ -1,7 +1,7 @@
 module hole_number (
 	input logic clk,
-	input logic signed [10:0] pixelX,
-	input logic signed [10:0] pixelY,
+	input logic [10:0] pixelX,
+	input logic [10:0] pixelY,
 	input logic [2:0] holeNumber,
 	output logic drawingRequestHoleNumber,
 	output logic [7:0] RGBHoleNumber
@@ -15,13 +15,13 @@ parameter int TOP_OFFSET = 0, DOWN_OFFSET = 479, LEFT_OFFSET = 0, RIGHT_OFFSET =
 const int BITMAP_HEIGHT = 32;
 const int BITMAP_WIDTH = 16;
 
-const int LEFT_PLACE = 100;//LEFT_OFFSET - BITMAP_WIDTH / 2;
+const int LEFT_PLACE = LEFT_OFFSET - BITMAP_WIDTH / 2;
 const int MIDDLE_PLACE = (LEFT_OFFSET + RIGHT_OFFSET) / 2 - BITMAP_WIDTH / 2;
 const int RIGHT_PLACE = RIGHT_OFFSET - BITMAP_WIDTH / 2;
-const int TOP_PLACE = 100;//TOP_OFFSET - BITMAP_HEIGHT / 2;
+const int TOP_PLACE = TOP_OFFSET - BITMAP_HEIGHT / 2;
 const int DOWN_PLACE = DOWN_OFFSET - BITMAP_HEIGHT / 2;
 
-logic holeTopLeftX, holeTopLeftY;
+logic [10:0] holeTopLeftX, holeTopLeftY;
 
 bit [0:5] [0:31] [0:15] number_bitmap = {																	
 {16'b	0000000011100000,
@@ -223,14 +223,10 @@ bit [0:5] [0:31] [0:15] number_bitmap = {
 16'b	0000011111100000}}; 
 
 
-assign holeTopLeftX = 200;
-assign holeTopLeftY = 200;
-
-
 always_ff @(posedge clk)
 begin 
 	drawingRequestHoleNumber <= 1'b0;
-	/*
+
 	case(holeNumber)
 		1: begin
 			holeTopLeftX <= LEFT_PLACE;
@@ -257,7 +253,7 @@ begin
 			holeTopLeftY <= DOWN_PLACE;	
 		end
 	endcase
-	*/
+
 	if ((holeTopLeftX <= pixelX) && (holeTopLeftX + BITMAP_WIDTH > pixelX) && (holeTopLeftY + BITMAP_HEIGHT > pixelY) && (holeTopLeftY <= pixelY)) begin 
 		drawingRequestHoleNumber <= number_bitmap[holeNumber - 1][pixelY - holeTopLeftY][pixelX - holeTopLeftX];
 	end

@@ -1,9 +1,9 @@
 module ball_draw (
 	input logic clk,
-	input logic signed [10:0] pixelX,
-	input logic signed [10:0] pixelY,
-	input logic signed [10:0] ballTopLeftPosX,
-	input logic signed [10:0] ballTopLeftPosY,
+	input logic [10:0] pixelX,
+	input logic [10:0] pixelY,
+	input logic [10:0] ballTopLeftPosX,
+	input logic [10:0] ballTopLeftPosY,
 
 	output logic drawingRequestBall,
 	output logic [7:0] RGBoutBall

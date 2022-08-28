@@ -5,13 +5,13 @@ module ball_collision (
 	input logic ballDR1,
 	input logic ballDR2,
 
-	input logic signed [10:0] ballTopLeftPosX1,
-	input logic signed [10:0] ballTopLeftPosY1,
+	input logic [10:0] ballTopLeftPosX1,
+	input logic [10:0] ballTopLeftPosY1,
 	input logic signed [10:0] ballVelX1,
 	input logic signed [10:0] ballVelY1,
 
-	input logic signed [10:0] ballTopLeftPosX2,
-	input logic signed [10:0] ballTopLeftPosY2,
+	input logic [10:0] ballTopLeftPosX2,
+	input logic [10:0] ballTopLeftPosY2,
 	input logic signed [10:0] ballVelX2,
 	input logic signed [10:0] ballVelY2,
 

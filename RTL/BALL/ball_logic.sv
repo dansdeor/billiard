@@ -7,8 +7,8 @@ module ball_logic (
 					input logic signed [10:0] inVelocityX,
 					input logic signed [10:0] inVelocityY,
 					
-					output logic signed [10:0] topLeftPosX,
-					output logic signed [10:0] topLeftPosY,
+					output logic [10:0] topLeftPosX,
+					output logic [10:0] topLeftPosY,
 					
 					output logic signed [10:0] outVelocityX,
 					output logic signed [10:0] outVelocityY,

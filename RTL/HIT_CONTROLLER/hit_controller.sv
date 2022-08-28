@@ -14,13 +14,13 @@ module hit_controller (
 	input logic holeDR6,
 
 	//ball position and velocity (velocities are most important for ball and border collision detection)
-	input logic signed [10:0] whiteBallTopLeftPosX,
-	input logic signed [10:0] whiteballTopLeftPosY,
+	input logic [10:0] whiteBallTopLeftPosX,
+	input logic [10:0] whiteballTopLeftPosY,
 	input logic signed [10:0] whiteBallVelX,
 	input logic signed [10:0] whiteBallVelY,
 
-	input logic signed [10:0] redBallTopLeftPosX,
-	input logic signed [10:0] redBallTopLeftPosY,
+	input logic [10:0] redBallTopLeftPosX,
+	input logic [10:0] redBallTopLeftPosY,
 	input logic signed [10:0] redBallVelX,
 	input logic signed [10:0] redBallVelY,
 

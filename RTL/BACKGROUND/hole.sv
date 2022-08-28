@@ -1,7 +1,7 @@
 module hole (
 	input logic clk,
-	input logic signed [10:0] pixelX,
-	input logic signed [10:0] pixelY,
+	input logic [10:0] pixelX,
+	input logic [10:0] pixelY,
 
 	output logic drawingRequestHole,
 	output logic [7:0] RGBoutHole

@@ -6,8 +6,8 @@ module border_collision #(parameter TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_
 					input logic ballDR,
 					input logic bordersDR,
 					
-					input logic signed [10:0] ballTopLeftPosX,
-					input logic signed [10:0] ballTopLeftPosY,
+					input logic [10:0] ballTopLeftPosX,
+					input logic [10:0] ballTopLeftPosY,
 					input logic signed [10:0] ballVelX,
 					input logic signed [10:0] ballVelY,
 					
@@ -29,8 +29,8 @@ begin
 	else begin
 		// Default value
 		collisionOccurred <= 1'b0;
-		//ballVelXOut <= ballVelX;
-		//ballVelYOut <= ballVelY;
+		ballVelXOut <= ballVelX;
+		ballVelYOut <= ballVelY;
 
 		// Collision occurres only when the DR of both objects is 1
 		// We dont want to change the velocities all the time when the drawing requests are on
@@ -40,11 +40,17 @@ begin
 			collisionOccurred <= 1'b1;
 			// Now we need to check the type of the collision
 			// The ball hit a vertical borders
-			if(ballTopLeftPosX <= LEFT_OFFSET || ballTopLeftPosX + BALL_RADIUS >= RIGHT_OFFSET) begin
+			if(ballTopLeftPosX <= LEFT_OFFSET && ballVelX < 0) begin
+				ballVelXOut <= -ballVelX;
+			end
+			else if(ballTopLeftPosX + BALL_RADIUS >= RIGHT_OFFSET && ballVelX > 0) begin
 				ballVelXOut <= -ballVelX;
 			end
 			// The ball hit a vertical borders
-			if(ballTopLeftPosY <= TOP_OFFSET || ballTopLeftPosY + BALL_RADIUS >= DOWN_OFFSET) begin
+			if(ballTopLeftPosY <= TOP_OFFSET && ballVelY < 0) begin
+				ballVelYOut <= -ballVelY;
+			end
+			else if(ballTopLeftPosY + BALL_RADIUS >= DOWN_OFFSET && ballVelY > 0) begin
 				ballVelYOut <= -ballVelY;
 			end	
 		end
