@@ -14,17 +14,13 @@ localparam logic [7:0] boardColor = 8'b00010100;
 
 assign RGBoutBoard = boardColor;
 
-always_ff @(posedge clk)
-begin
-	
+always_ff @(posedge clk) begin
 	if((pixelX >= LEFT_OFFSET) && (pixelX <= RIGHT_OFFSET) && (pixelY >= TOP_OFFSET) && (pixelY <= DOWN_OFFSET)) begin
 		drawingRequestBoard <= 1'b1;
-	end
-	
+	end	
 	else begin
 		drawingRequestBoard <= 1'b0;
 	end
-
 end
 
 endmodule

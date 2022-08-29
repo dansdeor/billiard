@@ -54,11 +54,9 @@ logic [0:31][0:31] HOLE_BITMAP = {
 	{32'b00000000011111111111111000000000},
 	{32'b00000000000011111111000000000000}};
 
-always_ff @(posedge clk)
-begin 
+always_ff @(posedge clk) begin 
 	holeNumber <= 3'b0;
 	RGBoutHoles <= TRANSPARENT_ENCODING;
-	
 	if((TOP_PLACE + BITMAP_HEIGHT > pixelY) && (TOP_PLACE <= pixelY)) begin
 		if((LEFT_PLACE <= pixelX) && (LEFT_PLACE + BITMAP_WIDTH > pixelX)) begin
 			RGBoutHoles <= (HOLE_BITMAP[pixelY - TOP_PLACE][pixelX - LEFT_PLACE]) ? 8'b0 : TRANSPARENT_ENCODING;
@@ -73,7 +71,6 @@ begin
 			holeNumber <= 3'd3;
 		end
 	end
-	
 	else if((DOWN_PLACE + BITMAP_HEIGHT > pixelY) && (DOWN_PLACE <= pixelY)) begin
 		if((RIGHT_PLACE <= pixelX) && (RIGHT_PLACE + BITMAP_WIDTH > pixelX)) begin 
 			RGBoutHoles <= (HOLE_BITMAP[pixelY - DOWN_PLACE][pixelX - RIGHT_PLACE]) ? 8'b0 : TRANSPARENT_ENCODING;
@@ -91,4 +88,5 @@ begin
 end 
 	
 assign drawingRequestHoles = (RGBoutHoles != TRANSPARENT_ENCODING) ? 1'b1 : 1'b0 ; // get optional transparent command from the bitmpap   
+
 endmodule

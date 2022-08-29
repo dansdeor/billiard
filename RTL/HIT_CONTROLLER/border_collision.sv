@@ -19,8 +19,7 @@ module border_collision #(parameter TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_
 logic flag = 1'b1;
 const int BALL_RADIUS = 32;
 
-always_ff @(posedge clk or negedge resetN)
-begin
+always_ff @(posedge clk or negedge resetN) begin
 	if(!resetN) begin
 		flag <= 1'b1;
 		ballVelXOut <= 11'b0;

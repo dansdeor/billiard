@@ -222,8 +222,7 @@ bit [0:5] [0:31] [0:15] NUMBER_BITMAP = {
 16'b	0000011111100000}}; 
 
 
-always_ff @(posedge clk)
-begin 
+always_ff @(posedge clk) begin 
 	drawingRequestHoleNumber <= 1'b0;
 
 	case(holeNumber)
