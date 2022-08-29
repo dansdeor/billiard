@@ -17,7 +17,7 @@ module border_collision #(parameter TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_
 );
 
 logic flag = 1'b1;
-const int BALL_RADIUS = 32;
+const int BALL_DIAMETER = 32;
 
 always_ff @(posedge clk or negedge resetN) begin
 	if(!resetN) begin
@@ -42,18 +42,18 @@ always_ff @(posedge clk or negedge resetN) begin
 			if(ballTopLeftPosX <= LEFT_OFFSET && ballVelX < 0) begin
 				ballVelXOut <= -ballVelX;
 			end
-			else if(ballTopLeftPosX + BALL_RADIUS >= RIGHT_OFFSET && ballVelX > 0) begin
+			else if(ballTopLeftPosX + BALL_DIAMETER >= RIGHT_OFFSET && ballVelX > 0) begin
 				ballVelXOut <= -ballVelX;
 			end
 			// The ball hit a vertical borders
 			if(ballTopLeftPosY <= TOP_OFFSET && ballVelY < 0) begin
 				ballVelYOut <= -ballVelY;
 			end
-			else if(ballTopLeftPosY + BALL_RADIUS >= DOWN_OFFSET && ballVelY > 0) begin
+			else if(ballTopLeftPosY + BALL_DIAMETER >= DOWN_OFFSET && ballVelY > 0) begin
 				ballVelYOut <= -ballVelY;
 			end	
 		end
-		if(!(ballDR && bordersDR)) begin //((ballTopLeftPosX > LEFT_OFFSET || ballTopLeftPosX + BALL_RADIUS < RIGHT_OFFSET) && (ballTopLeftPosY > TOP_OFFSET || ballTopLeftPosY + BALL_RADIUS < DOWN_OFFSET))) begin
+		if(!(ballDR && bordersDR)) begin //((ballTopLeftPosX > LEFT_OFFSET || ballTopLeftPosX + BALL_DIAMETER < RIGHT_OFFSET) && (ballTopLeftPosY > TOP_OFFSET || ballTopLeftPosY + BALL_DIAMETER < DOWN_OFFSET))) begin
 			flag <= 1'b1;
 		end
 	end

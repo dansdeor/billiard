@@ -21,8 +21,7 @@ parameter int INITIAL_Y_POSITION = 0;
 parameter int INITIAL_X_POSITION = 0;
 
 const int FRICTION_FRAME_COUNT = 10;
-const int VELOCITY_Y_FRICTION = 1;
-const int VELOCITY_X_FRICTION = 1;
+const int VELOCITY_FRICTION = 1;
 int frictionCounterY = 0;
 int frictionCounterX = 0;
 
@@ -49,12 +48,12 @@ begin
 		//TODO : MAKE SURE THAT THE BALL ISN'T ON THE EDGES AFTER THE CHANGE!!!
 		if ( frictionCounterY % FRICTION_FRAME_COUNT == 0) begin
 			if (velocityY > 0) begin
-				velocityY <= velocityY - VELOCITY_Y_FRICTION;
+				//velocityY <= velocityY - VELOCITY_FRICTION;
 				if(velocityY < 0)
 					velocityY <= 0;
 			end		
 			else if (velocityY < 0) begin
-				velocityY <= velocityY + VELOCITY_Y_FRICTION;
+				//velocityY <= velocityY + VELOCITY_FRICTION;
 				if(velocityY > 0)
 					velocityY <= 0;
 			end
@@ -80,12 +79,12 @@ begin
 		//TODO : MAKE SURE THAT THE BALL ISN'T ON THE EDGES AFTER THE CHANGE!!!
 		if ( frictionCounterX % FRICTION_FRAME_COUNT == 0) begin
 			if (velocityX > 0) begin
-				velocityX <= velocityX - VELOCITY_X_FRICTION;
+				//velocityX <= velocityX - VELOCITY_FRICTION;
 				if(velocityX < 0)
 					velocityX <= 0;
 			end
 			else if (velocityX < 0) begin
-				velocityX <= velocityX + VELOCITY_X_FRICTION;
+				//velocityX <= velocityX + VELOCITY_FRICTION;
 				if(velocityX > 0)
 					velocityX <= 0;
 			end
