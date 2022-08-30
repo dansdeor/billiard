@@ -26,7 +26,7 @@ module ball_collision (
 
 
 logic flag = 1'b1;
-const int BALL_RADIUS = 32;
+const int BALL_DIAMETER = 32;
 
 int normalVectorNormSquared;
 int normalVectorX, normalVectorY;
@@ -82,7 +82,7 @@ begin
 		end
 		// Using the ballDR1 and ballDR2 for knowing the time to enable the flag is not enough because the balls are round and we can get a cenario
 		// where sometimes the DRs are "1" and sometimes the DRs are "0" in the same frame we are drawing
-		else if((normalVectorX >= BALL_RADIUS || normalVectorX <= -BALL_RADIUS) && (normalVectorY >= BALL_RADIUS || normalVectorY <= -BALL_RADIUS)) begin
+		else if((normalVectorX >= BALL_DIAMETER || normalVectorX <= -BALL_DIAMETER) && (normalVectorY >= BALL_DIAMETER || normalVectorY <= -BALL_DIAMETER)) begin
 			flag <= 1'b1;
 		end
 	end

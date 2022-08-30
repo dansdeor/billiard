@@ -223,3 +223,28 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tdi
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tdo
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to altera_reserved_tms
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/GAME_CONTROLLER/hex_ss.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/GAME_CONTROLLER/game_controller.sv
+set_global_assignment -name QXP_FILE RTL/KEYBOARD/KEYBOARD_INTERFACE.qxp
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/holes.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/hole_number.sv
+set_global_assignment -name BDF_FILE RTL/BILLIARD_GAME_ORIT.bdf
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/border_collision.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/hole_collision.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/hit_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/ball_collision.sv
+set_global_assignment -name VERILOG_FILE clock_divider/clock_divider_0002.v -library clock_divider
+set_global_assignment -name QIP_FILE clock_divider/clock_divider_0002.qip -library clock_divider
+set_global_assignment -name SIP_FILE clock_divider.sip
+set_global_assignment -name SOURCE_FILE clock_divider.cmp
+set_global_assignment -name QIP_FILE clock_divider.qip
+set_global_assignment -name VERILOG_FILE clock_divider.v -library clock_divider
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/VGA_Controller.sv
+set_global_assignment -name BDF_FILE RTL/BILLIARD_GAME.bdf
+set_global_assignment -name TCL_SCRIPT_FILE pin_layout.tcl
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/board_background.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/borders.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BALL/ball_logic.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/BALL/ball_draw.sv
+set_global_assignment -name SYSTEMVERILOG_FILE objects_mux.sv
+set_global_assignment -name QIP_FILE holeNumConstant.qip
