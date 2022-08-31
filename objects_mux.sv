@@ -18,6 +18,10 @@ module objects_mux (
 	// board layout
 	input logic boardDR,
 	input logic	[7:0] RGBBoard, 
+	
+	//Line layout
+	input logic lineDR,
+	input logic	[7:0] RGBLine, 
 
 	output logic [7:0] RGBOut
 );
@@ -34,6 +38,9 @@ begin
 		end
 		else if (redBallDR == 1'b1) begin
 			RGBOut <= RGBRedBall;
+		end
+		else if (lineDR == 1'b1) begin
+			RGBOut <= RGBLine;
 		end
 		else if (holeNumberDR == 1'b1) begin
 			RGBOut <= RGBHoleNumber;
