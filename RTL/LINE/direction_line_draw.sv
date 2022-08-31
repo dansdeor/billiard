@@ -10,8 +10,6 @@ module direction_line_draw(
 	input logic signed [10:0] velocityX,
 	input logic signed [10:0] velocityY,
 	
-	input logic keyEnterIsPressed,
-	
 	output logic drawingRequestLine,
 	output logic [7:0] RGBoutLine
 );

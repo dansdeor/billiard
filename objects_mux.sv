@@ -1,6 +1,9 @@
 module objects_mux (
 	input logic	clk,
 	input logic	resetN,
+	//Line layout
+	input logic lineDR,
+	input logic	[7:0] RGBLine,
 	// balls layout
 	input logic whiteBallDR,
 	input logic	[7:0] RGBWhiteBall,
@@ -19,10 +22,6 @@ module objects_mux (
 	input logic boardDR,
 	input logic	[7:0] RGBBoard, 
 	
-	//Line layout
-	input logic lineDR,
-	input logic	[7:0] RGBLine, 
-
 	output logic [7:0] RGBOut
 );
 
@@ -33,14 +32,14 @@ begin
 	end
 	
 	else begin
-		if (whiteBallDR == 1'b1) begin
+		if (lineDR == 1'b1) begin
+			RGBOut <= RGBLine;
+		end
+		else if (whiteBallDR == 1'b1) begin
 			RGBOut <= RGBWhiteBall;
 		end
 		else if (redBallDR == 1'b1) begin
 			RGBOut <= RGBRedBall;
-		end
-		else if (lineDR == 1'b1) begin
-			RGBOut <= RGBLine;
 		end
 		else if (holeNumberDR == 1'b1) begin
 			RGBOut <= RGBHoleNumber;
