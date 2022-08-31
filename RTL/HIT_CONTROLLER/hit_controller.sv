@@ -23,7 +23,7 @@ module hit_controller (
 	output logic signed [10:0] whiteBallVelYOut,
 	output logic whiteBallCollisionOccurred,
 	output logic whiteBallHoleHit,
-	output logic [2:0] whiteBallHoleNum,
+	//output logic [2:0] whiteBallHoleNum,
 
 	output logic signed [10:0] redBallVelXOut,
 	output logic signed [10:0] redBallVelYOut,
@@ -48,6 +48,26 @@ logic borderRedBallCol;
 
 logic ballToBallCol;
 
+
+/*
+* Hole collision detection instantiation
+*/
+/*
+hole_collision white_ball_hole_col(
+	.clk(clk),
+	.resetN(resetN),
+	.ballDR(),
+	input logic holesDR,
+	input logic [2:0] holeNumber,
+	
+	output logic holeHit,
+	output logic [2:0] holeNumberHit
+);
+*/
+
+/*
+* Border collision detection instantiation
+*/
 border_collision #(TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_OFFSET) white_ball_border_col(
 	.clk(clk),
 	.resetN(resetN),
@@ -76,7 +96,10 @@ border_collision #(TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_OFFSET) red_ball_
 	.collisionOccurred(borderRedBallCol)
 );
 
-ball_collision (
+/*
+* Ball collision detection instantiation
+*/
+ball_collision ball_to_ball_col(
 	.clk(clk),
 	.resetN(resetN),
 	.ballDR1(whiteBallDR),
