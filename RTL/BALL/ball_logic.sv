@@ -20,7 +20,7 @@ parameter int INITIAL_X_VELOCITY = 0;
 parameter int INITIAL_Y_POSITION = 0;
 parameter int INITIAL_X_POSITION = 0;
 
-const int FRICTION_FRAME_COUNT = 10;
+const int FRICTION_FRAME_COUNT = 5;
 const int VELOCITY_FRICTION = 1;
 const int VELOCITY_LIMIT = 200;
 int frictionCounterY = 0;
@@ -38,32 +38,34 @@ begin
 		velocityY <= INITIAL_Y_VELOCITY;
 		topLeftYInt	<= INITIAL_Y_POSITION * FIXED_POINT_MULTIPLIER;
 	end
-
-	else if(velocityWriteEnable) begin
-		velocityY <= inVelocityY;
-	end
-	// Velocity limiting
-	else if(velocityY > VELOCITY_LIMIT) begin
-		velocityY <= VELOCITY_LIMIT;
-	end
-	else if(velocityY < -VELOCITY_LIMIT) begin
-		velocityY <= -VELOCITY_LIMIT;
-	end
-	// Perform position and velocity addition only when a new frame starts
-	else if (startOfFrame) begin
-		frictionCounterY = frictionCounterY + 1;
-		topLeftYInt <= topLeftYInt + velocityY;// POSITION interpolation 
-		if ( frictionCounterY % FRICTION_FRAME_COUNT == 0) begin
-			if (velocityY > 0) begin
-				velocityY <= velocityY - VELOCITY_FRICTION;
-				if(velocityY < 0)
-					velocityY <= 0;
-			end		
-			else if (velocityY < 0) begin
-				velocityY <= velocityY + VELOCITY_FRICTION;
-				if(velocityY > 0)
-					velocityY <= 0;
+	else begin
+		if(velocityWriteEnable) begin
+			velocityY <= inVelocityY;
+		end
+		// Perform position and velocity addition only when a new frame starts
+		else if (startOfFrame) begin
+			frictionCounterY = frictionCounterY + 1;
+			topLeftYInt <= topLeftYInt + velocityY;// POSITION interpolation 
+			if ( frictionCounterY % FRICTION_FRAME_COUNT == 0) begin
+				if (velocityY > 0) begin
+					velocityY <= velocityY - VELOCITY_FRICTION;
+					if(velocityY < 0)
+						velocityY <= 0;
+				end		
+				else if (velocityY < 0) begin
+					velocityY <= velocityY + VELOCITY_FRICTION;
+					if(velocityY > 0)
+						velocityY <= 0;
+				end
 			end
+			
+		end
+		// Velocity limiting
+		if(velocityY > VELOCITY_LIMIT) begin
+			velocityY <= VELOCITY_LIMIT;
+		end
+		if(velocityY < -VELOCITY_LIMIT) begin
+			velocityY <= -VELOCITY_LIMIT;
 		end
 	end
 end
@@ -75,32 +77,34 @@ begin
 		velocityX	<= INITIAL_X_VELOCITY;
 		topLeftXInt	<= INITIAL_X_POSITION * FIXED_POINT_MULTIPLIER;
 	end
-	// For collision, the collision velocity we get from our cotroller
-	else if(velocityWriteEnable) begin
-		velocityX <= inVelocityX;
-	end
-	// Velocity limiting
-	else if(velocityX > VELOCITY_LIMIT) begin
-		velocityX <= VELOCITY_LIMIT;
-	end
-	else if(velocityX < -VELOCITY_LIMIT) begin
-		velocityX <= -VELOCITY_LIMIT;
-	end
-	// Perform position and velocity addition only when a new frame starts
-	else if (startOfFrame) begin
-		frictionCounterX <= frictionCounterX + 1;
-		topLeftXInt <= topLeftXInt + velocityX;
-		if ( frictionCounterX % FRICTION_FRAME_COUNT == 0) begin
-			if (velocityX > 0) begin
-				velocityX <= velocityX - VELOCITY_FRICTION;
-				if(velocityX < 0)
-					velocityX <= 0;
+	else begin
+		// For collision, the collision velocity we get from our cotroller
+		if(velocityWriteEnable) begin
+			velocityX <= inVelocityX;
+		end
+		// Perform position and velocity addition only when a new frame starts
+		else if (startOfFrame) begin
+			frictionCounterX <= frictionCounterX + 1;
+			topLeftXInt <= topLeftXInt + velocityX;
+			if ( frictionCounterX % FRICTION_FRAME_COUNT == 0) begin
+				if (velocityX > 0) begin
+					velocityX <= velocityX - VELOCITY_FRICTION;
+					if(velocityX < 0)
+						velocityX <= 0;
+				end
+				else if (velocityX < 0) begin
+					velocityX <= velocityX + VELOCITY_FRICTION;
+					if(velocityX > 0)
+						velocityX <= 0;
+				end
 			end
-			else if (velocityX < 0) begin
-				velocityX <= velocityX + VELOCITY_FRICTION;
-				if(velocityX > 0)
-					velocityX <= 0;
-			end
+		end
+		// Velocity limiting
+		if(velocityX > VELOCITY_LIMIT) begin
+			velocityX <= VELOCITY_LIMIT;
+		end
+		if(velocityX < -VELOCITY_LIMIT) begin
+			velocityX <= -VELOCITY_LIMIT;
 		end
 	end
 end 
@@ -110,6 +114,6 @@ assign outVelocityX = velocityX;
 assign outVelocityY = velocityY;
 assign topLeftPosX = topLeftXInt / FIXED_POINT_MULTIPLIER;
 assign topLeftPosY = topLeftYInt / FIXED_POINT_MULTIPLIER;
-assign ballStopped = ~(outVelocityX & outVelocityY);
+assign ballStopped = ~(outVelocityX | outVelocityY);
 
 endmodule

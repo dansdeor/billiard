@@ -41,8 +41,8 @@ agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "enterPressed" (rect 0 0 53 12)(font "Arial" ))
-		(text "enterPressed" (rect 21 59 74 71)(font "Arial" ))
+		(text "lineWriteEnable" (rect 0 0 61 12)(font "Arial" ))
+		(text "lineWriteEnable" (rect 21 59 82 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 1))
 	)
 	(port
@@ -114,6 +114,20 @@ agreement for further details.
 		(text "resetGameN" (rect 0 0 51 12)(font "Arial" ))
 		(text "resetGameN" (rect 192 91 243 103)(font "Arial" ))
 		(line (pt 264 96)(pt 248 96)(line_width 1))
+	)
+	(port
+		(pt 264 112)
+		(output)
+		(text "score[7..0]" (rect 0 0 42 12)(font "Arial" ))
+		(text "score[7..0]" (rect 201 107 243 119)(font "Arial" ))
+		(line (pt 264 112)(pt 248 112)(line_width 3))
+	)
+	(port
+		(pt 264 128)
+		(output)
+		(text "attempts[7..0]" (rect 0 0 54 12)(font "Arial" ))
+		(text "attempts[7..0]" (rect 189 123 243 135)(font "Arial" ))
+		(line (pt 264 128)(pt 248 128)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 248 160)(line_width 1))
