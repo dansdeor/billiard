@@ -47,7 +47,8 @@ set_location_assignment PIN_AF25 -to LEDR[5]
 set_location_assignment PIN_AE24 -to LEDR[6]
 set_location_assignment PIN_AF24 -to LEDR[7]
 set_location_assignment PIN_AB22 -to LEDR[8]
-set_location_assignment PIN_AC22 -to LEDR[9]
+#set_location_assignment PIN_AC22 -to LEDR[9]
+set_location_assignment PIN_AC22 -to AUDOUT[0] ;
 #set_location_assignment PIN_AF9 -to redLight
 #set_location_assignment PIN_AE7 -to yellowLight
 #set_location_assignment PIN_AE11 -to greenLight

@@ -1,0 +1,22 @@
+{
+	"system" : {
+		"platform" : "windows64",
+		"os_name" : "Windows 10",
+		"os_version" : "10.0"
+	},
+	"error" : {
+		"executable" : "quartus",
+		"comment" : "not_applicable",
+		"error_message" : "m_name != NULL",
+		"source_file" : "/quartus/sld/sdr/sdr_data_log.cpp",
+		"line" : "1322",
+		"stack_trace" : "\t0x7ffbc6b09da5: sld_sdr + 0x49da5 (?set_name@SDR_DATA_LOG@@QEAA_NPEBD@Z + 0x55)\n\t0x7ffc113116d1: sld_chi + 0x116d1 (?start_acquisition@CHI_CONTROL_NODE_STP_V6@@MEAA_NXZ + 0xb71)\n\t0x7ffc1130ffc0: sld_chi + 0xffc0 (?start@CHI_CONTROL_NODE_STP_V6@@UEAA_NPEAPEAUTHR_THREAD_STRUCT@@_N@Z + 0x280)\n\t0x7ffc11305505: sld_chi + 0x5505 (?acquisition_thread_proc@CHI_CONTROL_NODE_STP@@SAPEAXPEAX@Z + 0x35)\n\t0x7ffc408f454e: CCL_MSG + 0x1454e (?msg_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x6e)\n\t0x7ffc409f5b00: ccl_mem + 0x15b00 (?mem_thread_wrapper@@YAPEAXP6APEAXPEAX@Z0@Z + 0x70)\n\t0x7ffc40862791: ccl_thr + 0x2791 (thr_thread_begin + 0xa1)\n\t0x7ffc67757033: KERNEL32 + 0x17033 (BaseThreadInitThunk + 0x13)\n\t0x7ffc69582650: ntdll + 0x52650 (RtlUserThreadStart + 0x20)\n",
+		"subsystem" : "SDR"
+	},
+	"quartus" : {
+		"quartus_bits" : "64",
+		"version" : "17.0.0",
+		"build" : "595",
+		"edition" : "Lite Edition"
+	}
+}
