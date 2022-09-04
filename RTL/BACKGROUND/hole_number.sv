@@ -22,7 +22,44 @@ const logic [10:0] DOWN_PLACE = DOWN_OFFSET - BITMAP_HEIGHT / 2;
 
 logic [10:0] holeTopLeftX, holeTopLeftY;
 
-bit [0:5] [0:31] [0:15] NUMBER_BITMAP = {																	
+always_ff @(posedge clk) begin 
+	drawingRequestHoleNumber <= 1'b0;
+
+	case(holeNumber)
+		1: begin
+			holeTopLeftX <= LEFT_PLACE;
+			holeTopLeftY <= TOP_PLACE;	
+			end		
+		2: begin
+			holeTopLeftX <= MIDDLE_PLACE;
+			holeTopLeftY <= TOP_PLACE;	
+			end
+		3: begin
+			holeTopLeftX <= RIGHT_PLACE;
+			holeTopLeftY <= TOP_PLACE;	
+			end
+		4: begin
+			holeTopLeftX <= RIGHT_PLACE;
+			holeTopLeftY <= DOWN_PLACE;	
+			end
+		5: begin
+			holeTopLeftX <= MIDDLE_PLACE;
+			holeTopLeftY <= DOWN_PLACE;	
+		end
+		6: begin
+			holeTopLeftX <= LEFT_PLACE;
+			holeTopLeftY <= DOWN_PLACE;	
+		end
+	endcase
+
+	if ((holeTopLeftX <= pixelX) && (holeTopLeftX + BITMAP_WIDTH > pixelX) && (holeTopLeftY + BITMAP_HEIGHT > pixelY) && (holeTopLeftY <= pixelY)) begin 
+		drawingRequestHoleNumber <= NUMBER_BITMAP[holeNumber - 1][pixelY - holeTopLeftY][pixelX - holeTopLeftX];
+	end
+end  
+
+assign RGBHoleNumber = TRANSPARENT_ENCODING - drawingRequestHoleNumber;
+
+logic [0:5] [0:31] [0:15] NUMBER_BITMAP = {																	
 {16'b	0000000011100000,
 16'b	0000000111100000,
 16'b	0000011111100000,
@@ -220,43 +257,5 @@ bit [0:5] [0:31] [0:15] NUMBER_BITMAP = {
 16'b	0001111111111100,
 16'b	0001111111111000,
 16'b	0000011111100000}}; 
-
-
-always_ff @(posedge clk) begin 
-	drawingRequestHoleNumber <= 1'b0;
-
-	case(holeNumber)
-		1: begin
-			holeTopLeftX <= LEFT_PLACE;
-			holeTopLeftY <= TOP_PLACE;	
-			end		
-		2: begin
-			holeTopLeftX <= MIDDLE_PLACE;
-			holeTopLeftY <= TOP_PLACE;	
-			end
-		3: begin
-			holeTopLeftX <= RIGHT_PLACE;
-			holeTopLeftY <= TOP_PLACE;	
-			end
-		4: begin
-			holeTopLeftX <= RIGHT_PLACE;
-			holeTopLeftY <= DOWN_PLACE;	
-			end
-		5: begin
-			holeTopLeftX <= MIDDLE_PLACE;
-			holeTopLeftY <= DOWN_PLACE;	
-		end
-		6: begin
-			holeTopLeftX <= LEFT_PLACE;
-			holeTopLeftY <= DOWN_PLACE;	
-		end
-	endcase
-
-	if ((holeTopLeftX <= pixelX) && (holeTopLeftX + BITMAP_WIDTH > pixelX) && (holeTopLeftY + BITMAP_HEIGHT > pixelY) && (holeTopLeftY <= pixelY)) begin 
-		drawingRequestHoleNumber <= NUMBER_BITMAP[holeNumber - 1][pixelY - holeTopLeftY][pixelX - holeTopLeftX];
-	end
-end  
-
-assign RGBHoleNumber = TRANSPARENT_ENCODING - drawingRequestHoleNumber;
 
 endmodule

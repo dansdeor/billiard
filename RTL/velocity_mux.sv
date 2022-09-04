@@ -12,24 +12,23 @@ module velocity_mux (
 );
 
 always_comb begin
-	if(velocityWriteEnableHit) begin
-		outVelocityX = inVelocityXHit;
-		outVelocityY = inVelocityYHit;
-	end
-	
-	else if(velocityWriteEnableLine) begin
+	if (velocityWriteEnableLine) begin
 		outVelocityX = inVelocityXLine;
 		outVelocityY = inVelocityYLine;
+	end
+	
+	else if (velocityWriteEnableHit) begin
+		outVelocityX = inVelocityXHit;
+		outVelocityY = inVelocityYHit;
 	end
 		
 	else begin
 		outVelocityX = 11'b0;
 		outVelocityY = 11'b0;
 	end
-	
 end
 
-//outputs
+// Outputs
 assign WriteEnable = velocityWriteEnableHit | velocityWriteEnableLine;
 
 endmodule

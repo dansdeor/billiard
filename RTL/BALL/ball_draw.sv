@@ -1,21 +1,19 @@
-module ball_draw (
+module ball_draw #(parameter logic BALL_COLOR)
+(
 	input logic clk,
 	input logic ballShow,
 	input logic [10:0] pixelX,
 	input logic [10:0] pixelY,
-	input logic [10:0] ballTopLeftPosX,
-	input logic [10:0] ballTopLeftPosY,
+	input logic [10:0] topLeftPosX,
+	input logic [10:0] topLeftPosY,
 
 	output logic drawingRequestBall,
 	output logic [7:0] RGBoutBall
 );
 
-localparam logic [7:0] TRANSPARENT_ENCODING = 8'hff;
+const logic [7:0] TRANSPARENT_ENCODING = 8'hff;
 const int BITMAP_WIDTH = 32;
 const int BITMAP_HEIGHT = 32;
-
-// 0 for white 1 for red index
-parameter logic BALL_COLOR = 0;
 
 logic [1:0][0:31][0:31][7:0] BALL_BITMAP = {
 	// Red ball bitmap
@@ -88,8 +86,8 @@ logic [1:0][0:31][0:31][7:0] BALL_BITMAP = {
 always_ff@(posedge clk) 
 begin 
 	RGBoutBall <= TRANSPARENT_ENCODING; 
-	if ((ballTopLeftPosX <= pixelX) && (ballTopLeftPosX + BITMAP_WIDTH > pixelX) && (ballTopLeftPosY + BITMAP_HEIGHT > pixelY) && (ballTopLeftPosY <= pixelY)) begin 
-		RGBoutBall <= BALL_BITMAP[BALL_COLOR][pixelY - ballTopLeftPosY][pixelX - ballTopLeftPosX];
+	if ((topLeftPosX <= pixelX) && (topLeftPosX + BITMAP_WIDTH > pixelX) && (topLeftPosY + BITMAP_HEIGHT > pixelY) && (topLeftPosY <= pixelY)) begin 
+		RGBoutBall <= BALL_BITMAP[BALL_COLOR][pixelY - topLeftPosY][pixelX - topLeftPosX];
 	end
 end
 

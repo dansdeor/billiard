@@ -1,19 +1,19 @@
 module border_collision #(parameter TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_OFFSET)
 (
-					input logic clk,
-					input logic resetN,
-					
-					input logic ballDR,
-					input logic bordersDR,
-					
-					input logic [10:0] ballTopLeftPosX,
-					input logic [10:0] ballTopLeftPosY,
-					input logic signed [10:0] ballVelX,
-					input logic signed [10:0] ballVelY,
-					
-					output logic signed [10:0] ballVelXOut,
-					output logic signed [10:0] ballVelYOut,
-					output logic collisionOccurred
+	input logic clk,
+	input logic resetN,
+	
+	input logic ballDR,
+	input logic bordersDR,
+	
+	input logic [10:0] ballTopLeftPosX,
+	input logic [10:0] ballTopLeftPosY,
+	input logic signed [10:0] ballVelX,
+	input logic signed [10:0] ballVelY,
+	
+	output logic signed [10:0] ballVelXOut,
+	output logic signed [10:0] ballVelYOut,
+	output logic collisionOccurred
 );
 
 logic flag = 1'b1;
