@@ -465,7 +465,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 1800 784 2032 896)
+	(rect 1792 784 2024 896)
 	(text "addr_counter" (rect 5 0 68 12)(font "Arial" ))
 	(text "inst8" (rect 8 96 30 113)(font "Intel Clear" ))
 	(port
@@ -504,7 +504,7 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 216 96))
 	)
-	(annotation_block (parameter)(rect 2224 688 2408 728))
+	(annotation_block (parameter)(rect 2216 688 2400 728))
 )
 (symbol
 	(rect 848 1024 1136 1200)
@@ -790,29 +790,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "resetN" (rect 1698 816 1728 833)(font "Intel Clear" ))
-	(pt 1792 832)
-	(pt 1800 832)
-)
-(connector
-	(pt 2056 768)
-	(pt 2056 816)
-	(bus)
-)
-(connector
-	(pt 2032 816)
-	(pt 2056 816)
-	(bus)
-)
-(connector
-	(pt 1800 848)
-	(pt 1752 848)
-)
-(connector
-	(pt 1752 864)
-	(pt 1752 848)
-)
-(connector
 	(pt 1712 864)
 	(pt 1752 864)
 )
@@ -949,24 +926,6 @@ agreement for further details.
 	(pt 1360 488)
 )
 (connector
-	(text "clk" (rect 1666 768 1680 785)(font "Intel Clear" ))
-	(pt 1800 784)
-	(pt 1656 784)
-)
-(connector
-	(text "resetN" (rect 1666 784 1696 801)(font "Intel Clear" ))
-	(pt 1792 800)
-	(pt 1656 800)
-)
-(connector
-	(pt 1800 816)
-	(pt 1800 784)
-)
-(connector
-	(pt 1792 832)
-	(pt 1792 800)
-)
-(connector
 	(text "clk" (rect 1058 504 1072 521)(font "Intel Clear" ))
 	(pt 1048 520)
 	(pt 1120 520)
@@ -975,5 +934,49 @@ agreement for further details.
 	(text "resetN" (rect 1058 528 1088 545)(font "Intel Clear" ))
 	(pt 1048 544)
 	(pt 1120 544)
+)
+(connector
+	(pt 2056 768)
+	(pt 2056 816)
+	(bus)
+)
+(connector
+	(pt 1752 848)
+	(pt 1792 848)
+)
+(connector
+	(pt 1752 864)
+	(pt 1752 848)
+)
+(connector
+	(pt 2024 816)
+	(pt 2056 816)
+	(bus)
+)
+(connector
+	(text "resetN" (rect 1642 800 1672 817)(font "Intel Clear" ))
+	(pt 1632 816)
+	(pt 1768 816)
+)
+(connector
+	(pt 1768 816)
+	(pt 1768 832)
+)
+(connector
+	(pt 1792 832)
+	(pt 1768 832)
+)
+(connector
+	(text "clk" (rect 1642 776 1656 793)(font "Intel Clear" ))
+	(pt 1776 792)
+	(pt 1632 792)
+)
+(connector
+	(pt 1776 792)
+	(pt 1776 816)
+)
+(connector
+	(pt 1792 816)
+	(pt 1776 816)
 )
 (junction (pt 1824 552))
