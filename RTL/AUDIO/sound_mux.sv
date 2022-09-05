@@ -11,7 +11,7 @@ module sound_mux (
 	
 	input logic holeColOccured,
 	input logic borderColOccured,
-	input logic ballToBallcolOccured
+	input logic ballToBallcolOccured,
 	
 	output logic keyXAudioRequest,
 	output logic keyYAudioRequest,
@@ -31,20 +31,23 @@ begin
 	end*/
 	
 	//defaults
-	keyAudioRequest = 1'b0;
+	keyXAudioRequest = 1'b0;
+	keyYAudioRequest = 1'b0;
+	keyEnterAudioRequest = 1'b0;
 	holeColAudioRequest = 1'b0;
 	borderColAudioRequest = 1'b0;
+	ballToBallColAudioRequest = 1'b0;
 	
 	//else begin
 		if (keyEnterIsPressed) begin
-			keyEnterRequest = 1'b1;
+			keyEnterAudioRequest = 1'b1;
 		end
 		
-		if( key4IsPressed || key6IsPressed ) begin
+		if(key4IsPressed || key6IsPressed) begin
 			keyXAudioRequest = 1'b1;
 		end
 	
-		if( key2IsPressed || key8IsPressed ) begin
+		if(key2IsPressed || key8IsPressed) begin
 			keyXAudioRequest = 1'b1;
 		end
 

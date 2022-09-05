@@ -192,6 +192,27 @@ agreement for further details.
 		(text "redBallHoleNum[2..0]" (rect 208 155 291 167)(font "Arial" ))
 		(line (pt 312 160)(pt 296 160)(line_width 3))
 	)
+	(port
+		(pt 312 176)
+		(output)
+		(text "borderCollisionOccurred" (rect 0 0 94 12)(font "Arial" ))
+		(text "borderCollisionOccurred" (rect 197 171 291 183)(font "Arial" ))
+		(line (pt 312 176)(pt 296 176)(line_width 1))
+	)
+	(port
+		(pt 312 192)
+		(output)
+		(text "ballCollisionOccurred" (rect 0 0 80 12)(font "Arial" ))
+		(text "ballCollisionOccurred" (rect 211 187 291 199)(font "Arial" ))
+		(line (pt 312 192)(pt 296 192)(line_width 1))
+	)
+	(port
+		(pt 312 208)
+		(output)
+		(text "holeCollisionOccurred" (rect 0 0 83 12)(font "Arial" ))
+		(text "holeCollisionOccurred" (rect 208 203 291 215)(font "Arial" ))
+		(line (pt 312 208)(pt 296 208)(line_width 1))
+	)
 	(parameter
 		"TOP_OFFSET"
 		"0"

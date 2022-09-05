@@ -13,8 +13,8 @@ module	ToneDecoder	(
 			input logic keyEnterAudioRequest,
 			input logic holeColAudioRequest,
 			input logic borderColAudioRequest,
-			input logic ballToBallColAudioRequest
-			output logic [9:0]	preScaleValue
+			input logic ballToBallColAudioRequest,
+			output logic [9:0] preScaleValue
 );
 
 //logic [15:0] [9:0]	preScaleValueTable = { 
@@ -70,11 +70,11 @@ begin
 			kpreScaleValue = 10'h175; //do
 		end
 		
-		else if( key4IsPressed || key6IsPressed ) begin
-			kpreScaleValue = 10'h14C; //re
+		else if( keyXAudioRequest ) begin
+			preScaleValue = 10'h14C; //re
 		end
 	
-		else if( key2IsPressed || key8IsPressed ) begin
+		else if(keyYAudioRequest ) begin
 			preScaleValue = 10'h128; //mi
 		end
 	end
@@ -85,11 +85,11 @@ begin
 			preScaleValue = 10'h0DD; //La
 		end
 		
-		else if (borderColOccured) begin
+		else if (borderColAudioRequest) begin
 			preScaleValue = 10'h18B; //si
 		end
 		
-		else if (ballToBallcolOccured) begin
+		else if (ballToBallColAudioRequest) begin
 			preScaleValue = 10'h117; //fa
 		end
 

@@ -28,7 +28,11 @@ module hit_controller (
 	output logic signed [10:0] redBallVelYOut,
 	output logic redBallCollisionOccurred,
 	output logic redBallHoleHit,
-	output logic [2:0] redBallHoleNum
+	output logic [2:0] redBallHoleNum,
+	
+	output logic borderCollisionOccurred,
+	output logic ballCollisionOccurred,
+	output logic holeCollisionOccurred
 );
 
 parameter int TOP_OFFSET = 0, DOWN_OFFSET = 479, LEFT_OFFSET = 0, RIGHT_OFFSET = 639;
@@ -158,7 +162,11 @@ always_comb begin
 	end
 end
 
-assign whiteBallCollisionOccurred = borderWhiteBallCol | ballToBallCol;
-assign redBallCollisionOccurred = borderRedBallCol | ballToBallCol;
+assign whiteBallCollisionOccurred = borderWhiteBallCol || ballToBallCol;
+assign redBallCollisionOccurred = borderRedBallCol || ballToBallCol;
+
+assign borderCollisionOccurred = borderWhiteBallCol || borderRedBallCol;
+assign holeCollisionOccurred = whiteBallHoleHit || redBallHoleHit;
+assign ballCollisionOccurred = ballToBallCol;
 
 endmodule

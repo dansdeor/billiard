@@ -25,14 +25,15 @@ module game_controller(
 	output logic gameFinished
 );
 
-const logic [7:0] ATTEMPTS_INIT = 8'h2;
+parameter logic [7:0] ATTEMPTS_INIT = 8'h2;
 
 const logic [7:0] HIT_SUCCESS_SCORE = 8'h5;
 const logic [7:0] WRONG_BALL_SCORE = 8'h1;
 
-enum logic [2:0] {s_level1, s_level2, s_level3, s_level4, s_level5, s_level6, s_anyHole} gameLevel;
+enum logic [3:0] {s_level1, s_level2, s_level3, s_level4, s_level5, s_level6, s_level7, s_level8, s_level9, s_level10} gameLevel;
 
 logic ballsStopped;
+logic anyHole;
 
 always_ff @(posedge clk or negedge resetN) begin
 	if(!resetN) begin
@@ -45,7 +46,8 @@ always_ff @(posedge clk or negedge resetN) begin
 		// Getting back to level 1 on pressing resetN
 		gameLevel <= s_level1;
 		holeNumToHit <= 3'b1;
-		
+		anyHole <= 1'b0;
+
 		whiteBallShow <= 1'b1;
 		redBallShow <= 1'b1;
 	end
@@ -66,7 +68,7 @@ always_ff @(posedge clk or negedge resetN) begin
 			
 			if(redBallHoleHit && redBallShow) begin
 				redBallShow <= 1'b0;
-				if(holeNumToHit == redBallHoleNum || gameLevel == s_anyHole) begin
+				if(holeNumToHit == redBallHoleNum || anyHole) begin
 					score <= score + HIT_SUCCESS_SCORE;
 					case(gameLevel)
 						s_level1: begin
@@ -91,8 +93,21 @@ always_ff @(posedge clk or negedge resetN) begin
 						end
 						s_level6: begin
 							// When we give a value different from 1-6 to holeNumToHit, we won't see a number on the screen
+							anyHole <= 1'b1;
 							holeNumToHit <= 3'd0;
-							gameLevel <= s_anyHole;
+							gameLevel <= s_level7;
+						end
+						s_level7: begin
+							gameLevel <= s_level8;
+						end
+						s_level8: begin
+							gameLevel <= s_level9;
+						end
+						s_level9: begin
+							gameLevel <= s_level10;
+						end
+						s_level10: begin
+							gameFinished <= 1'b1;
 						end
 					endcase
 				end
