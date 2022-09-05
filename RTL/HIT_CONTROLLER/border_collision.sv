@@ -16,12 +16,10 @@ module border_collision #(parameter TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_
 	output logic collisionOccurred
 );
 
-logic flag = 1'b1;
 const int BALL_DIAMETER = 32;
 
 always_ff @(posedge clk or negedge resetN) begin
 	if(!resetN) begin
-		flag <= 1'b1;
 		ballVelXOut <= 11'b0;
 		ballVelXOut <= 11'b0;
 	end
@@ -34,8 +32,7 @@ always_ff @(posedge clk or negedge resetN) begin
 		// Collision occurres only when the DR of both objects is 1
 		// We dont want to change the velocities all the time when the drawing requests are on
 		// only once.
-		if(ballDR && bordersDR && flag) begin
-			flag <= 1'b0;
+		if(ballDR && bordersDR) begin
 			collisionOccurred <= 1'b1;
 			// Now we need to check the type of the collision
 			// The ball hit a vertical borders
@@ -51,11 +48,7 @@ always_ff @(posedge clk or negedge resetN) begin
 			end
 			else if(ballTopLeftPosY + BALL_DIAMETER >= DOWN_OFFSET && ballVelY > 0) begin
 				ballVelYOut <= -ballVelY;
-			end	
-		end
-		// TODO: check if we can delete this flag
-		if(!(ballDR && bordersDR)) begin //((ballTopLeftPosX > LEFT_OFFSET || ballTopLeftPosX + BALL_DIAMETER < RIGHT_OFFSET) && (ballTopLeftPosY > TOP_OFFSET || ballTopLeftPosY + BALL_DIAMETER < DOWN_OFFSET))) begin
-			flag <= 1'b1;
+			end
 		end
 	end
 end
