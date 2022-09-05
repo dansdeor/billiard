@@ -21,17 +21,24 @@ agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 160 96)
-	(text "holeNumConstant" (rect 5 0 75 12)(font "Arial" ))
+	(rect 16 16 200 96)
+	(text "hex_ss" (rect 5 0 34 12)(font "Arial" ))
 	(text "inst" (rect 8 64 20 76)(font "Arial" ))
 	(port
-		(pt 144 32)
+		(pt 0 32)
+		(input)
+		(text "iDIG[3..0]" (rect 0 0 37 12)(font "Arial" ))
+		(text "iDIG[3..0]" (rect 21 27 58 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 184 32)
 		(output)
-		(text "result[2..0]" (rect 0 0 41 12)(font "Arial" ))
-		(text "result[2..0]" (rect 82 27 123 39)(font "Arial" ))
-		(line (pt 144 32)(pt 128 32)(line_width 3))
+		(text "oSEG[6..0]" (rect 0 0 44 12)(font "Arial" ))
+		(text "oSEG[6..0]" (rect 119 27 163 39)(font "Arial" ))
+		(line (pt 184 32)(pt 168 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 128 64)(line_width 1))
+		(rectangle (rect 16 16 168 64)(line_width 1))
 	)
 )

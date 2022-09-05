@@ -1,19 +1,19 @@
 module border_collision #(parameter TOP_OFFSET, DOWN_OFFSET, LEFT_OFFSET, RIGHT_OFFSET)
 (
-					input logic clk,
-					input logic resetN,
-					
-					input logic ballDR,
-					input logic bordersDR,
-					
-					input logic [10:0] ballTopLeftPosX,
-					input logic [10:0] ballTopLeftPosY,
-					input logic signed [10:0] ballVelX,
-					input logic signed [10:0] ballVelY,
-					
-					output logic signed [10:0] ballVelXOut,
-					output logic signed [10:0] ballVelYOut,
-					output logic collisionOccurred
+	input logic clk,
+	input logic resetN,
+	
+	input logic ballDR,
+	input logic bordersDR,
+	
+	input logic [10:0] ballTopLeftPosX,
+	input logic [10:0] ballTopLeftPosY,
+	input logic signed [10:0] ballVelX,
+	input logic signed [10:0] ballVelY,
+	
+	output logic signed [10:0] ballVelXOut,
+	output logic signed [10:0] ballVelYOut,
+	output logic collisionOccurred
 );
 
 logic flag = 1'b1;
@@ -53,6 +53,7 @@ always_ff @(posedge clk or negedge resetN) begin
 				ballVelYOut <= -ballVelY;
 			end	
 		end
+		// TODO: check if we can delete this flag
 		if(!(ballDR && bordersDR)) begin //((ballTopLeftPosX > LEFT_OFFSET || ballTopLeftPosX + BALL_DIAMETER < RIGHT_OFFSET) && (ballTopLeftPosY > TOP_OFFSET || ballTopLeftPosY + BALL_DIAMETER < DOWN_OFFSET))) begin
 			flag <= 1'b1;
 		end

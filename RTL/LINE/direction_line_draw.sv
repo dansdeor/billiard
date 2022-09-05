@@ -34,42 +34,25 @@ always_ff @(posedge clk) begin
 	innerlineTopLeftPosX <= lineTopLeftPosX + BALL_RADIUS;
 	innerlineTopLeftPosY <= lineTopLeftPosY + BALL_RADIUS;
 	// For getting the right final point of the line
-	// innervelocityX <= velocityX*FIXED_POINT_MULTIPLIER + lineTopLeftPosX + BALL_RADIUS; //* FIXED_POINT_MULTIPLIER;
-	// innervelocityY <= velocityY*FIXED_POINT_MULTIPLIER + lineTopLeftPosY + BALL_RADIUS; //* FIXED_POINT_MULTIPLIER;
-	innervelocityX <= velocityX + lineTopLeftPosX + BALL_RADIUS; //* FIXED_POINT_MULTIPLIER;
-	innervelocityY <= velocityY + lineTopLeftPosY + BALL_RADIUS; //* FIXED_POINT_MULTIPLIER;
+	innervelocityX <= velocityX + lineTopLeftPosX + BALL_RADIUS;
+	innervelocityY <= velocityY + lineTopLeftPosY + BALL_RADIUS;
 	
-	//innerKeyEnterIsPressed <= keyEnterIsPressed;
-
+	//Line Drawing condition
+	yDiffer <= innervelocityY - innerlineTopLeftPosY;
+	xDiffer <= innervelocityX - innerlineTopLeftPosX;
+	rightSide <= (yDiffer*(pixelX - innerlineTopLeftPosX) + LINE_THICKNESS);
+	middleSide <= xDiffer* (pixelY -innerlineTopLeftPosY);
+	leftSide <=  (yDiffer*(pixelX - innerlineTopLeftPosX) - LINE_THICKNESS);
 	
-//Line Drawing condition
-	
-	//TODO - adding an input DrawLineEnable from the game controller
-	//if(DrawLineEnable) begin
-		yDiffer <= innervelocityY - innerlineTopLeftPosY;
-		xDiffer <= innervelocityX - innerlineTopLeftPosX;
-		rightSide <= (yDiffer*(pixelX - innerlineTopLeftPosX) + LINE_THICKNESS); // FIXED_POINT_MULTIPLIER ;
-		middleSide <= xDiffer* (pixelY -innerlineTopLeftPosY);
-		leftSide <=  (yDiffer*(pixelX - innerlineTopLeftPosX) - LINE_THICKNESS); // FIXED_POINT_MULTIPLIER;
-		
-		if( (middleSide >= leftSide) && (middleSide <= rightSide)) begin
-			if (((pixelX >= innerlineTopLeftPosX) && (pixelX <= innervelocityX) )|| (pixelX <= innerlineTopLeftPosX) && (pixelX >= innervelocityX))
-				if (((pixelY >= innerlineTopLeftPosY) && (pixelY <= innervelocityY) )|| (pixelY <= innerlineTopLeftPosY) && (pixelY >= innervelocityY)) begin
-					/*if( (xDiffer*xDiffer + yDiffer*yDiffer ) <= 200*200 ) begin
-						innervelocityX <= lineTopLeftPosX + BALL_RADIUS;
-						innervelocityY <= lineTopLeftPosY + BALL_RADIUS;
-					end*/
-					RGBoutLine <= 8'b00000011;
-				end
+	if( (middleSide >= leftSide) && (middleSide <= rightSide)) begin
+		if (((pixelX >= innerlineTopLeftPosX) && (pixelX <= innervelocityX) )|| (pixelX <= innerlineTopLeftPosX) && (pixelX >= innervelocityX)) begin
+			if (((pixelY >= innerlineTopLeftPosY) && (pixelY <= innervelocityY) )|| (pixelY <= innerlineTopLeftPosY) && (pixelY >= innervelocityY)) begin
+				RGBoutLine <= 8'b00000011;
+			end
 		end
-	//end
-	//TODO - erasing the Line by keyEnterIsPressed
-	/*if(keyEnterIsPressed) begin
-	innervelocityX <= innerlineTopLeftPosX;
-	innervelocityY <= innervelocityY;
-	end*/
+	end
 end
 
 assign drawingRequestLine = (RGBoutLine != TRANSPARENT_ENCODING ) ? 1'b1 : 1'b0;
 
-endmodule 
+endmodule

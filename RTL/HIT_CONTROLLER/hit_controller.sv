@@ -8,7 +8,7 @@ module hit_controller (
 	input logic holesDR,
 	input logic [2:0] holeNumber,
 
-	//ball position and velocity (velocities are most important for ball and border collision detection)
+	// Ball position and velocity (velocities are most important for ball and border collision detection)
 	input logic [10:0] whiteBallTopLeftPosX,
 	input logic [10:0] whiteballTopLeftPosY,
 	input logic signed [10:0] whiteBallVelX,
@@ -23,7 +23,6 @@ module hit_controller (
 	output logic signed [10:0] whiteBallVelYOut,
 	output logic whiteBallCollisionOccurred,
 	output logic whiteBallHoleHit,
-	//output logic [2:0] whiteBallHoleNum,
 
 	output logic signed [10:0] redBallVelXOut,
 	output logic signed [10:0] redBallVelYOut,
@@ -48,22 +47,28 @@ logic borderRedBallCol;
 
 logic ballToBallCol;
 
-
 /*
 * Hole collision detection instantiation
 */
-/*
+
 hole_collision white_ball_hole_col(
 	.clk(clk),
 	.resetN(resetN),
-	.ballDR(),
-	input logic holesDR,
-	input logic [2:0] holeNumber,
-	
-	output logic holeHit,
-	output logic [2:0] holeNumberHit
+	.ballDR(whiteBallDR),
+	.holesDR(holesDR),
+	.holeNumber(holeNumber),
+	.holeHit(whiteBallHoleHit)
 );
-*/
+
+hole_collision red_ball_hole_col(
+	.clk(clk),
+	.resetN(resetN),
+	.ballDR(redBallDR),
+	.holesDR(holesDR),
+	.holeNumber(holeNumber),
+	.holeHit(redBallHoleHit),
+	.holeNumberHit(redBallHoleNum)
+);
 
 /*
 * Border collision detection instantiation
@@ -118,10 +123,7 @@ ball_collision ball_to_ball_col(
 	.ballVelYOut2(ballColRedBallVelY),
 	.collisionOccurred(ballToBallCol)
 );
-
-
-//TODO: add mux between cols of border and ball
-//for now
+ 
 always_comb begin
 	if(borderWhiteBallCol) begin
 		whiteBallVelXOut = borderWhiteBallVelX;

@@ -1,5 +1,4 @@
 module velocity_mux (
-	input logic clk, 
 	input logic velocityWriteEnableHit,
 	input logic velocityWriteEnableLine,
 	input logic signed [10:0] inVelocityXLine,
@@ -12,27 +11,24 @@ module velocity_mux (
 	output logic WriteEnable
 );
 
-logic signed [10:0] velocityX;
-logic signed [10:0] velocityY; 
-
-always_ff @(posedge clk)
-begin	
-
-	if(velocityWriteEnableHit) begin
-		velocityX <= inVelocityXHit;
-		velocityY <= inVelocityYHit;
+always_comb begin
+	if (velocityWriteEnableLine) begin
+		outVelocityX = inVelocityXLine;
+		outVelocityY = inVelocityYLine;
 	end
 	
-	else if(velocityWriteEnableLine) begin
-		velocityX <= inVelocityXLine;
-		velocityY <= inVelocityYLine;
+	else if (velocityWriteEnableHit) begin
+		outVelocityX = inVelocityXHit;
+		outVelocityY = inVelocityYHit;
 	end
 		
+	else begin
+		outVelocityX = 11'b0;
+		outVelocityY = 11'b0;
+	end
 end
 
-//outputs
-assign outVelocityX = velocityX;
-assign outVelocityY = velocityY;
+// Outputs
 assign WriteEnable = velocityWriteEnableHit | velocityWriteEnableLine;
 
-endmodule 
+endmodule

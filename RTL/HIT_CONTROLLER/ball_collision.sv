@@ -49,7 +49,7 @@ begin
 		ballVelYOut2 <= 11'b0;
 	end
 	else begin
-		// Default value
+		// Default values
 		collisionOccurred <= 1'b0;
 		ballVelXOut1 <= ballVelX1;
 		ballVelYOut1 <= ballVelY1;
@@ -82,7 +82,10 @@ begin
 		end
 		// Using the ballDR1 and ballDR2 for knowing the time to enable the flag is not enough because the balls are round and we can get a cenario
 		// where sometimes the DRs are "1" and sometimes the DRs are "0" in the same frame we are drawing
-		else if((normalVectorX >= BALL_DIAMETER || normalVectorX <= -BALL_DIAMETER) && (normalVectorY >= BALL_DIAMETER || normalVectorY <= -BALL_DIAMETER)) begin
+		if(normalVectorX > BALL_DIAMETER || normalVectorX < -BALL_DIAMETER) begin
+			flag <= 1'b1;
+		end
+		if(normalVectorY > BALL_DIAMETER || normalVectorY < -BALL_DIAMETER) begin
 			flag <= 1'b1;
 		end
 	end
