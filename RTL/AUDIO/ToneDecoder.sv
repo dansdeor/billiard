@@ -60,7 +60,37 @@ module	ToneDecoder	(
 	
 always_comb
 begin
+
+		if (keyEnterIsPressed) begin
+			kpreScaleValue = 10'h175; //do
+		end
 		
+		else if( key4IsPressed || key6IsPressed ) begin
+			kpreScaleValue = 10'h14C; //re
+		end
+	
+		else if( key2IsPressed || key8IsPressed ) begin
+			preScaleValue = 10'h128; //mi
+		end
+
+		else if (holeColOccured) begin
+			preScaleValue = 10'h0DD; //La
+		end
+		
+		else if (borderColOccured) begin
+			preScaleValue = 10'h18B; //si
+		end
+		
+		else if (ballToBallcolOccured) begin
+			preScaleValue = 10'h117; //fa
+		end
+
+		else 
+		preScaleValue = 10'h00;
+	  //none*/
+
+
+	/*
 	if(keyAudioRequest == 1'b1)
 		preScaleValue = 10'h175; //do
 		

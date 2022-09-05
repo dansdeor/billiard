@@ -11,10 +11,15 @@ module sound_mux (
 	
 	input logic holeColOccured,
 	input logic borderColOccured,
+	input logic ballToBallcolOccured
 	
-	output logic keyAudioRequest,
+	output logic keyXAudioRequest,
+	output logic keyYAudioRequest,
+	output logic keyEnterAudioRequest,
 	output logic holeColAudioRequest,
-	output logic borderColAudioRequest
+	output logic borderColAudioRequest,
+	output logic ballToBallColAudioRequest
+	
 );
 
 always_comb //or negedge resetN) //do I need non-blocking implamation?
@@ -31,15 +36,31 @@ begin
 	borderColAudioRequest = 1'b0;
 	
 	//else begin
-		if (key2IsPressed || key4IsPressed || key6IsPressed || key8IsPressed || keyEnterIsPressed) begin
-			keyAudioRequest = 1'b1;
+		if (keyEnterIsPressed) begin
+			keyEnterRequest = 1'b1;
 		end
-		else if (holeColOccured) begin
+		
+		if( key4IsPressed || key6IsPressed ) begin
+			keyXAudioRequest = 1'b1;
+		end
+	
+		if( key2IsPressed || key8IsPressed ) begin
+			keyXAudioRequest = 1'b1;
+		end
+
+		if (holeColOccured) begin
 			holeColAudioRequest = 1'b1;
 		end
-		else if (borderColOccured) begin
+		
+		if (borderColOccured) begin
 			borderColAudioRequest = 1'b1;
 		end
+		
+		if (ballToBallcolOccured) begin
+			ballToBallColAudioRequest = 1'b1;
+		end
+	
+		
 	//end
 end
 
