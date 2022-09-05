@@ -30,13 +30,17 @@ module	ToneDecoder	(
 10'h18B,   // decimal =395.46      Hz =246.94  si
 */
 	
-parameter int DURATION = 2;
+parameter int DURATION = 10;
+
+logic flagX, flagY;
 	
 int durationCounter;
 	
 always_ff @(posedge clk or negedge resetN) begin
 	if(!resetN) begin
 		durationCounter <= 0;
+		flagX <= 1'b1;
+		flagY <= 1'b1;
 	end
 	else begin
 		if(startOfFrame) begin
@@ -53,27 +57,35 @@ always_ff @(posedge clk or negedge resetN) begin
 			preScaleValue <= 10'h175; //do
 		end
 		
-		else if(keyXAudioRequest) begin
+		if(keyXAudioRequest && flagX) begin
+			flagX <= 1'b0;
 			durationCounter <= DURATION;
 			preScaleValue <= 10'h14C; //re
 		end
+		if(!keyXAudioRequest) begin
+			flagX <= 1'b1;
+		end
 	
-		else if(keyYAudioRequest) begin
+		if(keyYAudioRequest && flagY) begin
+			flagY <= 1'b0;
 			durationCounter <= DURATION;
 			preScaleValue <= 10'h128; //mi
 		end
-
-		else if(holeColAudioRequest) begin
+		if(!keyYAudioRequest) begin
+			flagY <= 1'b1;
+		end
+		
+		if(holeColAudioRequest) begin
 			durationCounter <= DURATION;
 			preScaleValue <= 10'h0DD; //La
 		end
 		
-		else if(borderColAudioRequest) begin
+		if(borderColAudioRequest) begin
 			durationCounter <= DURATION;
 			preScaleValue <= 10'h18B; //si
 		end
 		
-		else if(ballToBallColAudioRequest) begin
+		if(ballToBallColAudioRequest) begin
 			durationCounter <= DURATION;
 			preScaleValue <= 10'h117; //fa
 		end

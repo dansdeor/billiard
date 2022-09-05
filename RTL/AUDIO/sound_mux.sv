@@ -28,18 +28,16 @@ always_comb begin
 	borderColAudioRequest = 1'b0;
 	ballToBallColAudioRequest = 1'b0;
 	
-	if(keyRisingEdge) begin
-		if (keyEnterIsPressed) begin
-			keyEnterAudioRequest = 1'b1;
-		end
-		
-		if(key4IsPressed || key6IsPressed) begin
-			keyXAudioRequest = 1'b1;
-		end
+	if (keyRisingEdge && keyEnterIsPressed) begin
+		keyEnterAudioRequest = 1'b1;
+	end
 	
-		if(key2IsPressed || key8IsPressed) begin
-			keyXAudioRequest = 1'b1;
-		end
+	if(key4IsPressed || key6IsPressed) begin
+		keyXAudioRequest = 1'b1;
+	end
+
+	if(key2IsPressed || key8IsPressed) begin
+		keyXAudioRequest = 1'b1;
 	end
 	
 	if (holeColOccured) begin
