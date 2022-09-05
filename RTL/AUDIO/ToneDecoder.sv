@@ -7,9 +7,12 @@
 module	ToneDecoder	(	
 			//input	logic [3:0] tone, 
 			//input clk,
-			input logic keyAudioRequest,
+			input logic keyXAudioRequest,
+			input logic keyYAudioRequest,
+			input logic keyEnterAudioRequest,
 			input logic holeColAudioRequest,
 			input logic borderColAudioRequest,
+			input logic ballToBallColAudioRequest
 			output logic [9:0]	preScaleValue
 );
 
