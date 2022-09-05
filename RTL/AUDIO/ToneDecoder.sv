@@ -7,7 +7,7 @@
 module	ToneDecoder	(	
 			//input	logic [3:0] tone, 
 			//input clk,
-			input keyRisingEdge
+			//input keyRisingEdge
 			input logic keyXAudioRequest,
 			input logic keyYAudioRequest,
 			input logic keyEnterAudioRequest,
@@ -65,9 +65,9 @@ module	ToneDecoder	(
 always_comb
 begin
 
-	if(keyRisingEdge) begin
-		if (keyEnterIsPressed) begin
-			kpreScaleValue = 10'h175; //do
+	//if(keyRisingEdge) begin
+		if (keyEnterAudioRequest) begin
+			preScaleValue = 10'h175; //do
 		end
 		
 		else if( keyXAudioRequest ) begin
@@ -77,11 +77,11 @@ begin
 		else if(keyYAudioRequest ) begin
 			preScaleValue = 10'h128; //mi
 		end
-	end
+	//end
 	
-	else begin
+	//else begin
 
-		if (holeColOccured) begin
+		else if (holeColAudioRequest) begin
 			preScaleValue = 10'h0DD; //La
 		end
 		
@@ -93,10 +93,10 @@ begin
 			preScaleValue = 10'h117; //fa
 		end
 
-		else 
+		else begin
 		preScaleValue = 10'h00;
 	  //none*/
-	 end
+		end
 
 
 	/*
