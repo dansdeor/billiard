@@ -225,6 +225,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/objects_mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/velocity_mux.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/BALL/ball.sv
@@ -239,9 +240,9 @@ set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/hole_number.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/statistics.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/board_background.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/BACKGROUND/borders.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/hit_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/border_collision.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/hole_collision.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/hit_controller.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/HIT_CONTROLLER/ball_collision.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/VGA/VGA_Controller.sv
 set_global_assignment -name BDF_FILE RTL/BILLIARD_GAME_ORIT.bdf
@@ -254,4 +255,3 @@ set_global_assignment -name QIP_FILE clock_divider.qip
 set_global_assignment -name VERILOG_FILE clock_divider.v -library clock_divider
 set_global_assignment -name TCL_SCRIPT_FILE pin_layout.tcl
 set_global_assignment -name QXP_FILE RTL/KEYBOARD/KEYBOARD_INTERFACE.qxp
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

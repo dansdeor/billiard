@@ -8,7 +8,7 @@ module hit_controller (
 	input logic holesDR,
 	input logic [2:0] holeNumber,
 
-	//ball position and velocity (velocities are most important for ball and border collision detection)
+	// Ball position and velocity (velocities are most important for ball and border collision detection)
 	input logic [10:0] whiteBallTopLeftPosX,
 	input logic [10:0] whiteballTopLeftPosY,
 	input logic signed [10:0] whiteBallVelX,

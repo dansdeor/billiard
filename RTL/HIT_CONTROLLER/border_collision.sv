@@ -53,6 +53,7 @@ always_ff @(posedge clk or negedge resetN) begin
 				ballVelYOut <= -ballVelY;
 			end	
 		end
+		// TODO: check if we can delete this flag
 		if(!(ballDR && bordersDR)) begin //((ballTopLeftPosX > LEFT_OFFSET || ballTopLeftPosX + BALL_DIAMETER < RIGHT_OFFSET) && (ballTopLeftPosY > TOP_OFFSET || ballTopLeftPosY + BALL_DIAMETER < DOWN_OFFSET))) begin
 			flag <= 1'b1;
 		end

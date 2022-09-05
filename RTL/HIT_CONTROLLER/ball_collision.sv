@@ -49,7 +49,7 @@ begin
 		ballVelYOut2 <= 11'b0;
 	end
 	else begin
-		// Default value
+		// Default values
 		collisionOccurred <= 1'b0;
 		ballVelXOut1 <= ballVelX1;
 		ballVelYOut1 <= ballVelY1;
