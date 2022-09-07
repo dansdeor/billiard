@@ -46,7 +46,7 @@
 *.qws
 *.rpt
 *.smsg
-*.sof
+.sof
 *.qsf
 *.sopc_builder
 *.summary
@@ -65,6 +65,5 @@
 */*_sim/
 incremental_db/
 db/
-output_files/
 PLLJ_PLLSPE_INFO.txt
 c5_pin_model_dump.txt

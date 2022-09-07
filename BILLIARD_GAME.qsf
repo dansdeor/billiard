@@ -160,7 +160,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
-set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name SMART_RECOMPILE OFF
 set_global_assignment -name BDF_FILE RTL/AUDIO/TOP_AUDIO.bdf
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/AUDIO/ToneDecoder.sv
 set_global_assignment -name SYSTEMVERILOG_FILE RTL/AUDIO/sound_mux.sv

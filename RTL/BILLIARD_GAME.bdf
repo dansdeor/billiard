@@ -210,7 +210,7 @@ agreement for further details.
 )
 (pin
 	(output)
-	(rect 1928 776 2104 792)
+	(rect 1904 832 2080 848)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "OVGA[28..0]" (rect 90 0 152 12)(font "Arial" ))
 	(pt 0 8)
@@ -341,7 +341,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 1688 704 1896 816)
+	(rect 1664 760 1872 872)
 	(text "VGA_Controller" (rect 5 0 80 12)(font "Arial" ))
 	(text "VGA_Controller" (rect 8 96 83 108)(font "Arial" ))
 	(port
@@ -970,218 +970,6 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect -48 1696 184 1840)
-	(text "statistics" (rect 5 0 49 12)(font "Arial" ))
-	(text "statistics" (rect 8 128 48 145)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "score[7..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "score[7..0]" (rect 21 75 74 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "attempts[7..0]" (rect 0 0 69 12)(font "Arial" ))
-		(text "attempts[7..0]" (rect 21 91 90 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "gameFinished" (rect 0 0 68 12)(font "Arial" ))
-		(text "gameFinished" (rect 21 107 89 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 232 32)
-		(output)
-		(text "drawingRequestStat" (rect 0 0 97 12)(font "Arial" ))
-		(text "drawingRequestStat" (rect 129 27 226 39)(font "Arial" ))
-		(line (pt 232 32)(pt 216 32))
-	)
-	(port
-		(pt 232 48)
-		(output)
-		(text "RGBoutStat[7..0]" (rect 0 0 84 12)(font "Arial" ))
-		(text "RGBoutStat[7..0]" (rect 140 43 224 55)(font "Arial" ))
-		(line (pt 232 48)(pt 216 48)(line_width 3))
-	)
-	(parameter
-		"TOP_OFFSET"
-		"top_offset"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"DOWN_OFFSET"
-		"down_offset"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"LEFT_OFFSET"
-		"left_offset"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"RIGHT_OFFSET"
-		"right_offset"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 216 128))
-	)
-	(annotation_block (parameter)(rect 48 1784 296 1879))
-)
-(symbol
-	(rect -48 1488 216 1696)
-	(text "game_controller" (rect 5 0 82 12)(font "Arial" ))
-	(text "game_controller" (rect 8 192 85 204)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
-		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "startOfFrame" (rect 0 0 67 12)(font "Arial" ))
-		(text "startOfFrame" (rect 21 59 88 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "lineWriteEnable" (rect 0 0 75 12)(font "Arial" ))
-		(text "lineWriteEnable" (rect 21 75 96 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "whiteBallStopped" (rect 0 0 82 12)(font "Arial" ))
-		(text "whiteBallStopped" (rect 21 91 103 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "redBallStopped" (rect 0 0 73 12)(font "Arial" ))
-		(text "redBallStopped" (rect 21 107 94 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "whiteBallHoleHit" (rect 0 0 79 12)(font "Arial" ))
-		(text "whiteBallHoleHit" (rect 21 123 100 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128))
-	)
-	(port
-		(pt 0 144)
-		(input)
-		(text "redBallHoleHit" (rect 0 0 69 12)(font "Arial" ))
-		(text "redBallHoleHit" (rect 21 139 90 151)(font "Arial" ))
-		(line (pt 0 144)(pt 16 144))
-	)
-	(port
-		(pt 0 160)
-		(input)
-		(text "redBallHoleNum[2..0]" (rect 0 0 105 12)(font "Arial" ))
-		(text "redBallHoleNum[2..0]" (rect 21 155 126 167)(font "Arial" ))
-		(line (pt 0 160)(pt 16 160)(line_width 3))
-	)
-	(port
-		(pt 264 32)
-		(output)
-		(text "whiteBallShow" (rect 0 0 68 12)(font "Arial" ))
-		(text "whiteBallShow" (rect 186 27 254 39)(font "Arial" ))
-		(line (pt 264 32)(pt 248 32))
-	)
-	(port
-		(pt 264 48)
-		(output)
-		(text "redBallShow" (rect 0 0 59 12)(font "Arial" ))
-		(text "redBallShow" (rect 194 43 253 55)(font "Arial" ))
-		(line (pt 264 48)(pt 248 48))
-	)
-	(port
-		(pt 264 64)
-		(output)
-		(text "drawLine" (rect 0 0 42 12)(font "Arial" ))
-		(text "drawLine" (rect 208 59 250 71)(font "Arial" ))
-		(line (pt 264 64)(pt 248 64))
-	)
-	(port
-		(pt 264 80)
-		(output)
-		(text "holeNumToHit[2..0]" (rect 0 0 95 12)(font "Arial" ))
-		(text "holeNumToHit[2..0]" (rect 163 75 258 87)(font "Arial" ))
-		(line (pt 264 80)(pt 248 80)(line_width 3))
-	)
-	(port
-		(pt 264 96)
-		(output)
-		(text "score[7..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "score[7..0]" (rect 199 91 252 103)(font "Arial" ))
-		(line (pt 264 96)(pt 248 96)(line_width 3))
-	)
-	(port
-		(pt 264 112)
-		(output)
-		(text "attempts[7..0]" (rect 0 0 69 12)(font "Arial" ))
-		(text "attempts[7..0]" (rect 185 107 254 119)(font "Arial" ))
-		(line (pt 264 112)(pt 248 112)(line_width 3))
-	)
-	(port
-		(pt 264 128)
-		(output)
-		(text "resetGameN" (rect 0 0 62 12)(font "Arial" ))
-		(text "resetGameN" (rect 191 123 253 135)(font "Arial" ))
-		(line (pt 264 128)(pt 248 128))
-	)
-	(port
-		(pt 264 144)
-		(output)
-		(text "gameFinished" (rect 0 0 68 12)(font "Arial" ))
-		(text "gameFinished" (rect 186 139 254 151)(font "Arial" ))
-		(line (pt 264 144)(pt 248 144))
-	)
-	(drawing
-		(rectangle (rect 16 16 248 192))
-	)
-)
-(symbol
 	(rect 432 584 496 632)
 	(text "AND2" (rect 1 0 25 10)(font "Arial" (font_size 6)))
 	(text "andW" (rect 3 37 31 54)(font "Intel Clear" ))
@@ -1246,279 +1034,7 @@ agreement for further details.
 	)
 )
 (symbol
-	(rect 568 336 824 544)
-	(text "ball" (rect 5 0 21 12)(font "Arial" ))
-	(text "red_ball" (rect 8 192 45 204)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
-		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "startOfFrame" (rect 0 0 67 12)(font "Arial" ))
-		(text "startOfFrame" (rect 21 59 88 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 75 81 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 91 83 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "ballShow" (rect 0 0 42 12)(font "Arial" ))
-		(text "ballShow" (rect 21 107 63 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "velocityWriteEnable" (rect 0 0 99 12)(font "Arial" ))
-		(text "velocityWriteEnable" (rect 21 123 120 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128))
-	)
-	(port
-		(pt 0 144)
-		(input)
-		(text "inVelocityX[10..0]" (rect 0 0 86 12)(font "Arial" ))
-		(text "inVelocityX[10..0]" (rect 21 139 107 151)(font "Arial" ))
-		(line (pt 0 144)(pt 16 144)(line_width 3))
-	)
-	(port
-		(pt 0 160)
-		(input)
-		(text "inVelocityY[10..0]" (rect 0 0 88 12)(font "Arial" ))
-		(text "inVelocityY[10..0]" (rect 21 155 109 167)(font "Arial" ))
-		(line (pt 0 160)(pt 16 160)(line_width 3))
-	)
-	(port
-		(pt 256 32)
-		(output)
-		(text "drawingRequestBall" (rect 0 0 95 12)(font "Arial" ))
-		(text "drawingRequestBall" (rect 155 27 250 39)(font "Arial" ))
-		(line (pt 256 32)(pt 240 32))
-	)
-	(port
-		(pt 256 48)
-		(output)
-		(text "RGBoutBall[7..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "RGBoutBall[7..0]" (rect 166 43 248 55)(font "Arial" ))
-		(line (pt 256 48)(pt 240 48)(line_width 3))
-	)
-	(port
-		(pt 256 64)
-		(output)
-		(text "outVelocityX[10..0]" (rect 0 0 93 12)(font "Arial" ))
-		(text "outVelocityX[10..0]" (rect 157 59 250 71)(font "Arial" ))
-		(line (pt 256 64)(pt 240 64)(line_width 3))
-	)
-	(port
-		(pt 256 80)
-		(output)
-		(text "outVelocityY[10..0]" (rect 0 0 95 12)(font "Arial" ))
-		(text "outVelocityY[10..0]" (rect 155 75 250 87)(font "Arial" ))
-		(line (pt 256 80)(pt 240 80)(line_width 3))
-	)
-	(port
-		(pt 256 96)
-		(output)
-		(text "topLeftPosX[10..0]" (rect 0 0 92 12)(font "Arial" ))
-		(text "topLeftPosX[10..0]" (rect 158 91 250 103)(font "Arial" ))
-		(line (pt 256 96)(pt 240 96)(line_width 3))
-	)
-	(port
-		(pt 256 112)
-		(output)
-		(text "topLeftPosY[10..0]" (rect 0 0 94 12)(font "Arial" ))
-		(text "topLeftPosY[10..0]" (rect 156 107 250 119)(font "Arial" ))
-		(line (pt 256 112)(pt 240 112)(line_width 3))
-	)
-	(port
-		(pt 256 128)
-		(output)
-		(text "ballStopped" (rect 0 0 56 12)(font "Arial" ))
-		(text "ballStopped" (rect 188 123 244 135)(font "Arial" ))
-		(line (pt 256 128)(pt 240 128))
-	)
-	(parameter
-		"BALL_COLOR"
-		"red_color"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"INITIAL_POSITION_X"
-		"100"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"INITIAL_POSITION_Y"
-		"100"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 240 192))
-	)
-	(annotation_block (parameter)(rect 832 480 1088 556))
-)
-(symbol
-	(rect 568 560 824 768)
-	(text "ball" (rect 5 0 21 12)(font "Arial" ))
-	(text "white_ball" (rect 8 192 55 204)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
-		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "startOfFrame" (rect 0 0 67 12)(font "Arial" ))
-		(text "startOfFrame" (rect 21 59 88 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "pixelX[10..0]" (rect 21 75 81 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
-		(text "pixelY[10..0]" (rect 21 91 83 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "ballShow" (rect 0 0 42 12)(font "Arial" ))
-		(text "ballShow" (rect 21 107 63 119)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "velocityWriteEnable" (rect 0 0 99 12)(font "Arial" ))
-		(text "velocityWriteEnable" (rect 21 123 120 135)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128))
-	)
-	(port
-		(pt 0 144)
-		(input)
-		(text "inVelocityX[10..0]" (rect 0 0 86 12)(font "Arial" ))
-		(text "inVelocityX[10..0]" (rect 21 139 107 151)(font "Arial" ))
-		(line (pt 0 144)(pt 16 144)(line_width 3))
-	)
-	(port
-		(pt 0 160)
-		(input)
-		(text "inVelocityY[10..0]" (rect 0 0 88 12)(font "Arial" ))
-		(text "inVelocityY[10..0]" (rect 21 155 109 167)(font "Arial" ))
-		(line (pt 0 160)(pt 16 160)(line_width 3))
-	)
-	(port
-		(pt 256 32)
-		(output)
-		(text "drawingRequestBall" (rect 0 0 95 12)(font "Arial" ))
-		(text "drawingRequestBall" (rect 155 27 250 39)(font "Arial" ))
-		(line (pt 256 32)(pt 240 32))
-	)
-	(port
-		(pt 256 48)
-		(output)
-		(text "RGBoutBall[7..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "RGBoutBall[7..0]" (rect 166 43 248 55)(font "Arial" ))
-		(line (pt 256 48)(pt 240 48)(line_width 3))
-	)
-	(port
-		(pt 256 64)
-		(output)
-		(text "outVelocityX[10..0]" (rect 0 0 93 12)(font "Arial" ))
-		(text "outVelocityX[10..0]" (rect 157 59 250 71)(font "Arial" ))
-		(line (pt 256 64)(pt 240 64)(line_width 3))
-	)
-	(port
-		(pt 256 80)
-		(output)
-		(text "outVelocityY[10..0]" (rect 0 0 95 12)(font "Arial" ))
-		(text "outVelocityY[10..0]" (rect 155 75 250 87)(font "Arial" ))
-		(line (pt 256 80)(pt 240 80)(line_width 3))
-	)
-	(port
-		(pt 256 96)
-		(output)
-		(text "topLeftPosX[10..0]" (rect 0 0 92 12)(font "Arial" ))
-		(text "topLeftPosX[10..0]" (rect 158 91 250 103)(font "Arial" ))
-		(line (pt 256 96)(pt 240 96)(line_width 3))
-	)
-	(port
-		(pt 256 112)
-		(output)
-		(text "topLeftPosY[10..0]" (rect 0 0 94 12)(font "Arial" ))
-		(text "topLeftPosY[10..0]" (rect 156 107 250 119)(font "Arial" ))
-		(line (pt 256 112)(pt 240 112)(line_width 3))
-	)
-	(port
-		(pt 256 128)
-		(output)
-		(text "ballStopped" (rect 0 0 56 12)(font "Arial" ))
-		(text "ballStopped" (rect 188 123 244 135)(font "Arial" ))
-		(line (pt 256 128)(pt 240 128))
-	)
-	(parameter
-		"BALL_COLOR"
-		"white_color"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"INITIAL_POSITION_X"
-		"200"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(parameter
-		"INITIAL_POSITION_Y"
-		"200"
-		""
-		(type "PARAMETER_UNSIGNED_DEC")	)
-	(drawing
-		(rectangle (rect 16 16 240 192))
-	)
-	(annotation_block (parameter)(rect 832 704 1100 780))
-)
-(symbol
-	(rect 1368 704 1616 1008)
+	(rect 1344 760 1592 1064)
 	(text "objects_mux" (rect 5 0 67 12)(font "Arial" ))
 	(text "objects_mux" (rect 8 288 67 305)(font "Intel Clear" ))
 	(port
@@ -1865,7 +1381,7 @@ agreement for further details.
 (symbol
 	(rect 616 1400 880 1656)
 	(text "TOP_AUDIO" (rect 5 0 78 19)(font "Intel Clear" (font_size 8)))
-	(text "inst3" (rect 8 235 30 252)(font "Intel Clear" ))
+	(text "AUDIO" (rect 8 235 39 252)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -1967,6 +1483,517 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 248 240))
 	)
+)
+(symbol
+	(rect 480 1704 712 1880)
+	(text "statistics" (rect 5 0 49 12)(font "Arial" ))
+	(text "statistics" (rect 8 160 52 172)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "pixelX[10..0]" (rect 21 43 81 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "pixelY[10..0]" (rect 21 59 83 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "score[7..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "score[7..0]" (rect 21 75 74 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "attempts[7..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "attempts[7..0]" (rect 21 91 90 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "gameStarted" (rect 0 0 62 12)(font "Arial" ))
+		(text "gameStarted" (rect 21 107 83 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "gameFinished" (rect 0 0 68 12)(font "Arial" ))
+		(text "gameFinished" (rect 21 123 89 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 232 32)
+		(output)
+		(text "drawingRequestStat" (rect 0 0 97 12)(font "Arial" ))
+		(text "drawingRequestStat" (rect 129 27 226 39)(font "Arial" ))
+		(line (pt 232 32)(pt 216 32))
+	)
+	(port
+		(pt 232 48)
+		(output)
+		(text "RGBoutStat[7..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "RGBoutStat[7..0]" (rect 140 43 224 55)(font "Arial" ))
+		(line (pt 232 48)(pt 216 48)(line_width 3))
+	)
+	(parameter
+		"TOP_OFFSET"
+		"top_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"DOWN_OFFSET"
+		"down_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"LEFT_OFFSET"
+		"left_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"RIGHT_OFFSET"
+		"right_offset"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 216 160))
+	)
+	(annotation_block (parameter)(rect 832 1744 1080 1839))
+)
+(symbol
+	(rect -48 1560 216 1768)
+	(text "game_controller" (rect 5 0 82 12)(font "Arial" ))
+	(text "game_controller" (rect 8 192 85 204)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
+		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "startOfFrame" (rect 0 0 67 12)(font "Arial" ))
+		(text "startOfFrame" (rect 21 59 88 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "keyRisingEdge" (rect 0 0 74 12)(font "Arial" ))
+		(text "keyRisingEdge" (rect 21 75 95 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "lineWriteEnable" (rect 0 0 75 12)(font "Arial" ))
+		(text "lineWriteEnable" (rect 21 91 96 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "whiteBallStopped" (rect 0 0 82 12)(font "Arial" ))
+		(text "whiteBallStopped" (rect 21 107 103 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "redBallStopped" (rect 0 0 73 12)(font "Arial" ))
+		(text "redBallStopped" (rect 21 123 94 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "whiteBallHoleHit" (rect 0 0 79 12)(font "Arial" ))
+		(text "whiteBallHoleHit" (rect 21 139 100 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "redBallHoleHit" (rect 0 0 69 12)(font "Arial" ))
+		(text "redBallHoleHit" (rect 21 155 90 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "redBallHoleNum[2..0]" (rect 0 0 105 12)(font "Arial" ))
+		(text "redBallHoleNum[2..0]" (rect 21 171 126 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 3))
+	)
+	(port
+		(pt 264 32)
+		(output)
+		(text "whiteBallShow" (rect 0 0 68 12)(font "Arial" ))
+		(text "whiteBallShow" (rect 186 27 254 39)(font "Arial" ))
+		(line (pt 264 32)(pt 248 32))
+	)
+	(port
+		(pt 264 48)
+		(output)
+		(text "redBallShow" (rect 0 0 59 12)(font "Arial" ))
+		(text "redBallShow" (rect 194 43 253 55)(font "Arial" ))
+		(line (pt 264 48)(pt 248 48))
+	)
+	(port
+		(pt 264 64)
+		(output)
+		(text "drawLine" (rect 0 0 42 12)(font "Arial" ))
+		(text "drawLine" (rect 208 59 250 71)(font "Arial" ))
+		(line (pt 264 64)(pt 248 64))
+	)
+	(port
+		(pt 264 80)
+		(output)
+		(text "holeNumToHit[2..0]" (rect 0 0 95 12)(font "Arial" ))
+		(text "holeNumToHit[2..0]" (rect 163 75 258 87)(font "Arial" ))
+		(line (pt 264 80)(pt 248 80)(line_width 3))
+	)
+	(port
+		(pt 264 96)
+		(output)
+		(text "score[7..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "score[7..0]" (rect 199 91 252 103)(font "Arial" ))
+		(line (pt 264 96)(pt 248 96)(line_width 3))
+	)
+	(port
+		(pt 264 112)
+		(output)
+		(text "attempts[7..0]" (rect 0 0 69 12)(font "Arial" ))
+		(text "attempts[7..0]" (rect 185 107 254 119)(font "Arial" ))
+		(line (pt 264 112)(pt 248 112)(line_width 3))
+	)
+	(port
+		(pt 264 128)
+		(output)
+		(text "resetGameN" (rect 0 0 62 12)(font "Arial" ))
+		(text "resetGameN" (rect 191 123 253 135)(font "Arial" ))
+		(line (pt 264 128)(pt 248 128))
+	)
+	(port
+		(pt 264 144)
+		(output)
+		(text "gameStarted" (rect 0 0 62 12)(font "Arial" ))
+		(text "gameStarted" (rect 191 139 253 151)(font "Arial" ))
+		(line (pt 264 144)(pt 248 144))
+	)
+	(port
+		(pt 264 160)
+		(output)
+		(text "gameFinished" (rect 0 0 68 12)(font "Arial" ))
+		(text "gameFinished" (rect 186 155 254 167)(font "Arial" ))
+		(line (pt 264 160)(pt 248 160))
+	)
+	(parameter
+		"ATTEMPTS_INIT"
+		"32"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 248 192))
+	)
+	(annotation_block (parameter)(rect -16 1464 198 1502))
+)
+(symbol
+	(rect 568 560 824 768)
+	(text "ball" (rect 5 0 21 12)(font "Arial" ))
+	(text "white_ball" (rect 8 192 55 204)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
+		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "startOfFrame" (rect 0 0 67 12)(font "Arial" ))
+		(text "startOfFrame" (rect 21 59 88 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "pixelX[10..0]" (rect 21 75 81 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "pixelY[10..0]" (rect 21 91 83 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "ballShow" (rect 0 0 42 12)(font "Arial" ))
+		(text "ballShow" (rect 21 107 63 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "velocityWriteEnable" (rect 0 0 99 12)(font "Arial" ))
+		(text "velocityWriteEnable" (rect 21 123 120 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "inVelocityX[10..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "inVelocityX[10..0]" (rect 21 139 107 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "inVelocityY[10..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "inVelocityY[10..0]" (rect 21 155 109 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 256 32)
+		(output)
+		(text "drawingRequestBall" (rect 0 0 95 12)(font "Arial" ))
+		(text "drawingRequestBall" (rect 155 27 250 39)(font "Arial" ))
+		(line (pt 256 32)(pt 240 32))
+	)
+	(port
+		(pt 256 48)
+		(output)
+		(text "RGBoutBall[7..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "RGBoutBall[7..0]" (rect 166 43 248 55)(font "Arial" ))
+		(line (pt 256 48)(pt 240 48)(line_width 3))
+	)
+	(port
+		(pt 256 64)
+		(output)
+		(text "outVelocityX[10..0]" (rect 0 0 93 12)(font "Arial" ))
+		(text "outVelocityX[10..0]" (rect 157 59 250 71)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64)(line_width 3))
+	)
+	(port
+		(pt 256 80)
+		(output)
+		(text "outVelocityY[10..0]" (rect 0 0 95 12)(font "Arial" ))
+		(text "outVelocityY[10..0]" (rect 155 75 250 87)(font "Arial" ))
+		(line (pt 256 80)(pt 240 80)(line_width 3))
+	)
+	(port
+		(pt 256 96)
+		(output)
+		(text "topLeftPosX[10..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "topLeftPosX[10..0]" (rect 158 91 250 103)(font "Arial" ))
+		(line (pt 256 96)(pt 240 96)(line_width 3))
+	)
+	(port
+		(pt 256 112)
+		(output)
+		(text "topLeftPosY[10..0]" (rect 0 0 94 12)(font "Arial" ))
+		(text "topLeftPosY[10..0]" (rect 156 107 250 119)(font "Arial" ))
+		(line (pt 256 112)(pt 240 112)(line_width 3))
+	)
+	(port
+		(pt 256 128)
+		(output)
+		(text "ballStopped" (rect 0 0 56 12)(font "Arial" ))
+		(text "ballStopped" (rect 188 123 244 135)(font "Arial" ))
+		(line (pt 256 128)(pt 240 128))
+	)
+	(parameter
+		"BALL_COLOR"
+		"white_color"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"INITIAL_POSITION_X"
+		"right_pos"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"INITIAL_POSITION_Y"
+		"height_middle_pos"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 240 192))
+	)
+	(annotation_block (parameter)(rect 832 704 1139 780))
+)
+(symbol
+	(rect 568 336 824 544)
+	(text "ball" (rect 5 0 21 12)(font "Arial" ))
+	(text "red_ball" (rect 8 192 45 204)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "resetN" (rect 0 0 33 12)(font "Arial" ))
+		(text "resetN" (rect 21 43 54 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "startOfFrame" (rect 0 0 67 12)(font "Arial" ))
+		(text "startOfFrame" (rect 21 59 88 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "pixelX[10..0]" (rect 0 0 60 12)(font "Arial" ))
+		(text "pixelX[10..0]" (rect 21 75 81 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "pixelY[10..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "pixelY[10..0]" (rect 21 91 83 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "ballShow" (rect 0 0 42 12)(font "Arial" ))
+		(text "ballShow" (rect 21 107 63 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "velocityWriteEnable" (rect 0 0 99 12)(font "Arial" ))
+		(text "velocityWriteEnable" (rect 21 123 120 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "inVelocityX[10..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "inVelocityX[10..0]" (rect 21 139 107 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 3))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "inVelocityY[10..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "inVelocityY[10..0]" (rect 21 155 109 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 256 32)
+		(output)
+		(text "drawingRequestBall" (rect 0 0 95 12)(font "Arial" ))
+		(text "drawingRequestBall" (rect 155 27 250 39)(font "Arial" ))
+		(line (pt 256 32)(pt 240 32))
+	)
+	(port
+		(pt 256 48)
+		(output)
+		(text "RGBoutBall[7..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "RGBoutBall[7..0]" (rect 166 43 248 55)(font "Arial" ))
+		(line (pt 256 48)(pt 240 48)(line_width 3))
+	)
+	(port
+		(pt 256 64)
+		(output)
+		(text "outVelocityX[10..0]" (rect 0 0 93 12)(font "Arial" ))
+		(text "outVelocityX[10..0]" (rect 157 59 250 71)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64)(line_width 3))
+	)
+	(port
+		(pt 256 80)
+		(output)
+		(text "outVelocityY[10..0]" (rect 0 0 95 12)(font "Arial" ))
+		(text "outVelocityY[10..0]" (rect 155 75 250 87)(font "Arial" ))
+		(line (pt 256 80)(pt 240 80)(line_width 3))
+	)
+	(port
+		(pt 256 96)
+		(output)
+		(text "topLeftPosX[10..0]" (rect 0 0 92 12)(font "Arial" ))
+		(text "topLeftPosX[10..0]" (rect 158 91 250 103)(font "Arial" ))
+		(line (pt 256 96)(pt 240 96)(line_width 3))
+	)
+	(port
+		(pt 256 112)
+		(output)
+		(text "topLeftPosY[10..0]" (rect 0 0 94 12)(font "Arial" ))
+		(text "topLeftPosY[10..0]" (rect 156 107 250 119)(font "Arial" ))
+		(line (pt 256 112)(pt 240 112)(line_width 3))
+	)
+	(port
+		(pt 256 128)
+		(output)
+		(text "ballStopped" (rect 0 0 56 12)(font "Arial" ))
+		(text "ballStopped" (rect 188 123 244 135)(font "Arial" ))
+		(line (pt 256 128)(pt 240 128))
+	)
+	(parameter
+		"BALL_COLOR"
+		"red_color"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"INITIAL_POSITION_X"
+		"left_pos"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(parameter
+		"INITIAL_POSITION_Y"
+		"height_middle_pos"
+		""
+		(type "PARAMETER_UNSIGNED_DEC")	)
+	(drawing
+		(rectangle (rect 16 16 240 192))
+	)
+	(annotation_block (parameter)(rect 832 480 1139 556))
 )
 (connector
 	(text "clk" (rect 282 192 296 209)(font "Intel Clear" ))
@@ -2266,273 +2293,9 @@ agreement for further details.
 	(pt 1360 1768)
 )
 (connector
-	(text "PixelY[10..0]" (rect 1906 736 1966 753)(font "Intel Clear" ))
-	(pt 1896 752)
-	(pt 1960 752)
-	(bus)
-)
-(connector
-	(text "startOfFrame" (rect 1906 752 1969 769)(font "Intel Clear" ))
-	(pt 1896 768)
-	(pt 1960 768)
-)
-(connector
-	(pt 1896 784)
-	(pt 1928 784)
-	(bus)
-)
-(connector
-	(pt 1616 736)
-	(pt 1688 736)
-	(bus)
-)
-(connector
-	(text "clk" (rect 1658 736 1672 753)(font "Intel Clear" ))
-	(pt 1688 752)
-	(pt 1648 752)
-)
-(connector
-	(text "resetN" (rect 1658 752 1688 769)(font "Intel Clear" ))
-	(pt 1688 768)
-	(pt 1648 768)
-)
-(connector
-	(text "whiteBallDR" (rect 1226 784 1286 801)(font "Intel Clear" ))
-	(pt 1224 800)
-	(pt 1368 800)
-)
-(connector
-	(text "redBallDR" (rect 1226 816 1275 833)(font "Intel Clear" ))
-	(pt 1224 832)
-	(pt 1368 832)
-)
-(connector
-	(text "RGBWhiteBall[7..0]" (rect 1226 800 1319 817)(font "Intel Clear" ))
-	(pt 1224 816)
-	(pt 1368 816)
-	(bus)
-)
-(connector
-	(text "RGBRedBall[7..0]" (rect 1226 832 1309 849)(font "Intel Clear" ))
-	(pt 1224 848)
-	(pt 1368 848)
-	(bus)
-)
-(connector
-	(text "holeNumberDR" (rect 1226 848 1299 865)(font "Intel Clear" ))
-	(pt 1224 864)
-	(pt 1368 864)
-)
-(connector
-	(text "RGBHoleNumber[7..0]" (rect 1226 864 1331 881)(font "Intel Clear" ))
-	(pt 1224 880)
-	(pt 1368 880)
-	(bus)
-)
-(connector
-	(text "holesDR" (rect 1226 880 1266 897)(font "Intel Clear" ))
-	(pt 1224 896)
-	(pt 1368 896)
-)
-(connector
-	(text "RGBHoles[7..0]" (rect 1226 896 1297 913)(font "Intel Clear" ))
-	(pt 1368 912)
-	(pt 1224 912)
-	(bus)
-)
-(connector
-	(text "RGBBorders[7..0]" (rect 1226 928 1307 945)(font "Intel Clear" ))
-	(pt 1224 944)
-	(pt 1368 944)
-	(bus)
-)
-(connector
-	(text "boardDR" (rect 1226 944 1267 961)(font "Intel Clear" ))
-	(pt 1224 960)
-	(pt 1368 960)
-)
-(connector
-	(text "RGBboard[7..0]" (rect 1226 960 1297 977)(font "Intel Clear" ))
-	(pt 1224 976)
-	(pt 1368 976)
-	(bus)
-)
-(connector
-	(text "bordersDR" (rect 1226 912 1275 929)(font "Intel Clear" ))
-	(pt 1224 928)
-	(pt 1368 928)
-)
-(connector
-	(text "lineDR" (rect 1234 752 1265 769)(font "Intel Clear" ))
-	(pt 1368 768)
-	(pt 1224 768)
-)
-(connector
-	(text "RGBLine[7..0]" (rect 1234 768 1298 785)(font "Intel Clear" ))
-	(pt 1368 784)
-	(pt 1224 784)
-	(bus)
-)
-(connector
 	(text "keyRisingEdge" (rect 1282 1768 1351 1785)(font "Intel Clear" ))
 	(pt 1360 1784)
 	(pt 1272 1784)
-)
-(connector
-	(text "lineWriteEnable" (rect 1634 1656 1710 1673)(font "Intel Clear" ))
-	(pt 1616 1672)
-	(pt 1704 1672)
-)
-(connector
-	(text "holeNumToHit[2..0]" (rect 226 1552 318 1569)(font "Intel Clear" ))
-	(pt 216 1568)
-	(pt 296 1568)
-	(bus)
-)
-(connector
-	(text "drawLine" (rect 226 1536 269 1553)(font "Intel Clear" ))
-	(pt 216 1552)
-	(pt 296 1552)
-)
-(connector
-	(text "redBallShow" (rect 226 1520 287 1537)(font "Intel Clear" ))
-	(pt 216 1536)
-	(pt 296 1536)
-)
-(connector
-	(text "whiteBallShow" (rect 226 1504 297 1521)(font "Intel Clear" ))
-	(pt 216 1520)
-	(pt 296 1520)
-)
-(connector
-	(text "PixelX[10..0]" (rect 1906 720 1966 737)(font "Intel Clear" ))
-	(pt 1896 736)
-	(pt 1960 736)
-	(bus)
-)
-(connector
-	(text "statDR" (rect 1234 720 1265 737)(font "Intel Clear" ))
-	(pt 1368 736)
-	(pt 1224 736)
-)
-(connector
-	(text "RGBStat[7..0]" (rect 1234 736 1297 753)(font "Intel Clear" ))
-	(pt 1368 752)
-	(pt 1224 752)
-	(bus)
-)
-(connector
-	(text "attempts[7..0]" (rect 226 1584 292 1601)(font "Intel Clear" ))
-	(pt 216 1600)
-	(pt 296 1600)
-	(bus)
-)
-(connector
-	(text "score[7..0]" (rect 226 1568 274 1585)(font "Intel Clear" ))
-	(pt 216 1584)
-	(pt 296 1584)
-	(bus)
-)
-(connector
-	(text "resetGameN" (rect 226 1600 285 1617)(font "Intel Clear" ))
-	(pt 216 1616)
-	(pt 296 1616)
-)
-(connector
-	(text "gameFinished" (rect 226 1616 292 1633)(font "Intel Clear" ))
-	(pt 216 1632)
-	(pt 296 1632)
-)
-(connector
-	(text "statDR" (rect 194 1712 225 1729)(font "Intel Clear" ))
-	(pt 184 1728)
-	(pt 240 1728)
-)
-(connector
-	(text "RGBStat[7..0]" (rect 194 1728 257 1745)(font "Intel Clear" ))
-	(pt 184 1744)
-	(pt 240 1744)
-	(bus)
-)
-(connector
-	(text "clk" (rect -110 1712 -96 1729)(font "Intel Clear" ))
-	(pt -112 1728)
-	(pt -48 1728)
-)
-(connector
-	(text "PixelX[10..0]" (rect -112 1728 -52 1745)(font "Intel Clear" ))
-	(pt -112 1744)
-	(pt -48 1744)
-	(bus)
-)
-(connector
-	(text "PixelY[10..0]" (rect -112 1744 -52 1761)(font "Intel Clear" ))
-	(pt -112 1760)
-	(pt -48 1760)
-	(bus)
-)
-(connector
-	(text "attempts[7..0]" (rect -112 1776 -46 1793)(font "Intel Clear" ))
-	(pt -112 1792)
-	(pt -48 1792)
-	(bus)
-)
-(connector
-	(text "gameFinished" (rect -112 1792 -46 1809)(font "Intel Clear" ))
-	(pt -112 1808)
-	(pt -48 1808)
-)
-(connector
-	(text "score[7..0]" (rect -110 1760 -62 1777)(font "Intel Clear" ))
-	(pt -112 1776)
-	(pt -48 1776)
-	(bus)
-)
-(connector
-	(text "clk" (rect -150 1504 -136 1521)(font "Intel Clear" ))
-	(pt -152 1520)
-	(pt -48 1520)
-)
-(connector
-	(text "resetN" (rect -150 1520 -120 1537)(font "Intel Clear" ))
-	(pt -152 1536)
-	(pt -48 1536)
-)
-(connector
-	(text "whiteBallStopped" (rect -150 1568 -66 1585)(font "Intel Clear" ))
-	(pt -152 1584)
-	(pt -48 1584)
-)
-(connector
-	(text "redBallHoleNum[2..0]" (rect -152 1632 -49 1649)(font "Intel Clear" ))
-	(pt -152 1648)
-	(pt -48 1648)
-	(bus)
-)
-(connector
-	(text "redBallStopped" (rect -150 1584 -76 1601)(font "Intel Clear" ))
-	(pt -152 1600)
-	(pt -48 1600)
-)
-(connector
-	(text "whiteBallHoleHit" (rect -150 1600 -69 1617)(font "Intel Clear" ))
-	(pt -152 1616)
-	(pt -48 1616)
-)
-(connector
-	(text "redBallHoleHit" (rect -150 1616 -80 1633)(font "Intel Clear" ))
-	(pt -152 1632)
-	(pt -48 1632)
-)
-(connector
-	(text "lineWriteEnable" (rect -150 1552 -74 1569)(font "Intel Clear" ))
-	(pt -152 1568)
-	(pt -48 1568)
-)
-(connector
-	(text "startOfFrame" (rect -150 1536 -87 1553)(font "Intel Clear" ))
-	(pt -48 1552)
-	(pt -152 1552)
 )
 (connector
 	(text "outMuxVelX[10..0]" (rect 464 688 552 705)(font "Intel Clear" ))
@@ -2955,11 +2718,6 @@ agreement for further details.
 	(pt 616 1480)
 )
 (connector
-	(text "keyRisingEdge" (rect 1626 1304 1695 1321)(font "Intel Clear" ))
-	(pt 1616 1320)
-	(pt 1704 1320)
-)
-(connector
 	(text "2IsPressed" (rect 538 1496 588 1513)(font "Intel Clear" ))
 	(pt 528 1512)
 	(pt 616 1512)
@@ -3004,6 +2762,290 @@ agreement for further details.
 	(pt 528 1496)
 	(pt 616 1496)
 )
+(connector
+	(text "PixelY[10..0]" (rect 1882 792 1942 809)(font "Intel Clear" ))
+	(pt 1872 808)
+	(pt 1936 808)
+	(bus)
+)
+(connector
+	(text "startOfFrame" (rect 1882 808 1945 825)(font "Intel Clear" ))
+	(pt 1872 824)
+	(pt 1936 824)
+)
+(connector
+	(pt 1872 840)
+	(pt 1904 840)
+	(bus)
+)
+(connector
+	(pt 1592 792)
+	(pt 1664 792)
+	(bus)
+)
+(connector
+	(text "clk" (rect 1634 792 1648 809)(font "Intel Clear" ))
+	(pt 1664 808)
+	(pt 1624 808)
+)
+(connector
+	(text "resetN" (rect 1634 808 1664 825)(font "Intel Clear" ))
+	(pt 1664 824)
+	(pt 1624 824)
+)
+(connector
+	(text "whiteBallDR" (rect 1202 840 1262 857)(font "Intel Clear" ))
+	(pt 1200 856)
+	(pt 1344 856)
+)
+(connector
+	(text "redBallDR" (rect 1202 872 1251 889)(font "Intel Clear" ))
+	(pt 1200 888)
+	(pt 1344 888)
+)
+(connector
+	(text "RGBWhiteBall[7..0]" (rect 1202 856 1295 873)(font "Intel Clear" ))
+	(pt 1200 872)
+	(pt 1344 872)
+	(bus)
+)
+(connector
+	(text "RGBRedBall[7..0]" (rect 1202 888 1285 905)(font "Intel Clear" ))
+	(pt 1200 904)
+	(pt 1344 904)
+	(bus)
+)
+(connector
+	(text "holeNumberDR" (rect 1202 904 1275 921)(font "Intel Clear" ))
+	(pt 1200 920)
+	(pt 1344 920)
+)
+(connector
+	(text "RGBHoleNumber[7..0]" (rect 1202 920 1307 937)(font "Intel Clear" ))
+	(pt 1200 936)
+	(pt 1344 936)
+	(bus)
+)
+(connector
+	(text "holesDR" (rect 1202 936 1242 953)(font "Intel Clear" ))
+	(pt 1200 952)
+	(pt 1344 952)
+)
+(connector
+	(text "RGBHoles[7..0]" (rect 1202 952 1273 969)(font "Intel Clear" ))
+	(pt 1344 968)
+	(pt 1200 968)
+	(bus)
+)
+(connector
+	(text "RGBBorders[7..0]" (rect 1202 984 1283 1001)(font "Intel Clear" ))
+	(pt 1200 1000)
+	(pt 1344 1000)
+	(bus)
+)
+(connector
+	(text "boardDR" (rect 1202 1000 1243 1017)(font "Intel Clear" ))
+	(pt 1200 1016)
+	(pt 1344 1016)
+)
+(connector
+	(text "RGBboard[7..0]" (rect 1202 1016 1273 1033)(font "Intel Clear" ))
+	(pt 1200 1032)
+	(pt 1344 1032)
+	(bus)
+)
+(connector
+	(text "bordersDR" (rect 1202 968 1251 985)(font "Intel Clear" ))
+	(pt 1200 984)
+	(pt 1344 984)
+)
+(connector
+	(text "lineDR" (rect 1210 808 1241 825)(font "Intel Clear" ))
+	(pt 1344 824)
+	(pt 1200 824)
+)
+(connector
+	(text "RGBLine[7..0]" (rect 1210 824 1274 841)(font "Intel Clear" ))
+	(pt 1344 840)
+	(pt 1200 840)
+	(bus)
+)
+(connector
+	(text "PixelX[10..0]" (rect 1882 776 1942 793)(font "Intel Clear" ))
+	(pt 1872 792)
+	(pt 1936 792)
+	(bus)
+)
+(connector
+	(text "statDR" (rect 1210 776 1241 793)(font "Intel Clear" ))
+	(pt 1344 792)
+	(pt 1200 792)
+)
+(connector
+	(text "RGBStat[7..0]" (rect 1210 792 1273 809)(font "Intel Clear" ))
+	(pt 1344 808)
+	(pt 1200 808)
+	(bus)
+)
+(connector
+	(text "keyRisingEdge" (rect 1626 1304 1695 1321)(font "Intel Clear" ))
+	(pt 1616 1320)
+	(pt 1704 1320)
+)
+(connector
+	(text "holeNumToHit[2..0]" (rect 226 1624 318 1641)(font "Intel Clear" ))
+	(pt 216 1640)
+	(pt 296 1640)
+	(bus)
+)
+(connector
+	(text "drawLine" (rect 226 1608 269 1625)(font "Intel Clear" ))
+	(pt 216 1624)
+	(pt 296 1624)
+)
+(connector
+	(text "redBallShow" (rect 226 1592 287 1609)(font "Intel Clear" ))
+	(pt 216 1608)
+	(pt 296 1608)
+)
+(connector
+	(text "whiteBallShow" (rect 226 1576 297 1593)(font "Intel Clear" ))
+	(pt 216 1592)
+	(pt 296 1592)
+)
+(connector
+	(text "attempts[7..0]" (rect 226 1656 292 1673)(font "Intel Clear" ))
+	(pt 216 1672)
+	(pt 296 1672)
+	(bus)
+)
+(connector
+	(text "score[7..0]" (rect 226 1640 274 1657)(font "Intel Clear" ))
+	(pt 216 1656)
+	(pt 296 1656)
+	(bus)
+)
+(connector
+	(text "resetGameN" (rect 226 1672 285 1689)(font "Intel Clear" ))
+	(pt 216 1688)
+	(pt 296 1688)
+)
+(connector
+	(text "clk" (rect -150 1576 -136 1593)(font "Intel Clear" ))
+	(pt -152 1592)
+	(pt -48 1592)
+)
+(connector
+	(text "resetN" (rect -150 1592 -120 1609)(font "Intel Clear" ))
+	(pt -152 1608)
+	(pt -48 1608)
+)
+(connector
+	(text "startOfFrame" (rect -150 1608 -87 1625)(font "Intel Clear" ))
+	(pt -48 1624)
+	(pt -152 1624)
+)
+(connector
+	(text "gameFinished" (rect 226 1704 292 1721)(font "Intel Clear" ))
+	(pt 216 1720)
+	(pt 296 1720)
+)
+(connector
+	(text "gameStarted" (rect 226 1688 287 1705)(font "Intel Clear" ))
+	(pt 216 1704)
+	(pt 296 1704)
+)
+(connector
+	(text "statDR" (rect 722 1720 753 1737)(font "Intel Clear" ))
+	(pt 712 1736)
+	(pt 768 1736)
+)
+(connector
+	(text "RGBStat[7..0]" (rect 722 1736 785 1753)(font "Intel Clear" ))
+	(pt 712 1752)
+	(pt 768 1752)
+	(bus)
+)
+(connector
+	(text "clk" (rect 418 1720 432 1737)(font "Intel Clear" ))
+	(pt 416 1736)
+	(pt 480 1736)
+)
+(connector
+	(text "PixelX[10..0]" (rect 416 1736 476 1753)(font "Intel Clear" ))
+	(pt 416 1752)
+	(pt 480 1752)
+	(bus)
+)
+(connector
+	(text "PixelY[10..0]" (rect 416 1752 476 1769)(font "Intel Clear" ))
+	(pt 416 1768)
+	(pt 480 1768)
+	(bus)
+)
+(connector
+	(text "attempts[7..0]" (rect 416 1784 482 1801)(font "Intel Clear" ))
+	(pt 416 1800)
+	(pt 480 1800)
+	(bus)
+)
+(connector
+	(text "score[7..0]" (rect 418 1768 466 1785)(font "Intel Clear" ))
+	(pt 416 1784)
+	(pt 480 1784)
+	(bus)
+)
+(connector
+	(text "gameFinished" (rect 418 1816 484 1833)(font "Intel Clear" ))
+	(pt 480 1832)
+	(pt 416 1832)
+)
+(connector
+	(text "gameStarted" (rect 416 1800 477 1817)(font "Intel Clear" ))
+	(pt 416 1816)
+	(pt 480 1816)
+)
+(connector
+	(text "lineWriteEnable" (rect 1634 1656 1710 1673)(font "Intel Clear" ))
+	(pt 1616 1672)
+	(pt 1704 1672)
+)
+(connector
+	(text "keyRisingEdge" (rect -150 1624 -81 1641)(font "Intel Clear" ))
+	(pt -152 1640)
+	(pt -48 1640)
+)
+(connector
+	(text "lineWriteEnable" (rect -150 1640 -74 1657)(font "Intel Clear" ))
+	(pt -152 1656)
+	(pt -48 1656)
+)
+(connector
+	(text "whiteBallStopped" (rect -150 1656 -66 1673)(font "Intel Clear" ))
+	(pt -152 1672)
+	(pt -48 1672)
+)
+(connector
+	(text "redBallHoleNum[2..0]" (rect -152 1720 -49 1737)(font "Intel Clear" ))
+	(pt -152 1736)
+	(pt -48 1736)
+	(bus)
+)
+(connector
+	(text "redBallStopped" (rect -150 1672 -76 1689)(font "Intel Clear" ))
+	(pt -152 1688)
+	(pt -48 1688)
+)
+(connector
+	(text "whiteBallHoleHit" (rect -150 1688 -69 1705)(font "Intel Clear" ))
+	(pt -152 1704)
+	(pt -48 1704)
+)
+(connector
+	(text "redBallHoleHit" (rect -150 1704 -80 1721)(font "Intel Clear" ))
+	(pt -152 1720)
+	(pt -48 1720)
+)
 (junction (pt 1360 1256))
 (junction (pt 1360 1272))
 (text "Billiard Background" (rect 24 312 139 331)(font "Intel Clear" (font_size 8)))
@@ -3011,12 +3053,14 @@ agreement for further details.
 (text "CONSTANTS" (rect 1344 272 1421 291)(font "Intel Clear" (font_size 8)))
 (text "hit controller" (rect 720 952 794 971)(font "Intel Clear" (font_size 8)))
 (text "direction loader" (rect 1440 1152 1533 1171)(font "Intel Clear" (font_size 8)))
-(text "game controller" (rect 48 1464 140 1483)(font "Intel Clear" (font_size 8)))
+(text "game controller" (rect 48 1384 140 1403)(font "Intel Clear" (font_size 8)))
 (text "Audio" (rect 736 1368 770 1387)(font "Intel Clear" (font_size 8)))
-(rectangle (rect -160 264 336 1440))
+(text "Statistics" (rect 736 1688 790 1707)(font "Intel Clear" (font_size 8)))
+(rectangle (rect -160 264 336 1352))
 (rectangle (rect 344 264 1160 936))
 (rectangle (rect 1168 264 1616 688))
 (rectangle (rect 344 944 1160 1352))
 (rectangle (rect 1168 1144 1800 1888))
-(rectangle (rect -160 1448 336 1888))
+(rectangle (rect -160 1360 336 1888))
 (rectangle (rect 344 1360 1160 1672))
+(rectangle (rect 344 1680 1160 1888))

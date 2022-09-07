@@ -3,6 +3,7 @@ module game_controller(
 	input logic resetN,
 	input logic startOfFrame,
 	
+	input logic keyRisingEdge,
 	input logic lineWriteEnable,
 
 	input logic whiteBallStopped,
@@ -22,11 +23,11 @@ module game_controller(
 	output logic [7:0] attempts,
 	
 	output logic resetGameN,
+	output logic gameStarted,
 	output logic gameFinished
 );
 
-parameter logic [7:0] ATTEMPTS_INIT = 8'h2;
-
+parameter logic [7:0] ATTEMPTS_INIT = 8'h20;
 const logic [7:0] HIT_SUCCESS_SCORE = 8'h5;
 const logic [7:0] WRONG_BALL_SCORE = 8'h1;
 
@@ -38,6 +39,7 @@ logic anyHole;
 always_ff @(posedge clk or negedge resetN) begin
 	if(!resetN) begin
 		resetGameN <= 1'b0;
+		gameStarted <= 1'b0;
 		gameFinished <= 1'b0;
 		
 		score <= 8'h0;
@@ -53,11 +55,7 @@ always_ff @(posedge clk or negedge resetN) begin
 	end
 	else begin
 		resetGameN <= 1'b1;
-		
-		if(lineWriteEnable && attempts > 0) begin
-			attempts <= attempts - 4'b1;
-		end
-		
+				
 		if(!gameFinished) begin
 			if(whiteBallHoleHit && whiteBallShow) begin 
 				whiteBallShow <= 1'b0;
@@ -114,7 +112,16 @@ always_ff @(posedge clk or negedge resetN) begin
 			end
 		end
 		
-		if(ballsStopped) begin
+		
+		if(keyRisingEdge && !gameStarted) begin
+			gameStarted <= 1'b1;
+		end
+		
+		else if(lineWriteEnable && attempts > 0) begin
+			attempts <= attempts - 4'b1;
+		end
+		
+		else if(ballsStopped) begin
 			if (!redBallShow || !whiteBallShow) begin
 				resetGameN <= 1'b0;
 				whiteBallShow <= 1'b1;
@@ -125,10 +132,11 @@ always_ff @(posedge clk or negedge resetN) begin
 				gameFinished <= 1'b1;
 			end
 		end
+		
 	end
 end
 
 assign ballsStopped = (!whiteBallShow || whiteBallStopped) && (!redBallShow || redBallStopped);
-assign drawLine = ballsStopped;
+assign drawLine = ballsStopped && gameStarted;
 
 endmodule
